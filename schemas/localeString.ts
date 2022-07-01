@@ -1,22 +1,24 @@
+import { CustomSanityTyper, SanityTyper } from './typer';
+
 const localeString = {
   title: 'Localized string',
-  name: 'localeString',
-  type: 'object',
+  name: CustomSanityTyper.LOCALE_STRING,
+  type: SanityTyper.OBJECT,
   fields: [
     {
       title: 'Bokmål',
       name: 'nb',
-      type: 'string',
+      type: SanityTyper.STRING,
     },
     {
       title: 'Nynorsk',
       name: 'nn',
-      type: 'string',
+      type: SanityTyper.STRING,
     },
     {
       title: 'Engelsk',
       name: 'en',
-      type: 'string',
+      type: SanityTyper.STRING,
     },
   ],
 };

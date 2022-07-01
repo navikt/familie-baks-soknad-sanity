@@ -1,22 +1,24 @@
+import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
+
 const bekreftelsesboks = {
-  title: 'Bekreftelsesboks',
-  name: 'forside-bekreftelsesboks',
-  type: 'document',
+  title: DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
+  name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
+  type: SanityTyper.DOCUMENT,
   fields: [
     {
       title: 'Brødtekst',
       name: 'brodtekst',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       title: 'Erklæring',
       name: 'erklaering',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       title: 'Feilmelding',
       name: 'feilmelding',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
   ],
 };

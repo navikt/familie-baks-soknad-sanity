@@ -1,27 +1,29 @@
+import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from './typer';
+
 const navigasjon = {
-  title: 'Navigasjon',
-  name: 'navigasjon',
-  type: 'document',
+  title: DokumentTittel.NAVIGASJON,
+  name: DokumentNavn.NAVIGASJON,
+  type: SanityTyper.DOCUMENT,
   fields: [
     {
       title: 'Startknapp',
       name: 'start',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       title: 'Gå videre-knapp',
       name: 'ga_videre',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       title: 'Tilbakeknapp',
       name: 'tilbake',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       title: 'Avbryt søknad-knapp',
       name: 'avbryt',
-      type: 'localeString',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
   ],
 };

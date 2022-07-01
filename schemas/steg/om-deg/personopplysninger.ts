@@ -1,6 +1,8 @@
+import { DokumentNavn, DokumentTittel } from '../../typer';
+
 const personopplysninger = {
-  title: 'Personopplysninger',
-  name: 'om-deg-personopplysninger',
+  title: DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
+  name: DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
   type: 'document',
   fields: [
     {

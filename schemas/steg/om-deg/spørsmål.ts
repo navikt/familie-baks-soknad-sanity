@@ -1,9 +1,9 @@
 import spørsmålBase from '../../spørsmålBase';
-import { SpørsmålTemplate, Steg } from '../../typer';
+import { DokumentNavn, SpørsmålTemplate } from '../../typer';
 
 const spørsmål: SpørsmålTemplate = {
   ...spørsmålBase,
-  name: `sporsmal_${Steg.OM_DEG}`,
+  name: DokumentNavn.OM_DEG_SPØRSMÅL,
 };
 
 export default spørsmål;

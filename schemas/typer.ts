@@ -1,17 +1,17 @@
+interface Field {
+  title: string;
+  name: string;
+  type: SanityTyper;
+}
+
 export interface SpørsmålTemplate extends SpørsmålBaseTemplate {
-  name: `sporsmal_${Steg}`;
+  name: DokumentNavn;
 }
 
 export interface SpørsmålBaseTemplate {
   title: string;
   type: SanityTyper;
   fields: Field[];
-}
-
-interface Field {
-  title: string;
-  name: string;
-  type: SanityTyper;
 }
 
 export enum SanityTyper {
@@ -25,14 +25,29 @@ export enum SanityTyper {
   TABLE = 'table',
 }
 
-export enum Steg {
-  FORSIDE = 'FORSIDE',
-  OM_DEG = 'OM_DEG',
-  DIN_LIVSSITUASJON = 'DIN_LIVSSITUASJON',
+export enum CustomSanityTyper {
+  LOCALE_STRING = 'localeString',
 }
 
-export enum DocumentTittel {
-  BEKREFTELSESBOKS = 'Bekreftelsesboks',
-  PUNKTLISTE = 'Punktliste',
-  PERSONOPPLYSNINGER = 'Personopplysninger',
+export enum StegTittel {
+  FORSIDE = 'Forside',
+  OM_DEG = 'Om deg',
+  DIN_LIVSSITUASJON = 'Din livssituasjon',
+}
+
+export enum DokumentNavn {
+  NAVIGASJON = 'navigasjon',
+  FORSIDE_BEKREFTELSESBOKS = 'forside_bekreftelsesboks',
+  FORSIDE_PUNKTLISTE = 'forside_punktliste',
+  OM_DEG_PERSONOPPLYSNINGER = 'om_deg_personopplysninger',
+  OM_DEG_SPØRSMÅL = 'om_deg_sporsmal',
+  DIN_LIVSSITUASJON_SPØRSMÅL = 'din_livssituasjon_sporsmal',
+}
+
+export enum DokumentTittel {
+  NAVIGASJON = 'Navigasjon',
+  SPØRSMÅL = 'Spørsmål',
+  FORSIDE_BEKREFTELSESBOKS = 'Bekreftelsesboks',
+  FORSIDE_PUNKTLISTE = 'Punktliste',
+  OM_DEG_PERSONOPPLYSNINGER = 'Personopplysninger',
 }

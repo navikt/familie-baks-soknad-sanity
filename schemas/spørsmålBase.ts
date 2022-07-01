@@ -1,7 +1,7 @@
-import { SanityTyper, SpørsmålBaseTemplate } from './typer';
+import { DokumentTittel, SanityTyper, SpørsmålBaseTemplate } from './typer';
 
 const spørsmålBase: SpørsmålBaseTemplate = {
-  title: 'Spørsmål',
+  title: DokumentTittel.SPØRSMÅL,
   type: SanityTyper.DOCUMENT,
   fields: [
     {

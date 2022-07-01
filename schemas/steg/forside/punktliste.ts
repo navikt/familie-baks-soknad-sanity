@@ -1,7 +1,9 @@
+import { DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
+
 const punktliste = {
-  title: 'Punktliste',
-  name: 'forside-punktliste',
-  type: 'document',
+  title: DokumentTittel.FORSIDE_PUNKTLISTE,
+  name: DokumentNavn.FORSIDE_PUNKTLISTE,
+  type: SanityTyper.DOCUMENT,
   fields: [
     {
       title: 'Tittel',
