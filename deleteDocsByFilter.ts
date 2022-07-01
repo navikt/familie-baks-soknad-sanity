@@ -13,4 +13,4 @@
 
 import client from 'part:@sanity/base/client';
 
-client.delete({ query: '*[_type == "NOE"]' }).then(console.log).catch(console.error);
+client.delete({ query: '*[_type == "ANYYYTHIIING"]' }).then(console.log).catch(console.error);

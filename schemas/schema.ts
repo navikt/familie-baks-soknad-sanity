@@ -3,12 +3,13 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
-import dinLivssituasjonSpørsmål from './din-livssituasjon/spørsmål';
-import forsideBekreftelsesboks from './forside/bekreftelsesboks';
-import forsidePunktliste from './forside/punktliste';
 import localeString from './localeString';
-import omDegPersonopplysninger from './om-deg/personopplysninger';
-import omDegSpørsmål from './om-deg/spørsmål';
+import navigasjon from './navigasjon';
+import dinLivssituasjonSpørsmål from './steg/din-livssituasjon/spørsmål';
+import forsideBekreftelsesboks from './steg/forside/bekreftelsesboks';
+import forsidePunktliste from './steg/forside/punktliste';
+import omDegPersonopplysninger from './steg/om-deg/personopplysninger';
+import omDegSpørsmål from './steg/om-deg/spørsmål';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -19,6 +20,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     localeString,
+    navigasjon,
     forsideBekreftelsesboks,
     forsidePunktliste,
     omDegPersonopplysninger,

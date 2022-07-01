@@ -1,4 +1,4 @@
-export default {
+const personopplysninger = {
   title: 'Personopplysninger',
   name: 'om-deg-personopplysninger',
   type: 'document',
@@ -10,3 +10,5 @@ export default {
     },
   ],
 };
+
+export default personopplysninger;

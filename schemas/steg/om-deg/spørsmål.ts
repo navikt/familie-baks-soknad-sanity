@@ -1,5 +1,5 @@
-import spørsmålBase from '../spørsmålBase';
-import { SpørsmålTemplate, Steg } from '../typer';
+import spørsmålBase from '../../spørsmålBase';
+import { SpørsmålTemplate, Steg } from '../../typer';
 
 const spørsmål: SpørsmålTemplate = {
   ...spørsmålBase,

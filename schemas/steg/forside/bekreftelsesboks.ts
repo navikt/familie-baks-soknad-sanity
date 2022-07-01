@@ -4,11 +4,6 @@ const bekreftelsesboks = {
   type: 'document',
   fields: [
     {
-      title: 'Tittel',
-      name: 'tittel',
-      type: 'string',
-    },
-    {
       title: 'Brødtekst',
       name: 'brodtekst',
       type: 'localeString',

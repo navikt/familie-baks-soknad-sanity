@@ -30,3 +30,9 @@ export enum Steg {
   OM_DEG = 'OM_DEG',
   DIN_LIVSSITUASJON = 'DIN_LIVSSITUASJON',
 }
+
+export enum DocumentTittel {
+  BEKREFTELSESBOKS = 'Bekreftelsesboks',
+  PUNKTLISTE = 'Punktliste',
+  PERSONOPPLYSNINGER = 'Personopplysninger',
+}
