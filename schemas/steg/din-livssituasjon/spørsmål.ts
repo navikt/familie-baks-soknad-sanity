@@ -1,8 +1,8 @@
-import spørsmålBase from '../../spørsmålBase';
+import spørsmålDokumentBase from '../../spørsmålDokumentBase';
 import { DokumentNavn, SpørsmålTemplate } from '../../typer';
 
 const spørsmål: SpørsmålTemplate = {
-  ...spørsmålBase,
+  ...spørsmålDokumentBase,
   name: DokumentNavn.DIN_LIVSSITUASJON_SPØRSMÅL,
 };
 

@@ -1,3 +1,4 @@
+import fieldsBase from '../../fieldsBase';
 import { DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
 
 const punktliste = {
@@ -5,10 +6,38 @@ const punktliste = {
   name: DokumentNavn.FORSIDE_PUNKTLISTE,
   type: SanityTyper.DOCUMENT,
   fields: [
+    ...fieldsBase,
     {
-      title: 'Tittel',
-      name: 'tittel',
-      type: 'string',
+      name: 'body',
+      type: 'array',
+      title: 'Body',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'External link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                  {
+                    title: 'Open in new tab',
+                    name: 'blank',
+                    type: 'boolean',
+                    initialValue: true,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
     },
   ],
 };

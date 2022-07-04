@@ -1,3 +1,4 @@
+import fieldsBase from '../../fieldsBase';
 import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
 
 const bekreftelsesboks = {
@@ -5,6 +6,7 @@ const bekreftelsesboks = {
   name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
   type: SanityTyper.DOCUMENT,
   fields: [
+    ...fieldsBase,
     {
       title: 'Brødtekst',
       name: 'brodtekst',

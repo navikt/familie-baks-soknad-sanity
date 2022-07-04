@@ -51,3 +51,9 @@ export enum DokumentTittel {
   FORSIDE_PUNKTLISTE = 'Punktliste',
   OM_DEG_PERSONOPPLYSNINGER = 'Personopplysninger',
 }
+
+export enum Ytelse {
+  ORDINÆR_BARNETRYGD = 'ORDINÆR_BARNETRYGD',
+  UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
+  KONTANTSTØTTE = 'KONTANTSTØTTE',
+}

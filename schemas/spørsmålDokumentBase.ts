@@ -1,14 +1,11 @@
+import fieldsBase from './fieldsBase';
 import { DokumentTittel, SanityTyper, SpørsmålBaseTemplate } from './typer';
 
-const spørsmålBase: SpørsmålBaseTemplate = {
+const spørsmålDokumentBase: SpørsmålBaseTemplate = {
   title: DokumentTittel.SPØRSMÅL,
   type: SanityTyper.DOCUMENT,
   fields: [
-    {
-      title: 'Id',
-      name: 'id',
-      type: SanityTyper.STRING,
-    },
+    ...fieldsBase,
     {
       title: 'Spørsmål',
       name: 'sporsmalstekst',
@@ -17,4 +14,4 @@ const spørsmålBase: SpørsmålBaseTemplate = {
   ],
 };
 
-export default spørsmålBase;
+export default spørsmålDokumentBase;
