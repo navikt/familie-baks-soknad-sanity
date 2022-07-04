@@ -26,7 +26,6 @@ export const apiNavnValideringer = (Rule, type) => [
   ...maskinnavnValideringer(Rule),
   Rule.custom(async (value, context) => {
     const erUnik = await erUniktApiNavn(type, value, context);
-    console.log(erUnik);
     if (!erUnik) return 'Apinavnet er ikke unikt.';
     return true;
   }),
