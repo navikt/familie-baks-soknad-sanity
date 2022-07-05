@@ -1,20 +1,27 @@
 import { apiNavnValideringer } from '../util/valideringer';
-import { SanityTyper, Ytelse } from './typer';
+import { Field, SanityTyper, Ytelse } from './typer';
 
-const fieldsBase = [
+const fieldsBase: Field[] = [
   {
+    name: 'visningsnavn',
+    title: 'Visningsnavn',
+    description: '(obligatorisk)',
+    type: SanityTyper.STRING,
+    validation: Rule => Rule.required().error('Dokumentet må ha et visningsnavn'),
+  },
+  {
+    name: 'api_navn',
     title: 'Api navn',
     type: SanityTyper.STRING,
-    name: 'api_navn',
-    description: 'Teknisk navn. Eksempel om-deg-bor-på-registrert-adresse',
+    description: 'Teknisk navn. Eksempel om-deg-bor-på-registrert-adresse (obligatorisk)',
     validation: Rule => apiNavnValideringer(Rule, SanityTyper.DOCUMENT),
   },
   {
+    name: 'ytelse',
     title: 'Ytelse',
     type: SanityTyper.ARRAY,
-    name: 'ytelse',
-    description: 'For hvilke ytelser gjelder teksten?',
-    validation: Rule => Rule.required().error('Dokumentet må høre til en ytelse'),
+    description: 'For hvilke ytelser gjelder teksten? Velg minst én. (obligatorisk)',
+    validation: Rule => Rule.required().error('Dokumentet må høre til minst en ytelse'),
     options: {
       list: [
         { value: Ytelse.ORDINÆR_BARNETRYGD, title: 'Ordinær barnetrygd' },

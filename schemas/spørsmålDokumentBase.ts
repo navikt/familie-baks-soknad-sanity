@@ -1,5 +1,5 @@
 import fieldsBase from './fieldsBase';
-import { DokumentTittel, SanityTyper, SpørsmålBaseTemplate } from './typer';
+import { CustomSanityTyper, DokumentTittel, SanityTyper, SpørsmålBaseTemplate } from './typer';
 
 const spørsmålDokumentBase: SpørsmålBaseTemplate = {
   title: DokumentTittel.SPØRSMÅL,
@@ -7,9 +7,36 @@ const spørsmålDokumentBase: SpørsmålBaseTemplate = {
   fields: [
     ...fieldsBase,
     {
+      name: 'sporsmal',
       title: 'Spørsmål',
-      name: 'sporsmalstekst',
-      type: SanityTyper.STRING,
+      description: '(obligatorisk)',
+      type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+    },
+    {
+      name: 'feilmelding',
+      title: 'Feilmelding',
+      description: '(obligatorisk)',
+      type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+    },
+    {
+      name: 'beskrivelse',
+      title: 'Beskrivelse',
+      description: '(frivillig)',
+      type: CustomSanityTyper.LOCALE_STRING,
+    },
+    {
+      name: 'alertOpplysning',
+      title: 'Opplysning i alert',
+      description: '(frivillig)',
+      type: CustomSanityTyper.LOCALE_STRING,
+    },
+    {
+      name: 'vedleggsnotis',
+      title: 'Vedleggsnotis',
+      description: '(frivillig)',
+      type: CustomSanityTyper.LOCALE_STRING,
     },
   ],
 };

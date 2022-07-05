@@ -1,7 +1,7 @@
-interface Field {
-  title: string;
-  name: string;
-  type: SanityTyper;
+import { ObjectField } from '@sanity/types/src/schema/types';
+
+export interface Field extends Omit<ObjectField, 'type'> {
+  type: SanityTyper | CustomSanityTyper;
 }
 
 export interface SpørsmålTemplate extends SpørsmålBaseTemplate {
@@ -10,7 +10,7 @@ export interface SpørsmålTemplate extends SpørsmålBaseTemplate {
 
 export interface SpørsmålBaseTemplate {
   title: string;
-  type: SanityTyper;
+  type: SanityTyper | CustomSanityTyper;
   fields: Field[];
 }
 
