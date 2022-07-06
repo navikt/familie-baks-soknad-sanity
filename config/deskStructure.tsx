@@ -11,7 +11,7 @@ import { DokumentNavn, DokumentTittel, StegTittel } from '../schemas/typer';
 export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
 
 const stegListItem = (title: string, items: (ListItemBuilder | ListItem | Divider)[]) =>
-  S.listItem().title(title).child(S.list().title('Innhold').items(items));
+  S.listItem().title(title).child(S.list().title(title).items(items));
 
 const documentListItem = (tittel: DokumentTittel, template: DokumentNavn) => {
   return S.listItem()

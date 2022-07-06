@@ -1,6 +1,7 @@
-import { DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
+import { DokumentNavn, DokumentTittel, SanityTyper, StegDokument, StegTittel } from '../../typer';
 
-const punktliste = {
+const punktliste: StegDokument = {
+  steg: StegTittel.FORSIDE,
   title: DokumentTittel.FORSIDE_PUNKTLISTE,
   name: DokumentNavn.FORSIDE_PUNKTLISTE,
   type: SanityTyper.DOCUMENT,

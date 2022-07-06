@@ -1,6 +1,14 @@
-import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
+import {
+  CustomSanityTyper,
+  DokumentNavn,
+  DokumentTittel,
+  SanityTyper,
+  StegDokument,
+  StegTittel,
+} from '../../typer';
 
-const bekreftelsesboks = {
+const bekreftelsesboks: StegDokument = {
+  steg: StegTittel.FORSIDE,
   title: DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
   name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
   type: SanityTyper.DOCUMENT,
@@ -8,7 +16,7 @@ const bekreftelsesboks = {
     {
       title: 'Tittel',
       name: 'tittel',
-      description: '(obligatorisk)',
+      description: 'Overskrift over bekreftelsesboksen (obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
       validation: Rule => Rule.required().error('Du må fylle inn tittel'),
     },

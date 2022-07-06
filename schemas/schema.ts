@@ -14,6 +14,7 @@ import forsideBekreftelsesboks from './steg/forside/bekreftelsesboks';
 import forsidePunktliste from './steg/forside/punktliste';
 import omDegPersonopplysninger from './steg/om-deg/personopplysninger';
 import omDegSpørsmål from './steg/om-deg/spørsmål';
+import { StegDokument } from './typer';
 
 const spesifikkeDokumenterForSøknad = [
   forsideBekreftelsesboks,
@@ -22,9 +23,9 @@ const spesifikkeDokumenterForSøknad = [
   omDegSpørsmål,
   dinLivssituasjonSpørsmål,
   navigasjon,
-].map(dok => ({
+].map((dok: StegDokument) => ({
   ...dok,
-  fields: fieldsBase.concat(dok.fields), //todo: type opp dette
+  fields: [...fieldsBase(dok.steg), ...dok.fields],
 }));
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -33,14 +34,15 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes
-    .concat([
+  types: schemaTypes.concat(
+    [
       /* Your types here! */
       customBlock,
       localeString,
       localeBlock,
       alertString,
       alertBlock,
-    ])
-    .concat(spesifikkeDokumenterForSøknad),
+    ],
+    spesifikkeDokumenterForSøknad,
+  ),
 });

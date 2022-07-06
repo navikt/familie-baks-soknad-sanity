@@ -1,7 +1,7 @@
 import { apiNavnValideringer } from '../util/valideringer';
-import { SanityTyper, Ytelse } from './typer';
+import { SanityTyper, StegTittel, Ytelse } from './typer';
 
-const fieldsBase = [
+const fieldsBase = (steg: StegTittel) => [
   {
     name: 'visningsnavn',
     title: 'Visningsnavn',
@@ -35,6 +35,13 @@ const fieldsBase = [
         type: SanityTyper.STRING,
       },
     ],
+  },
+  {
+    title: 'Steg',
+    name: 'steg',
+    type: SanityTyper.STRING,
+    initialValue: steg,
+    readOnly: true,
   },
 ];
 

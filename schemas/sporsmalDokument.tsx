@@ -4,7 +4,7 @@ import { FileContent } from '@navikt/ds-icons';
 
 import { CustomSanityTyper, DokumentTittel, SanityTyper } from './typer';
 
-const spørsmålDokumentBase = {
+const sporsmalDokument = {
   title: DokumentTittel.SPØRSMÅL,
   type: SanityTyper.DOCUMENT,
   fields: [
@@ -47,4 +47,4 @@ const spørsmålDokumentBase = {
   ],
 };
 
-export default spørsmålDokumentBase;
+export default sporsmalDokument;

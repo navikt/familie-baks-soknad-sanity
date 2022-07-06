@@ -1,9 +1,17 @@
-import { CustomSanityTyper, DokumentNavn, DokumentTittel } from '../../typer';
+import {
+  CustomSanityTyper,
+  DokumentNavn,
+  DokumentTittel,
+  SanityTyper,
+  StegDokument,
+  StegTittel,
+} from '../../typer';
 
-const personopplysninger = {
+const personopplysninger: StegDokument = {
+  steg: StegTittel.OM_DEG,
   title: DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
   name: DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
-  type: 'document',
+  type: SanityTyper.DOCUMENT,
   fields: [
     { title: 'Alert', name: 'alert', type: CustomSanityTyper.ALERT_BLOCK },
     {

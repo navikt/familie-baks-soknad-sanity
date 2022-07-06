@@ -1,4 +1,16 @@
-import { ObjectField } from '@sanity/types/src/schema/types';
+export interface StegDokument {
+  steg: StegTittel;
+  title: DokumentTittel;
+  name: DokumentNavn;
+  type: SanityTyper.DOCUMENT;
+  fields: Field[];
+}
+
+interface Field {
+  name: string;
+  title: string;
+  [key: string]: unknown;
+}
 
 export enum SanityTyper {
   STRING = 'string',
@@ -19,10 +31,11 @@ export enum CustomSanityTyper {
   ALERT_BLOCK = 'alertBlock',
 }
 
-export enum StegTittel {
+export enum StegTittel { //Todo: fiks denne
   FORSIDE = 'Forside',
   OM_DEG = 'Om deg',
   DIN_LIVSSITUASJON = 'Din livssituasjon',
+  VELG_BARN = 'VELG_BARN',
 }
 
 export enum DokumentNavn {

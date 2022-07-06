@@ -1,8 +1,8 @@
-import spørsmålDokumentBase from '../../spørsmålDokumentBase';
+import sporsmalDokument from '../../sporsmalDokument';
 import { DokumentNavn } from '../../typer';
 
 const spørsmål = {
-  ...spørsmålDokumentBase,
+  ...sporsmalDokument,
   name: DokumentNavn.OM_DEG_SPØRSMÅL,
 };
 
