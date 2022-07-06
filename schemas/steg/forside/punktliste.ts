@@ -1,4 +1,3 @@
-import fieldsBase from '../../fieldsBase';
 import { DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
 
 const punktliste = {
@@ -6,7 +5,6 @@ const punktliste = {
   name: DokumentNavn.FORSIDE_PUNKTLISTE,
   type: SanityTyper.DOCUMENT,
   fields: [
-    ...fieldsBase,
     {
       name: 'body',
       type: 'array',

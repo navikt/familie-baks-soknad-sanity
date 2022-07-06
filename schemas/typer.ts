@@ -1,19 +1,5 @@
 import { ObjectField } from '@sanity/types/src/schema/types';
 
-export interface Field extends Omit<ObjectField, 'type'> {
-  type: SanityTyper | CustomSanityTyper;
-}
-
-export interface SpørsmålTemplate extends SpørsmålBaseTemplate {
-  name: DokumentNavn;
-}
-
-export interface SpørsmålBaseTemplate {
-  title: string;
-  type: SanityTyper | CustomSanityTyper;
-  fields: Field[];
-}
-
 export enum SanityTyper {
   STRING = 'string',
   REFERENCE = 'reference',
@@ -26,7 +12,11 @@ export enum SanityTyper {
 }
 
 export enum CustomSanityTyper {
+  CUSTOM_BLOCK = 'customBlock',
   LOCALE_STRING = 'localeString',
+  LOCALE_BLOCK = 'localeBlock',
+  ALERT_STRING = 'alertString',
+  ALERT_BLOCK = 'alertBlock',
 }
 
 export enum StegTittel {

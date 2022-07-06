@@ -1,4 +1,3 @@
-import fieldsBase from '../../fieldsBase';
 import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from '../../typer';
 
 const bekreftelsesboks = {
@@ -6,21 +5,33 @@ const bekreftelsesboks = {
   name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
   type: SanityTyper.DOCUMENT,
   fields: [
-    ...fieldsBase,
+    {
+      title: 'Tittel',
+      name: 'tittel',
+      description: '(obligatorisk)',
+      type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn tittel'),
+    },
     {
       title: 'Brødtekst',
       name: 'brodtekst',
+      description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn brødtekst'),
     },
     {
       title: 'Erklæring',
       name: 'erklaering',
+      description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn erklæring'),
     },
     {
       title: 'Feilmelding',
       name: 'feilmelding',
+      description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
     },
   ],
 };

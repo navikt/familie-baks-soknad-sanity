@@ -27,7 +27,7 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./config/deskStructure.ts"
+      "path": "./config/deskStructure.tsx"
     }
   ]
 }

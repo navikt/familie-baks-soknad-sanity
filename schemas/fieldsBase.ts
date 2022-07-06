@@ -1,7 +1,7 @@
 import { apiNavnValideringer } from '../util/valideringer';
-import { Field, SanityTyper, Ytelse } from './typer';
+import { SanityTyper, Ytelse } from './typer';
 
-const fieldsBase: Field[] = [
+const fieldsBase = [
   {
     name: 'visningsnavn',
     title: 'Visningsnavn',
@@ -13,7 +13,7 @@ const fieldsBase: Field[] = [
     name: 'api_navn',
     title: 'Api navn',
     type: SanityTyper.STRING,
-    description: 'Teknisk navn. Eksempel om-deg-bor-på-registrert-adresse (obligatorisk)',
+    description: 'Teknisk navn. Eksempel borPaRegistrertAdresse (obligatorisk)',
     validation: Rule => apiNavnValideringer(Rule, SanityTyper.DOCUMENT),
   },
   {
@@ -37,4 +37,5 @@ const fieldsBase: Field[] = [
     ],
   },
 ];
+
 export default fieldsBase;

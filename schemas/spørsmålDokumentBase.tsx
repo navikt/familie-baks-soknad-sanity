@@ -1,11 +1,13 @@
-import fieldsBase from './fieldsBase';
-import { CustomSanityTyper, DokumentTittel, SanityTyper, SpørsmålBaseTemplate } from './typer';
+import React from 'react';
 
-const spørsmålDokumentBase: SpørsmålBaseTemplate = {
+import { FileContent } from '@navikt/ds-icons';
+
+import { CustomSanityTyper, DokumentTittel, SanityTyper } from './typer';
+
+const spørsmålDokumentBase = {
   title: DokumentTittel.SPØRSMÅL,
   type: SanityTyper.DOCUMENT,
   fields: [
-    ...fieldsBase,
     {
       name: 'sporsmal',
       title: 'Spørsmål',
@@ -22,21 +24,25 @@ const spørsmålDokumentBase: SpørsmålBaseTemplate = {
     },
     {
       name: 'beskrivelse',
-      title: 'Beskrivelse',
-      description: '(frivillig)',
-      type: CustomSanityTyper.LOCALE_STRING,
-    },
-    {
-      name: 'alertOpplysning',
-      title: 'Opplysning i alert',
-      description: '(frivillig)',
+      title: 'Beskrivelse av spørsmål',
+      description: 'F.eks. dd.mm.åååå under spørsmål om dato. (frivillig)',
       type: CustomSanityTyper.LOCALE_STRING,
     },
     {
       name: 'vedleggsnotis',
-      title: 'Vedleggsnotis',
-      description: '(frivillig)',
+      title: (
+        <span>
+          <FileContent /> Vedleggsnotis
+        </span>
+      ),
+      description: 'Beskjed om at vedlegg må lastes opp. (frivillig)',
       type: CustomSanityTyper.LOCALE_STRING,
+    },
+    {
+      name: 'alert',
+      title: 'Alert',
+      description: '(frivillig)',
+      type: CustomSanityTyper.ALERT_STRING,
     },
   ],
 };

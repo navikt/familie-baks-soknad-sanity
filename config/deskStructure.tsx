@@ -1,6 +1,10 @@
+import React from 'react';
+
 import S from '@sanity/desk-tool/structure-builder';
 import { ListItem, ListItemBuilder } from '@sanity/structure/dist/dts/ListItem';
 import { Divider } from '@sanity/structure/dist/dts/StructureNodes';
+
+import { File } from '@navikt/ds-icons';
 
 import { DokumentNavn, DokumentTittel, StegTittel } from '../schemas/typer';
 
@@ -12,7 +16,8 @@ const stegListItem = (title: string, items: (ListItemBuilder | ListItem | Divide
 const documentListItem = (tittel: DokumentTittel, template: DokumentNavn) => {
   return S.listItem()
     .title(tittel)
-    .child(S.defaultDocument({ documentId: template, schemaType: template }).title(tittel));
+    .icon(() => <File />)
+    .child(S.defaultDocument({ documentId: template, schemaType: template }));
 };
 
 const spørsmålListItem = (dokumentNavn: DokumentNavn) =>
