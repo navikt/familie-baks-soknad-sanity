@@ -1,5 +1,5 @@
 export interface StegDokument {
-  steg: StegTittel;
+  steg: Steg;
   title: DokumentTittel;
   name: DokumentNavn;
   type: SanityTyper.DOCUMENT;
@@ -31,13 +31,6 @@ export enum CustomSanityTyper {
   ALERT_BLOCK = 'alertBlock',
 }
 
-export enum StegTittel { //Todo: fiks denne
-  FORSIDE = 'Forside',
-  OM_DEG = 'Om deg',
-  DIN_LIVSSITUASJON = 'Din livssituasjon',
-  VELG_BARN = 'VELG_BARN',
-}
-
 export enum DokumentNavn {
   NAVIGASJON = 'navigasjon',
   FORSIDE_BEKREFTELSESBOKS = 'forside_bekreftelsesboks',
@@ -60,3 +53,31 @@ export enum Ytelse {
   UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
   KONTANTSTØTTE = 'KONTANTSTØTTE',
 }
+
+export enum Steg {
+  FORSIDE = 'FORSIDE',
+  OM_DEG = 'OM_DEG',
+  DIN_LIVSSITUASJON = 'DIN_LIVSSITUASJON',
+  VELG_BARN = 'VELG_BARN',
+  OM_BARNA = 'OM_BARNA',
+  OM_BARNET = 'OM_BARNET',
+  EØS_FOR_SØKER = 'EØS_FOR_SØKER',
+  EØS_FOR_BARN = 'EØS_FOR_BARN',
+  OPPSUMMERING = 'OPPSUMMERING',
+  DOKUMENTASJON = 'DOKUMENTASJON',
+  KVITTERING = 'KVITTERING',
+}
+
+export const stegTittel: Record<Steg, string> = {
+  FORSIDE: 'Forside',
+  OM_DEG: 'Om deg',
+  DIN_LIVSSITUASJON: 'Din livssituasjon',
+  VELG_BARN: 'Velg barn',
+  OM_BARNA: 'Om barna',
+  OM_BARNET: 'Om barnet',
+  EØS_FOR_SØKER: 'Eøs for søker',
+  EØS_FOR_BARN: 'Eøs for barn',
+  OPPSUMMERING: 'Oppsummering',
+  DOKUMENTASJON: 'Dokumentasjon',
+  KVITTERING: 'Kvittering',
+};

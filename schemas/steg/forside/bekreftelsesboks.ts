@@ -4,11 +4,11 @@ import {
   DokumentTittel,
   SanityTyper,
   StegDokument,
-  StegTittel,
+  Steg,
 } from '../../typer';
 
 const bekreftelsesboks: StegDokument = {
-  steg: StegTittel.FORSIDE,
+  steg: Steg.FORSIDE,
   title: DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
   name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
   type: SanityTyper.DOCUMENT,

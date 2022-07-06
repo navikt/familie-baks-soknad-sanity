@@ -4,11 +4,11 @@ import {
   DokumentTittel,
   SanityTyper,
   StegDokument,
-  StegTittel,
+  Steg,
 } from '../../typer';
 
 const personopplysninger: StegDokument = {
-  steg: StegTittel.OM_DEG,
+  steg: Steg.OM_DEG,
   title: DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
   name: DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
   type: SanityTyper.DOCUMENT,

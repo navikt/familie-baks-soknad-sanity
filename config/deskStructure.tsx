@@ -6,12 +6,12 @@ import { Divider } from '@sanity/structure/dist/dts/StructureNodes';
 
 import { File } from '@navikt/ds-icons';
 
-import { DokumentNavn, DokumentTittel, StegTittel } from '../schemas/typer';
+import { DokumentNavn, DokumentTittel, Steg, stegTittel } from '../schemas/typer';
 
 export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
 
-const stegListItem = (title: string, items: (ListItemBuilder | ListItem | Divider)[]) =>
-  S.listItem().title(title).child(S.list().title(title).items(items));
+const stegListItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
+  S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
 
 const documentListItem = (tittel: DokumentTittel, template: DokumentNavn) => {
   return S.listItem()
@@ -31,21 +31,21 @@ const steglisteItem = S.listItem()
     S.list()
       .title('Steg')
       .items([
-        stegListItem(StegTittel.FORSIDE, [
+        stegListItem(Steg.FORSIDE, [
           documentListItem(
             DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
             DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
           ),
           documentListItem(DokumentTittel.FORSIDE_PUNKTLISTE, DokumentNavn.FORSIDE_PUNKTLISTE),
         ]),
-        stegListItem(StegTittel.OM_DEG, [
+        stegListItem(Steg.OM_DEG, [
           documentListItem(
             DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
             DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
           ),
           spørsmålListItem(DokumentNavn.OM_DEG_SPØRSMÅL),
         ]),
-        stegListItem(StegTittel.DIN_LIVSSITUASJON, [
+        stegListItem(Steg.DIN_LIVSSITUASJON, [
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPØRSMÅL),
         ]),
       ]),
