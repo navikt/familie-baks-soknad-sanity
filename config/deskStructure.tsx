@@ -6,24 +6,24 @@ import { Divider } from '@sanity/structure/dist/dts/StructureNodes';
 
 import { File } from '@navikt/ds-icons';
 
-import { DokumentNavn, DokumentTittel, Steg, stegTittel } from '../schemas/typer';
+import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer';
 
 export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
 
 const stegListItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
 
-const documentListItem = (tittel: DokumentTittel, template: DokumentNavn) => {
+const documentListItem = (dokumentNavn: DokumentNavn) => {
   return S.listItem()
-    .title(tittel)
+    .title(dokumentTittel[dokumentNavn])
     .icon(() => <File />)
-    .child(S.defaultDocument({ documentId: template, schemaType: template }));
+    .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
 const spørsmålListItem = (dokumentNavn: DokumentNavn) =>
   S.listItem()
-    .title(DokumentTittel.SPØRSMÅL)
-    .child(S.documentTypeList(dokumentNavn).title(DokumentTittel.SPØRSMÅL));
+    .title(dokumentTittel[dokumentNavn])
+    .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
 
 const steglisteItem = S.listItem()
   .title('Steg')
@@ -32,30 +32,24 @@ const steglisteItem = S.listItem()
       .title('Steg')
       .items([
         stegListItem(Steg.FORSIDE, [
-          documentListItem(
-            DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
-            DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
-          ),
-          documentListItem(DokumentTittel.FORSIDE_PUNKTLISTE, DokumentNavn.FORSIDE_PUNKTLISTE),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
         ]),
         stegListItem(Steg.OM_DEG, [
-          documentListItem(
-            DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
-            DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
-          ),
-          spørsmålListItem(DokumentNavn.OM_DEG_SPØRSMÅL),
+          documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+          spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
         stegListItem(Steg.DIN_LIVSSITUASJON, [
-          spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPØRSMÅL),
+          spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
       ]),
   );
 
 const navigasjonItem = S.listItem()
-  .title(DokumentTittel.NAVIGASJON)
+  .title(dokumentTittel[DokumentNavn.NAVIGASJON])
   .child(
     S.defaultDocument({
       documentId: DokumentNavn.NAVIGASJON,
       schemaType: DokumentNavn.NAVIGASJON,
-    }).title(DokumentTittel.NAVIGASJON),
+    }).title(dokumentTittel[DokumentNavn.NAVIGASJON]),
   );

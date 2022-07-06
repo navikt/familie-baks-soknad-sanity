@@ -1,15 +1,15 @@
 import {
   CustomSanityTyper,
   DokumentNavn,
-  DokumentTittel,
   SanityTyper,
   StegDokument,
   Steg,
+  dokumentTittel,
 } from '../../typer';
 
 const bekreftelsesboks: StegDokument = {
   steg: Steg.FORSIDE,
-  title: DokumentTittel.FORSIDE_BEKREFTELSESBOKS,
+  title: dokumentTittel.FORSIDE_BEKREFTELSESBOKS,
   name: DokumentNavn.FORSIDE_BEKREFTELSESBOKS,
   type: SanityTyper.DOCUMENT,
   fields: [

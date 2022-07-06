@@ -2,10 +2,9 @@ import React from 'react';
 
 import { FileContent } from '@navikt/ds-icons';
 
-import { CustomSanityTyper, DokumentTittel, SanityTyper } from './typer';
+import { CustomSanityTyper, DokumentBase, SanityTyper } from './typer';
 
-const sporsmalDokument = {
-  title: DokumentTittel.SPØRSMÅL,
+const sporsmalDokument: DokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {

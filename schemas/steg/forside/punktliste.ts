@@ -1,8 +1,8 @@
-import { DokumentNavn, DokumentTittel, SanityTyper, StegDokument, Steg } from '../../typer';
+import { DokumentNavn, dokumentTittel, SanityTyper, StegDokument, Steg } from '../../typer';
 
 const punktliste: StegDokument = {
   steg: Steg.FORSIDE,
-  title: DokumentTittel.FORSIDE_PUNKTLISTE,
+  title: dokumentTittel.FORSIDE_PUNKTLISTE,
   name: DokumentNavn.FORSIDE_PUNKTLISTE,
   type: SanityTyper.DOCUMENT,
   fields: [

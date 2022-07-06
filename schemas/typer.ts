@@ -1,14 +1,19 @@
-export interface StegDokument {
-  steg: Steg;
-  title: DokumentTittel;
-  name: DokumentNavn;
+import { ReactNode } from 'react';
+
+export interface DokumentBase {
   type: SanityTyper.DOCUMENT;
   fields: Field[];
 }
 
+export interface StegDokument extends DokumentBase {
+  steg: Steg;
+  title: string;
+  name: DokumentNavn;
+}
+
 interface Field {
   name: string;
-  title: string;
+  title: string | ReactNode;
   [key: string]: unknown;
 }
 
@@ -32,27 +37,22 @@ export enum CustomSanityTyper {
 }
 
 export enum DokumentNavn {
-  NAVIGASJON = 'navigasjon',
-  FORSIDE_BEKREFTELSESBOKS = 'forside_bekreftelsesboks',
-  FORSIDE_PUNKTLISTE = 'forside_punktliste',
-  OM_DEG_PERSONOPPLYSNINGER = 'om_deg_personopplysninger',
-  OM_DEG_SPØRSMÅL = 'om_deg_sporsmal',
-  DIN_LIVSSITUASJON_SPØRSMÅL = 'din_livssituasjon_sporsmal',
+  NAVIGASJON = 'NAVIGASJON',
+  FORSIDE_BEKREFTELSESBOKS = 'FORSIDE_BEKREFTELSESBOKS',
+  FORSIDE_PUNKTLISTE = 'FORSIDE_PUNKTLISTE',
+  OM_DEG_PERSONOPPLYSNINGER = 'OM_DEG_PERSONOPPLYSNINGER',
+  OM_DEG_SPORSMAL = 'OM_DEG_SPORSMAL',
+  DIN_LIVSSITUASJON_SPORSMAL = 'DIN_LIVSSITUASJON_SPORSMAL',
 }
 
-export enum DokumentTittel {
-  NAVIGASJON = 'Navigasjon',
-  SPØRSMÅL = 'Spørsmål',
-  FORSIDE_BEKREFTELSESBOKS = 'Bekreftelsesboks',
-  FORSIDE_PUNKTLISTE = 'Punktliste',
-  OM_DEG_PERSONOPPLYSNINGER = 'Personopplysninger',
-}
-
-export enum Ytelse {
-  ORDINÆR_BARNETRYGD = 'ORDINÆR_BARNETRYGD',
-  UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
-  KONTANTSTØTTE = 'KONTANTSTØTTE',
-}
+export const dokumentTittel: Record<DokumentNavn, string> = {
+  NAVIGASJON: 'Navigasjon',
+  FORSIDE_BEKREFTELSESBOKS: 'Bekreftelsesboks',
+  FORSIDE_PUNKTLISTE: 'Punktliste',
+  OM_DEG_PERSONOPPLYSNINGER: 'Personopplysninger',
+  OM_DEG_SPORSMAL: 'Spørsmål',
+  DIN_LIVSSITUASJON_SPORSMAL: 'Spørsmål',
+};
 
 export enum Steg {
   FORSIDE = 'FORSIDE',
@@ -81,3 +81,9 @@ export const stegTittel: Record<Steg, string> = {
   DOKUMENTASJON: 'Dokumentasjon',
   KVITTERING: 'Kvittering',
 };
+
+export enum Ytelse {
+  ORDINÆR_BARNETRYGD = 'ORDINÆR_BARNETRYGD',
+  UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
+  KONTANTSTØTTE = 'KONTANTSTØTTE',
+}

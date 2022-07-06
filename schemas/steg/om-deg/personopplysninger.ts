@@ -1,7 +1,7 @@
 import {
   CustomSanityTyper,
   DokumentNavn,
-  DokumentTittel,
+  dokumentTittel,
   SanityTyper,
   StegDokument,
   Steg,
@@ -9,7 +9,7 @@ import {
 
 const personopplysninger: StegDokument = {
   steg: Steg.OM_DEG,
-  title: DokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
+  title: dokumentTittel.OM_DEG_PERSONOPPLYSNINGER,
   name: DokumentNavn.OM_DEG_PERSONOPPLYSNINGER,
   type: SanityTyper.DOCUMENT,
   fields: [

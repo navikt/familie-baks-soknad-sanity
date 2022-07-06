@@ -1,7 +1,7 @@
-import { CustomSanityTyper, DokumentNavn, DokumentTittel, SanityTyper } from './typer';
+import { CustomSanityTyper, DokumentNavn, dokumentTittel, SanityTyper } from './typer';
 
 const navigasjon = {
-  title: DokumentTittel.NAVIGASJON,
+  title: dokumentTittel.NAVIGASJON,
   name: DokumentNavn.NAVIGASJON,
   type: SanityTyper.DOCUMENT,
   fields: [

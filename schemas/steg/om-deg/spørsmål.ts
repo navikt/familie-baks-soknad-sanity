@@ -1,9 +1,11 @@
 import sporsmalDokument from '../../sporsmalDokument';
-import { DokumentNavn } from '../../typer';
+import { DokumentNavn, dokumentTittel, Steg, StegDokument } from '../../typer';
 
-const spørsmål = {
+const spørsmål: StegDokument = {
   ...sporsmalDokument,
-  name: DokumentNavn.OM_DEG_SPØRSMÅL,
+  steg: Steg.OM_DEG,
+  title: dokumentTittel.OM_DEG_SPORSMAL,
+  name: DokumentNavn.OM_DEG_SPORSMAL,
 };
 
 export default spørsmål;
