@@ -10,7 +10,7 @@ import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer
 
 export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
 
-const stegListItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
+const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
 
 const documentListItem = (dokumentNavn: DokumentNavn) => {
@@ -31,15 +31,15 @@ const steglisteItem = S.listItem()
     S.list()
       .title('Steg')
       .items([
-        stegListItem(Steg.FORSIDE, [
+        stegItem(Steg.FORSIDE, [
           documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
         ]),
-        stegListItem(Steg.OM_DEG, [
+        stegItem(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
           spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
-        stegListItem(Steg.DIN_LIVSSITUASJON, [
+        stegItem(Steg.DIN_LIVSSITUASJON, [
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
       ]),
