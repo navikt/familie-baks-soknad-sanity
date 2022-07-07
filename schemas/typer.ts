@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { Rule } from '@sanity/types';
+
 export interface DokumentBase {
   type: SanityTyper.DOCUMENT;
   fields: Field[];
@@ -11,9 +13,16 @@ export interface StegDokument extends DokumentBase {
   name: DokumentNavn;
 }
 
-interface Field {
+type Field = FieldBase &
+  (
+    | { description: `${string | undefined}${'(obligatorisk)'}`; validation: (rule: Rule) => Rule }
+    | { description: `${string | undefined}${'(frivillig)'}`; validation?: (rule: Rule) => Rule }
+  );
+
+interface FieldBase {
   name: string;
   title: string | ReactNode;
+
   [key: string]: unknown;
 }
 
