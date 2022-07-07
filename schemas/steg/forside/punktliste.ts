@@ -1,4 +1,11 @@
-import { DokumentNavn, dokumentTittel, SanityTyper, StegDokument, Steg } from '../../typer';
+import {
+  DokumentNavn,
+  dokumentTittel,
+  SanityTyper,
+  StegDokument,
+  Steg,
+  CustomSanityTyper,
+} from '../../typer';
 
 const punktliste: StegDokument = {
   steg: Steg.FORSIDE,
@@ -7,36 +14,12 @@ const punktliste: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
-      name: 'body',
-      type: 'array',
-      title: 'Body',
-      of: [
-        {
-          type: 'block',
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'External link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                  },
-                  {
-                    title: 'Open in new tab',
-                    name: 'blank',
-                    type: 'boolean',
-                    initialValue: true,
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      ],
+      name: 'tekst',
+      title: 'Tekst',
+      description: '(obligatorisk)',
+      type: CustomSanityTyper.LOCALE_BLOCK,
+      validation: Rule =>
+        Rule.required().error('Du må fylle inn teksten som skal være i punktlisten'),
     },
   ],
 };
