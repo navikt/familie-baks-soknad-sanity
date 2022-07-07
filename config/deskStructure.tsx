@@ -47,9 +47,10 @@ const steglisteItem = S.listItem()
 
 const navigasjonItem = S.listItem()
   .title(dokumentTittel[DokumentNavn.NAVIGASJON])
+  .icon(() => <File />)
   .child(
     S.defaultDocument({
       documentId: DokumentNavn.NAVIGASJON,
       schemaType: DokumentNavn.NAVIGASJON,
-    }).title(dokumentTittel[DokumentNavn.NAVIGASJON]),
+    }),
   );
