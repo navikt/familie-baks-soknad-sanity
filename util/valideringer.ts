@@ -14,11 +14,12 @@ const kunBokstaverOgTallUtenÆØÅ = (tekst: string): true | string =>
 
 const API_NAME_MAX_LENGTH = 70;
 
-export const maskinnavnValideringer = Rule => [
-  Rule.required().error('Feltet må settes'),
-  Rule.required().custom(kunBokstaverOgTallUtenÆØÅ),
-  Rule.required().custom(førsteTegnErLitenBokstav),
-  Rule.required()
+export const maskinnavnValideringer = (rule: Rule) => [
+  rule.required().error('Feltet må settes'),
+  rule.required().custom(kunBokstaverOgTallUtenÆØÅ),
+  rule.required().custom(førsteTegnErLitenBokstav),
+  rule
+    .required()
     .max(API_NAME_MAX_LENGTH)
     .error(`Feltet kan være på maksimalt ${API_NAME_MAX_LENGTH} tegn.`),
 ];

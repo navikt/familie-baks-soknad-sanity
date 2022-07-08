@@ -40,8 +40,11 @@ const fieldsBase = (steg: Steg) => [
     title: 'Teknisk stegnavn',
     name: 'steg',
     type: SanityTyper.STRING,
+    options: {
+      list: Object.keys(stegTittel),
+    },
     initialValue: steg,
-    readOnly: true,
+    validation: rule => rule.required().error('Du må velge teknisk stegnavn'),
   },
 ];
 
