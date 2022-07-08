@@ -14,28 +14,39 @@ const personopplysninger: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
+      title: 'Alert',
+      name: 'alert',
+      type: 'alertBlock',
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må legge inn alert-melding'),
+    },
+    {
       title: 'Ident',
       name: 'ident',
       type: 'localeString',
-      description: '(frivillig)',
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må legge inn ident'),
     },
     {
       title: 'Statsborgerskap',
       name: 'statsborgerskap',
       type: 'localeString',
-      description: '(frivillig)',
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må legge inn statsborgerskap'),
     },
     {
       title: 'Sivilstatus',
       name: 'sivilstatus',
       type: 'localeString',
-      description: '(frivillig)',
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må legge inn sivilstatus'),
     },
     {
       title: 'Adresse',
       name: 'adresse',
       type: 'localeString',
-      description: '(frivillig)',
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må legge inn adresse'),
     },
   ],
 };

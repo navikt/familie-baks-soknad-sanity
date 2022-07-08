@@ -8,6 +8,7 @@ const alertVariant = {
   name: 'alertVariant',
   title: 'Alertvariant',
   type: SanityTyper.STRING,
+  validation: rule => rule.required().error('Du må velge alertvariant'),
   options: {
     list: [
       {
@@ -71,6 +72,7 @@ export const alertBlock = {
       name: 'alertTekst',
       title: 'Alert-tekst',
       type: CustomSanityTyper.LOCALE_BLOCK,
+      validation: rule => rule.required().error('Du må fylle inn alert-tekst'),
     },
   ],
 };

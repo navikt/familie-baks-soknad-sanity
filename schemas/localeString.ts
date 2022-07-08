@@ -9,16 +9,19 @@ const localeString = {
       title: 'Bokmål',
       name: 'nb',
       type: SanityTyper.STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn bokmål'),
     },
     {
       title: 'Nynorsk',
       name: 'nn',
       type: SanityTyper.STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn nynorsk'),
     },
     {
       title: 'Engelsk',
       name: 'en',
       type: SanityTyper.STRING,
+      validation: Rule => Rule.required().error('Du må fylle inn engelsk'),
     },
   ],
 };
