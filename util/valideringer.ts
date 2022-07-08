@@ -1,5 +1,6 @@
 import groq from 'groq';
 import client from 'part:@sanity/base/client';
+import { Rule } from '@sanity/types';
 
 const førsteTegnErLitenBokstav = (tekst: string): true | string =>
   RegExp(/^[a-zæøå].*/).test(tekst)
@@ -22,9 +23,10 @@ export const maskinnavnValideringer = Rule => [
     .error(`Feltet kan være på maksimalt ${API_NAME_MAX_LENGTH} tegn.`),
 ];
 
-export const apiNavnValideringer = (Rule, type) => [
-  ...maskinnavnValideringer(Rule),
-  Rule.custom(async (value, context) => {
+export const apiNavnValideringer = (rule: Rule, type) => [
+  ...maskinnavnValideringer(rule),
+  rule.custom(async (value, context) => {
+    if (value === undefined) return true;
     const erUnik = await erUniktApiNavn(type, value, context);
     if (!erUnik) return 'Apinavnet er ikke unikt.';
     return true;
