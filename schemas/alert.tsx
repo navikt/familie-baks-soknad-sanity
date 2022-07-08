@@ -9,42 +9,33 @@ const alertVariant = {
   title: 'Alertvariant',
   type: SanityTyper.STRING,
   validation: rule => rule.required().error('Du må velge alertvariant'),
+  description: (
+    <span>
+      Suksess = <SuccessColored /> <br />
+      Informasjon = <InformationColored /> <br />
+      Advarsel = <WarningColored /> <br />
+      Feil = <ErrorColored /> <br />
+    </span>
+  ),
   options: {
     list: [
       {
-        title: (
-          <span>
-            <SuccessColored /> Suksess
-          </span>
-        ),
+        title: 'Suksess',
         value: 'success',
       },
       {
-        title: (
-          <span>
-            <InformationColored /> Informasjon
-          </span>
-        ),
+        title: 'Informasjon',
         value: 'info',
       },
       {
-        title: (
-          <span>
-            <WarningColored /> Advarsel
-          </span>
-        ),
+        title: 'Advarsel',
         value: 'warning',
       },
       {
-        title: (
-          <span>
-            <ErrorColored /> Feil
-          </span>
-        ),
+        title: 'Feil',
         value: 'error',
       },
     ],
-    layout: 'radio',
   },
 };
 
