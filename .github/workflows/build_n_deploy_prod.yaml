@@ -2,7 +2,7 @@ name: Build and deploy prod
 on:
   push:
     branches:
-      - 'master'
+      - '*'
 
 jobs:
   sanity-deploy:
@@ -14,5 +14,6 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
           NPM_TOKEN: ${{ secrets.READER_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
         with:
           args: deploy
