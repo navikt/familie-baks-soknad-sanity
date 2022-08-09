@@ -1,0 +1,31 @@
+name: Backup Routine
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 04:00 UTC on the 1st and 17th of every month
+    - cron: "0 4 */16 * *"
+jobs:
+  backup-prod-dataset:
+    runs-on: ubuntu-18.04
+    name: Backup prod dataset
+    steps:
+      - uses: actions/checkout@v2
+      - name: Export prod dataset
+        uses: sanity-io/github-action-sanity@v0.2-alpha
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_VIEWER_TOKEN }}
+        with:
+          args: dataset export production backups/baks-soknad-prod.tar.gz
+      - name: Upload baks-soknad-prod.tar.gz
+        uses: actions/upload-artifact@v2
+        with:
+          name: Backup prod dataset
+          path: backups/baks-soknad-prod.tar.gz
+          # Fails the workflow if no files are found; defaults to 'warn'
+          if-no-files-found: error
+      - name: Import prod dataset til test
+        uses: sanity-io/github-action-sanity@v0.2-alpha
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
+        with:
+          args: dataset import backups/baks-soknad-prod.tar.gz test --replace
