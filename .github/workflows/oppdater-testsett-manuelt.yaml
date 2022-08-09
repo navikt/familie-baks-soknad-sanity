@@ -5,7 +5,7 @@ on:
 jobs:
   oppdater-testsett:
     runs-on: ubuntu-18.04
-    name: Oppdater testsett
+    name: Oppdater testsett manuelt
     steps:
       - uses: actions/checkout@v2
       - name: Export prod dataset
