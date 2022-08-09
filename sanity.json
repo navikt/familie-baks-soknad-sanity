@@ -3,6 +3,24 @@
   "project": {
     "name": "baks-søknad-cms"
   },
+  "__experimental_spaces": [
+    {
+      "name": "test",
+      "title": "Test",
+      "api": {
+        "projectId": "by26nl8j",
+        "dataset": "test"
+      }
+    },
+    {
+      "name": "prod",
+      "title": "Prod",
+      "api": {
+        "projectId": "by26nl8j",
+        "dataset": "production"
+      }
+    }
+  ],
   "api": {
     "projectId": "by26nl8j",
     "dataset": "test"
@@ -11,7 +29,9 @@
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/dashboard",
+    "datatable"
   ],
   "env": {
     "development": {
@@ -28,6 +48,14 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./config/deskStructure.tsx"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./config/dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./logo/logo.js"
     }
   ]
 }
