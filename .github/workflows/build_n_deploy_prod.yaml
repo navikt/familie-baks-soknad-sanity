@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-18.04
     name: Deploy Sanity
     steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: "https://npm.pkg.github.com"
       - uses: actions/checkout@v2
       - uses: sanity-io/github-action-sanity@v0.2-alpha
         env:
