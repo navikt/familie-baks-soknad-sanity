@@ -11,6 +11,11 @@ jobs:
         with:
           node-version: '16'
           registry-url: "https://npm.pkg.github.com"
+        - name: Installer node-pakker
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+              NPM_TOKEN: ${{ secrets.READER_TOKEN }}
+            run: npx yarn
       - uses: actions/checkout@v2
       - uses: sanity-io/github-action-sanity@v0.2-alpha
         env:
