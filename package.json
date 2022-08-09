@@ -5,7 +5,6 @@
   "description": "Sanity (cms) for søknad til kontantstøtte",
   "main": "package.json",
   "author": "Daphne <daphne.leebeek@nav.no>",
-  "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
@@ -53,9 +52,5 @@
     "styled-components": "^5.2.0",
     "typescript": "^4.7.4"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:bekk/nav-soknad-sanity.git"
-  }
+  "devDependencies": {}
 }
