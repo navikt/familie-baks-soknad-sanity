@@ -4,8 +4,7 @@ import S from '@sanity/desk-tool/structure-builder';
 import { ListItem, ListItemBuilder } from '@sanity/structure/dist/dts/ListItem';
 import { Divider } from '@sanity/structure/dist/dts/StructureNodes';
 
-import { File } from '@navikt/ds-icons';
-
+import FileIcon from '../images/FileIcon';
 import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer';
 
 export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
@@ -16,7 +15,7 @@ const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =
 const documentListItem = (dokumentNavn: DokumentNavn) => {
   return S.listItem()
     .title(dokumentTittel[dokumentNavn])
-    .icon(() => <File />)
+    .icon(() => <FileIcon />)
     .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
@@ -47,7 +46,7 @@ const steglisteItem = S.listItem()
 
 const navigasjonItem = S.listItem()
   .title(dokumentTittel[DokumentNavn.NAVIGASJON])
-  .icon(() => <File />)
+  .icon(() => <FileIcon />)
   .child(
     S.defaultDocument({
       documentId: DokumentNavn.NAVIGASJON,

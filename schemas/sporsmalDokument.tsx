@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { FileContent } from '@navikt/ds-icons';
-
+import FileContentIcon from '../images/FileContentIcon';
 import { CustomSanityTyper, DokumentBase, SanityTyper } from './typer';
 
 const sporsmalDokument: DokumentBase = {
@@ -31,7 +30,7 @@ const sporsmalDokument: DokumentBase = {
       name: 'vedleggsnotis',
       title: (
         <span>
-          <FileContent /> Vedleggsnotis
+          <FileContentIcon /> Vedleggsnotis
         </span>
       ),
       description: 'Beskjed om at vedlegg må lastes opp. (frivillig)',

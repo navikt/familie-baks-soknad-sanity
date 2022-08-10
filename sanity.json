@@ -55,7 +55,7 @@
     },
     {
       "implements": "part:@sanity/base/brand-logo",
-      "path": "./logo/logo.js"
+      "path": "./images/NavLogo.tsx"
     }
   ]
 }

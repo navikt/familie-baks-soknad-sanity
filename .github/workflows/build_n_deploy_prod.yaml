@@ -13,6 +13,5 @@ jobs:
       - uses: sanity-io/github-action-sanity@v0.2-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
-          NPM_TOKEN: ${{ secrets.READER_TOKEN }}
         with:
           args: deploy

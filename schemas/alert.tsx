@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { ErrorColored, InformationColored, SuccessColored, WarningColored } from '@navikt/ds-icons';
-
+import ErrorIcon from '../images/ErrorIcon';
+import InfoIcon from '../images/InfoIcon';
+import SuccessIcon from '../images/SuccessIcon';
+import WarningIcon from '../images/WarningIcon';
 import { CustomSanityTyper, SanityTyper } from './typer';
 
 const alertVariant = {
@@ -11,10 +13,10 @@ const alertVariant = {
   validation: rule => rule.required().error('Du må velge alertvariant'),
   description: (
     <span>
-      Suksess = <SuccessColored /> <br />
-      Informasjon = <InformationColored /> <br />
-      Advarsel = <WarningColored /> <br />
-      Feil = <ErrorColored /> <br />
+      Suksess = <SuccessIcon /> <br />
+      Informasjon = <InfoIcon /> <br />
+      Advarsel = <WarningIcon /> <br />
+      Feil = <ErrorIcon /> <br />
     </span>
   ),
   options: {
