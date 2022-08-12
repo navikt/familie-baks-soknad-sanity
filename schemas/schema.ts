@@ -10,15 +10,13 @@ import localeBlock from './localeBlock';
 import localeString from './localeString';
 import navigasjon from './navigasjon';
 import dinLivssituasjonSpørsmål from './steg/din-livssituasjon/spørsmål';
-import forsideBekreftelsesboks from './steg/forside/bekreftelsesboks';
-import forsidePunktliste from './steg/forside/punktliste';
+import forsideDokumenter from './steg/forside/forsideDokumenter';
 import omDegPersonopplysninger from './steg/om-deg/personopplysninger';
 import omDegSpørsmål from './steg/om-deg/spørsmål';
 import { StegDokument } from './typer';
 
 const spesifikkeDokumenterForSøknad = [
-  forsideBekreftelsesboks,
-  forsidePunktliste,
+  ...forsideDokumenter,
   omDegPersonopplysninger,
   omDegSpørsmål,
   dinLivssituasjonSpørsmål,

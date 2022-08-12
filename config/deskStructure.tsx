@@ -31,8 +31,12 @@ const steglisteItem = S.listItem()
       .title('Steg')
       .items([
         stegItem(Steg.FORSIDE, [
-          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_VEILEDERHILSEN),
+          documentListItem(DokumentNavn.FORSIDE_TITTEL),
+          documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
         ]),
         stegItem(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
