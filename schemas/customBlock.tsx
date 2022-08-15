@@ -14,7 +14,7 @@ const customBlock = {
       marks: {
         annotations: [
           {
-            name: 'lenke',
+            name: 'link',
             type: SanityTyper.OBJECT,
             title: 'Ekstern lenke',
             fields: [
