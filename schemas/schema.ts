@@ -9,17 +9,15 @@ import fieldsBase from './fieldsBase';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import navigasjon from './navigasjon';
-import dinLivssituasjonSpørsmål from './steg/din-livssituasjon/spørsmål';
+import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
 import forsideDokumenter from './steg/forside/forsideDokumenter';
-import omDegPersonopplysninger from './steg/om-deg/personopplysninger';
-import omDegSpørsmål from './steg/om-deg/spørsmål';
+import omDegDokumenter from './steg/om-deg/omDegDokumenter';
 import { StegDokument } from './typer';
 
 const spesifikkeDokumenterForSøknad = [
   ...forsideDokumenter,
-  omDegPersonopplysninger,
-  omDegSpørsmål,
-  dinLivssituasjonSpørsmål,
+  ...omDegDokumenter,
+  ...dinLivssituasjonDokumenter,
   navigasjon,
 ].map((dok: StegDokument) => ({
   ...dok,
