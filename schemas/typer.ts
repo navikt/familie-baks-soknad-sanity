@@ -104,3 +104,8 @@ export enum Ytelse {
   UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
   KONTANTSTØTTE = 'KONTANTSTØTTE',
 }
+
+export enum EFlettefelt {
+  BARNETS_NAVN = 'BARNETS_NAVN',
+  YTELSE = 'YTELSE',
+}
