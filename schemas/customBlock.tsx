@@ -1,8 +1,8 @@
-
 import React from 'react';
 
-import styles from '../myStyling.css';
-import { CustomSanityTyper, DokumentNavn, SanityTyper, stegTittel, Ytelse } from './typer';
+import { rgba } from 'polished';
+
+import { CustomSanityTyper, EFlettefelt, SanityTyper, Ytelse } from './typer';
 
 const customBlock = {
   title: 'Custom block',
@@ -14,9 +14,9 @@ const customBlock = {
       marks: {
         annotations: [
           {
-            name: 'link',
+            name: 'lenke',
             type: SanityTyper.OBJECT,
-            title: 'External link',
+            title: 'Ekstern lenke',
             fields: [
               {
                 name: 'href',
@@ -24,7 +24,7 @@ const customBlock = {
                 title: 'URL',
               },
               {
-                title: 'Open in new tab',
+                title: 'Åpne i ny tab',
                 name: 'blank',
                 type: 'boolean',
                 initialValue: true,
@@ -36,18 +36,28 @@ const customBlock = {
             type: SanityTyper.OBJECT,
             title: 'Flettefelt',
             blockEditor: {
-              icon: () => <span className={styles.flettefeltIcon}>F</span>,
-              render: props => <span className={styles.flettefelt}>{props.flettefeltVerdi}</span>,
+              icon: () => <span>F</span>,
+              render: props => (
+                <span
+                  style={{
+                    backgroundColor: rgba(30, 133, 209, 0.2),
+                    color: 'black',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {props.flettefeltVerdi}
+                </span>
+              ),
             },
             fields: [
               {
                 name: 'flettefeltVerdi',
                 type: SanityTyper.STRING,
-                title: 'Mulige verdier',
+                title: 'Flettefeltverdier',
                 options: {
                   list: [
-                    { title: 'Barnets navn', value: '{barn}' },
-                    { title: 'Ytelse', value: '{ytelse}' },
+                    { title: 'Barnets navn', value: EFlettefelt.BARNETS_NAVN },
+                    { title: 'Ytelse', value: EFlettefelt.YTELSE },
                   ],
                 },
               },
