@@ -7,6 +7,7 @@ export interface DokumentBase {
   type: SanityTyper.DOCUMENT;
   fields: Field[];
   name: DokumentNavn;
+  fieldsets?: Fieldset[];
 }
 
 export interface SpørsmålDokumentBase {
@@ -18,7 +19,16 @@ export interface StegDokument extends DokumentBase {
   steg: Steg;
 }
 
-type Field = FieldBase &
+export interface Fieldset {
+  name: string;
+  title: string;
+  options?: {
+    collapsible?: boolean;
+    collapsed?: boolean;
+  };
+}
+
+export type Field = FieldBase &
   (
     | { description: `${string | undefined}${'(obligatorisk)'}`; validation: (rule: Rule) => Rule }
     | { description: `${string | undefined}${'(frivillig)'}`; validation?: (rule: Rule) => Rule }
@@ -61,11 +71,13 @@ export enum DokumentNavn {
   OM_DEG_PERSONOPPLYSNINGER = 'OM_DEG_PERSONOPPLYSNINGER',
   OM_DEG_SPORSMAL = 'OM_DEG_SPORSMAL',
   DIN_LIVSSITUASJON_SPORSMAL = 'DIN_LIVSSITUASJON_SPORSMAL',
+  MODAL_UTENLANDSOPPHOLD = 'MODAL_UTENLANDSOPPHOLD',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
   FLETTEFELT_YTELSE: 'Ytelse',
+  MODAL_UTENLANDSOPPHOLD: 'Utenlandsopphold',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
   FORSIDE_SPRAKVELGER: 'Språkvelger',
