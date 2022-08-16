@@ -47,6 +47,7 @@ export enum CustomSanityTyper {
 
 export enum DokumentNavn {
   NAVIGASJON = 'NAVIGASJON',
+  FLETTEFELT_YTELSER = 'FLETTEFELT_YTELSER',
   FORSIDE_VEILEDERHILSEN = 'FORSIDE_VEILEDERHILSEN',
   FORSIDE_TITTEL = 'FORSIDE_TITTEL',
   FORSIDE_SPRAKVELGER = 'FORSIDE_SPRAKVELGER',
@@ -60,6 +61,7 @@ export enum DokumentNavn {
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
+  FLETTEFELT_YTELSER: 'Ytelser',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
   FORSIDE_SPRAKVELGER: 'Språkvelger',

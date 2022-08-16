@@ -6,6 +6,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
 import fieldsBase from './fieldsBase';
+import flettefelterDokumenter from './flettefelter/flettefelterDokumenter';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import navigasjon from './navigasjon';
@@ -18,6 +19,7 @@ const spesifikkeDokumenterForSøknad = [
   ...forsideDokumenter,
   ...omDegDokumenter,
   ...dinLivssituasjonDokumenter,
+  ...flettefelterDokumenter,
   navigasjon,
 ].map((dok: StegDokument) => ({
   ...dok,

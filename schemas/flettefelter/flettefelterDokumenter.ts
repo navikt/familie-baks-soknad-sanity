@@ -1,6 +1,5 @@
-import personopplysninger from './personopplysninger';
-import spørsmål from './spørsmål';
+import ytelser from './ytelser';
 
-const omDegDokumenter = [personopplysninger, spørsmål];
+const flettefelterDokumenter = [ytelser];
 
-export default omDegDokumenter;
+export default flettefelterDokumenter;
