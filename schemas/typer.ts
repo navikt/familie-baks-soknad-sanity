@@ -112,6 +112,8 @@ export enum Ytelse {
 }
 
 export enum EFlettefelt {
-  BARNETS_NAVN = 'BARNETS_NAVN',
+  BARN_NAVN = 'BARN_NAVN',
+  SØKER_NAVN = 'SØKER_NAVN',
+  ANDRE_FORELDER_NAVN = 'ANDRE_FORELDER_NAVN',
   YTELSE = 'YTELSE',
 }

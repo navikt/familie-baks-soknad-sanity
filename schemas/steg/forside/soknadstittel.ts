@@ -17,7 +17,7 @@ const soknadstittel: StegDokument = {
       title: 'Søknadstittel',
       name: 'soknadstittel',
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn en tittel på søknaden'),
     },
   ],

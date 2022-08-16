@@ -17,7 +17,7 @@ const veilederhilsen: StegDokument = {
       title: 'Veilederhilsen',
       name: 'veilederhilsen',
       description: 'Veilederhilsen (obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn en veilederhilsen'),
     },
   ],
