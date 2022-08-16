@@ -1,5 +1,5 @@
-import ytelser from './ytelser';
+import ytelse from './ytelse';
 
-const flettefelterDokumenter = [ytelser];
+const flettefelterDokumenter = [ytelse];
 
 export default flettefelterDokumenter;

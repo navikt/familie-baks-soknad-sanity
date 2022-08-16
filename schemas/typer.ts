@@ -3,14 +3,14 @@ import { ReactNode } from 'react';
 import { Rule } from '@sanity/types';
 
 export interface DokumentBase {
+  title: string;
   type: SanityTyper.DOCUMENT;
   fields: Field[];
+  name: DokumentNavn;
 }
 
 export interface StegDokument extends DokumentBase {
   steg: Steg;
-  title: string;
-  name: DokumentNavn;
 }
 
 type Field = FieldBase &
@@ -22,7 +22,6 @@ type Field = FieldBase &
 interface FieldBase {
   name: string;
   title: string | ReactNode;
-
   [key: string]: unknown;
 }
 
@@ -47,7 +46,7 @@ export enum CustomSanityTyper {
 
 export enum DokumentNavn {
   NAVIGASJON = 'NAVIGASJON',
-  FLETTEFELT_YTELSER = 'FLETTEFELT_YTELSER',
+  FLETTEFELT_YTELSE = 'FLETTEFELT_YTELSE',
   FORSIDE_VEILEDERHILSEN = 'FORSIDE_VEILEDERHILSEN',
   FORSIDE_TITTEL = 'FORSIDE_TITTEL',
   FORSIDE_SPRAKVELGER = 'FORSIDE_SPRAKVELGER',
@@ -61,7 +60,7 @@ export enum DokumentNavn {
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
-  FLETTEFELT_YTELSER: 'Ytelser',
+  FLETTEFELT_YTELSE: 'ytelse',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
   FORSIDE_SPRAKVELGER: 'Språkvelger',

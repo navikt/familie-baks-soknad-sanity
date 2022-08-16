@@ -6,24 +6,27 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
 import fieldsBase from './fieldsBase';
+import fieldsBaseForSteg from './fieldsBaseForSteg';
 import flettefelterDokumenter from './flettefelter/flettefelterDokumenter';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
-import navigasjon from './navigasjon';
 import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
 import forsideDokumenter from './steg/forside/forsideDokumenter';
 import omDegDokumenter from './steg/om-deg/omDegDokumenter';
-import { StegDokument } from './typer';
+import { DokumentBase, StegDokument } from './typer';
 
-const spesifikkeDokumenterForSøknad = [
+const dokumenterForSteg = [
   ...forsideDokumenter,
   ...omDegDokumenter,
   ...dinLivssituasjonDokumenter,
-  ...flettefelterDokumenter,
-  navigasjon,
 ].map((dok: StegDokument) => ({
   ...dok,
-  fields: [...fieldsBase(dok.steg), ...dok.fields],
+  fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
+}));
+
+const dokumenterPåTversAvSteg = [...flettefelterDokumenter].map((dok: DokumentBase) => ({
+  ...dok,
+  fields: [...fieldsBase, ...dok.fields],
 }));
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -41,6 +44,7 @@ export default createSchema({
       alertString,
       alertBlock,
     ],
-    spesifikkeDokumenterForSøknad,
+    dokumenterForSteg,
+    dokumenterPåTversAvSteg,
   ),
 });

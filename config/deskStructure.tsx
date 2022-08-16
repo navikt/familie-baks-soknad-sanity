@@ -56,5 +56,5 @@ const flettefelterlisteItem = S.listItem()
   .child(
     S.list()
       .title('Flettefelter')
-      .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSER)]),
+      .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSE)]),
   );
