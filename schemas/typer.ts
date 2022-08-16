@@ -9,6 +9,11 @@ export interface DokumentBase {
   name: DokumentNavn;
 }
 
+export interface SpørsmålDokumentBase {
+  type: SanityTyper.DOCUMENT;
+  fields: Field[];
+}
+
 export interface StegDokument extends DokumentBase {
   steg: Steg;
 }
@@ -60,7 +65,7 @@ export enum DokumentNavn {
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
-  FLETTEFELT_YTELSE: 'ytelse',
+  FLETTEFELT_YTELSE: 'Ytelse',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
   FORSIDE_SPRAKVELGER: 'Språkvelger',

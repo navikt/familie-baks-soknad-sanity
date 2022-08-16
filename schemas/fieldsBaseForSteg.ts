@@ -1,5 +1,5 @@
 import fieldsBase from './fieldsBase';
-import { SanityTyper, Steg, stegTittel } from './typer';
+import { SanityTyper, Steg } from './typer';
 
 const fieldsBaseForSteg = (steg: Steg) => [
   ...fieldsBase,

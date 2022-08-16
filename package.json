@@ -8,11 +8,12 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn run typecheck"
     }
   },
   "lint-staged": {

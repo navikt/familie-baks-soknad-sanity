@@ -1,9 +1,9 @@
 import React from 'react';
 
-import FileContentIcon from '../images/FileContentIcon';
-import { CustomSanityTyper, DokumentBase, SanityTyper } from './typer';
+import FileContentIcon from '../../images/FileContentIcon';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../typer';
 
-const sporsmalDokument: DokumentBase = {
+const sporsmalDokument: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {

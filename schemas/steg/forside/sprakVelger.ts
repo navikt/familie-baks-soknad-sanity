@@ -1,10 +1,4 @@
-import {
-  DokumentNavn,
-  SanityTyper,
-  StegDokument,
-  Steg,
-  dokumentTittel,
-} from '../../typer';
+import { DokumentNavn, SanityTyper, StegDokument, Steg, dokumentTittel } from '../../typer';
 
 const sprakVelger: StegDokument = {
   steg: Steg.FORSIDE,
