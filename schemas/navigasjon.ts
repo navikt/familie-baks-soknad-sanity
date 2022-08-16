@@ -12,7 +12,7 @@ const navigasjon = {
     },
     {
       title: 'Gå videre-knapp',
-      name: 'ga_videre',
+      name: 'gaVidere',
       type: CustomSanityTyper.LOCALE_STRING,
     },
     {
