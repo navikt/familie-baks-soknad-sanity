@@ -7,7 +7,10 @@ import { Divider } from '@sanity/structure/dist/dts/StructureNodes';
 import FileIcon from '../images/FileIcon';
 import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer';
 
-export default () => S.list().title('Søknadsdialog').items([steglisteItem, navigasjonItem]);
+export default () =>
+  S.list()
+    .title('Søknadsdialog')
+    .items([steglisteItem, flettefelterlisteItem, documentListItem(DokumentNavn.NAVIGASJON)]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
@@ -31,8 +34,12 @@ const steglisteItem = S.listItem()
       .title('Steg')
       .items([
         stegItem(Steg.FORSIDE, [
-          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_VEILEDERHILSEN),
+          documentListItem(DokumentNavn.FORSIDE_TITTEL),
+          documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
         ]),
         stegItem(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
@@ -44,12 +51,10 @@ const steglisteItem = S.listItem()
       ]),
   );
 
-const navigasjonItem = S.listItem()
-  .title(dokumentTittel[DokumentNavn.NAVIGASJON])
-  .icon(() => <FileIcon />)
+const flettefelterlisteItem = S.listItem()
+  .title('Flettefelter')
   .child(
-    S.defaultDocument({
-      documentId: DokumentNavn.NAVIGASJON,
-      schemaType: DokumentNavn.NAVIGASJON,
-    }),
+    S.list()
+      .title('Flettefelter')
+      .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSE)]),
   );

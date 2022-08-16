@@ -5,28 +5,32 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
+import navigasjon from './felles/navigasjon';
 import fieldsBase from './fieldsBase';
+import fieldsBaseForSteg from './fieldsBaseForSteg';
+import flettefelterDokumenter from './flettefelter/flettefelterDokumenter';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
-import navigasjon from './navigasjon';
-import dinLivssituasjonSpørsmål from './steg/din-livssituasjon/spørsmål';
-import forsideBekreftelsesboks from './steg/forside/bekreftelsesboks';
-import forsidePunktliste from './steg/forside/punktliste';
-import omDegPersonopplysninger from './steg/om-deg/personopplysninger';
-import omDegSpørsmål from './steg/om-deg/spørsmål';
-import { StegDokument } from './typer';
+import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
+import forsideDokumenter from './steg/forside/forsideDokumenter';
+import omDegDokumenter from './steg/om-deg/omDegDokumenter';
+import { DokumentBase, StegDokument } from './typer';
 
-const spesifikkeDokumenterForSøknad = [
-  forsideBekreftelsesboks,
-  forsidePunktliste,
-  omDegPersonopplysninger,
-  omDegSpørsmål,
-  dinLivssituasjonSpørsmål,
-  navigasjon,
+const dokumenterForSteg = [
+  ...forsideDokumenter,
+  ...omDegDokumenter,
+  ...dinLivssituasjonDokumenter,
 ].map((dok: StegDokument) => ({
   ...dok,
-  fields: [...fieldsBase(dok.steg), ...dok.fields],
+  fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
 }));
+
+const dokumenterPåTversAvSteg = [...flettefelterDokumenter, navigasjon].map(
+  (dok: DokumentBase) => ({
+    ...dok,
+    fields: [...fieldsBase, ...dok.fields],
+  }),
+);
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,6 +47,7 @@ export default createSchema({
       alertString,
       alertBlock,
     ],
-    spesifikkeDokumenterForSøknad,
+    dokumenterForSteg,
+    dokumenterPåTversAvSteg,
   ),
 });

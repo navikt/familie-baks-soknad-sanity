@@ -1,7 +1,7 @@
 import { apiNavnValideringer } from '../util/valideringer';
-import { SanityTyper, Steg, stegTittel, Ytelse } from './typer';
+import { SanityTyper, Ytelse } from './typer';
 
-const fieldsBase = (steg: Steg) => [
+const fieldsBase = [
   {
     name: 'visningsnavn',
     title: 'Visningsnavn',
@@ -35,16 +35,6 @@ const fieldsBase = (steg: Steg) => [
         type: SanityTyper.STRING,
       },
     ],
-  },
-  {
-    title: 'Teknisk stegnavn',
-    name: 'steg',
-    type: SanityTyper.STRING,
-    options: {
-      list: Object.keys(stegTittel),
-    },
-    initialValue: steg,
-    validation: rule => rule.required().error('Du må velge teknisk stegnavn'),
   },
 ];
 

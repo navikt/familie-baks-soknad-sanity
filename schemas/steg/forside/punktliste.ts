@@ -14,8 +14,8 @@ const punktliste: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
-      name: 'tekst',
-      title: 'Tekst',
+      name: 'innhold',
+      title: 'Innhold',
       description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule =>

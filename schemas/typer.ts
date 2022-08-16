@@ -3,14 +3,19 @@ import { ReactNode } from 'react';
 import { Rule } from '@sanity/types';
 
 export interface DokumentBase {
+  title: string;
+  type: SanityTyper.DOCUMENT;
+  fields: Field[];
+  name: DokumentNavn;
+}
+
+export interface SpørsmålDokumentBase {
   type: SanityTyper.DOCUMENT;
   fields: Field[];
 }
 
 export interface StegDokument extends DokumentBase {
   steg: Steg;
-  title: string;
-  name: DokumentNavn;
 }
 
 type Field = FieldBase &
@@ -22,7 +27,6 @@ type Field = FieldBase &
 interface FieldBase {
   name: string;
   title: string | ReactNode;
-
   [key: string]: unknown;
 }
 
@@ -47,8 +51,13 @@ export enum CustomSanityTyper {
 
 export enum DokumentNavn {
   NAVIGASJON = 'NAVIGASJON',
+  FLETTEFELT_YTELSE = 'FLETTEFELT_YTELSE',
+  FORSIDE_VEILEDERHILSEN = 'FORSIDE_VEILEDERHILSEN',
+  FORSIDE_TITTEL = 'FORSIDE_TITTEL',
+  FORSIDE_SPRAKVELGER = 'FORSIDE_SPRAKVELGER',
   FORSIDE_BEKREFTELSESBOKS = 'FORSIDE_BEKREFTELSESBOKS',
   FORSIDE_PUNKTLISTE = 'FORSIDE_PUNKTLISTE',
+  FORSIDE_PERSONOPPLYSNINGSLENKE = 'FORSIDE_PERSONOPPLYSNINGSLENKE',
   OM_DEG_PERSONOPPLYSNINGER = 'OM_DEG_PERSONOPPLYSNINGER',
   OM_DEG_SPORSMAL = 'OM_DEG_SPORSMAL',
   DIN_LIVSSITUASJON_SPORSMAL = 'DIN_LIVSSITUASJON_SPORSMAL',
@@ -56,8 +65,13 @@ export enum DokumentNavn {
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
+  FLETTEFELT_YTELSE: 'Ytelse',
+  FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
+  FORSIDE_TITTEL: 'Søknadstittel',
+  FORSIDE_SPRAKVELGER: 'Språkvelger',
   FORSIDE_BEKREFTELSESBOKS: 'Bekreftelsesboks',
   FORSIDE_PUNKTLISTE: 'Punktliste',
+  FORSIDE_PERSONOPPLYSNINGSLENKE: 'Personopplysningslenke',
   OM_DEG_PERSONOPPLYSNINGER: 'Personopplysninger',
   OM_DEG_SPORSMAL: 'Spørsmål',
   DIN_LIVSSITUASJON_SPORSMAL: 'Spørsmål',
@@ -95,4 +109,11 @@ export enum Ytelse {
   ORDINÆR_BARNETRYGD = 'ORDINÆR_BARNETRYGD',
   UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
   KONTANTSTØTTE = 'KONTANTSTØTTE',
+}
+
+export enum EFlettefelt {
+  BARN_NAVN = 'BARN_NAVN',
+  SØKER_NAVN = 'SØKER_NAVN',
+  ANDRE_FORELDER_NAVN = 'ANDRE_FORELDER_NAVN',
+  YTELSE = 'YTELSE',
 }

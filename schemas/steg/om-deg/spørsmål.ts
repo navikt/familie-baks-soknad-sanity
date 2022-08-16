@@ -1,4 +1,4 @@
-import sporsmalDokument from '../../sporsmalDokument';
+import sporsmalDokument from '../../felles/sporsmalDokument';
 import { DokumentNavn, dokumentTittel, Steg, StegDokument } from '../../typer';
 
 const spørsmål: StegDokument = {
