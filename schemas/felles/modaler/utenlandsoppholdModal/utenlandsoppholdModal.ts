@@ -1,23 +1,15 @@
-import {
-  CustomSanityTyper,
-  DokumentBase,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-} from '../../../typer';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
 import arsak from './arsak';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
 
-const utenlandsoppholdModal: DokumentBase = {
-  title: dokumentTittel.MODAL_UTENLANDSOPPHOLD_SOKER,
-  name: DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER,
+const utenlandsoppholdModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
       title: 'Modal tittel',
       name: 'tittel',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn en tittel'),
     },
