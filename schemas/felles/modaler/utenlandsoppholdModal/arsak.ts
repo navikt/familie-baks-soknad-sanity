@@ -14,7 +14,7 @@ const arsak: Field[] = [
       {
         title: 'Spørsmål',
         name: 'sporsmal',
-        type: CustomSanityTyper.LOCALE_BLOCK,
+        type: CustomSanityTyper.LOCALE_STRING,
         description: '(obligatorisk)',
         validation: Rule =>
           Rule.required().error('Du må fylle inn spørsmål om beskrivelse av perioden'),
@@ -22,7 +22,7 @@ const arsak: Field[] = [
       {
         title: 'Feilmelding',
         name: 'feilmelding',
-        type: CustomSanityTyper.LOCALE_BLOCK,
+        type: CustomSanityTyper.LOCALE_STRING,
         description: '(obligatorisk)',
         validation: Rule =>
           Rule.required().error(
@@ -38,25 +38,25 @@ const arsak: Field[] = [
           {
             title: 'Flyttet permanent til Norge',
             name: 'permanentTilNorge',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn tekst for valgalternativ'),
           },
           {
             title: 'Flyttet permanent fra Norge',
             name: 'permanentFraNorge',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn tekst for valgalternativ'),
           },
           {
             title: 'Opphold utenfor Norge nå',
             name: 'oppholdUtenforNorgeNa',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn tekst for valgalternativ'),
           },
           {
             title: 'Opphold utenfor Norge tidligere',
             name: 'oppholdUtenforNorgeTidligere',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn tekst for valgalternativ'),
           },
         ],

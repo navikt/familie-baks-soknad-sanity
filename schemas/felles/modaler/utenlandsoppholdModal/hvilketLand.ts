@@ -21,13 +21,13 @@ const hvilketLand: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om land'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om land'),
           },
@@ -43,13 +43,13 @@ const hvilketLand: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om land'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om land'),
           },
@@ -65,13 +65,13 @@ const hvilketLand: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om land'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om land'),
           },
@@ -87,13 +87,13 @@ const hvilketLand: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om land'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om land'),
           },

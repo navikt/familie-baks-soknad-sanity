@@ -69,5 +69,5 @@ const modalerlisteItem = S.listItem()
   .child(
     S.list()
       .title('Modaler')
-      .items([documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD)]),
+      .items([documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER)]),
   );

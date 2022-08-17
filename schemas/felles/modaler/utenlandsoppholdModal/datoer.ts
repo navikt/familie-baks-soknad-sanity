@@ -21,13 +21,13 @@ const datoer: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om startdato'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om startdato'),
           },
@@ -43,13 +43,13 @@ const datoer: Field[] = [
           {
             title: 'Spørsmål',
             name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule => Rule.required().error('Du må fylle inn spørsmål om sluttdato'),
           },
           {
             title: 'Feilmelding',
             name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_BLOCK,
+            type: CustomSanityTyper.LOCALE_STRING,
             validation: Rule =>
               Rule.required().error('Du må fylle inn en feilmelding for spørsmål om sluttdato'),
           },
