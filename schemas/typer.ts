@@ -7,7 +7,6 @@ export interface DokumentBase {
   type: SanityTyper.DOCUMENT;
   fields: Field[];
   name: DokumentNavn;
-  fieldsets?: Fieldset[];
 }
 
 export interface SpørsmålDokumentBase {
@@ -19,17 +18,13 @@ export interface StegDokument extends DokumentBase {
   steg: Steg;
 }
 
-export interface Fieldset {
-  name: string;
-  title: string;
-  options?: {
-    collapsible?: boolean;
-    collapsed?: boolean;
-  };
-}
-
 export type Field = FieldBase &
   (
+    | {
+        type: SanityTyper.OBJECT;
+        description?: string;
+        validation?: (rule: Rule) => Rule;
+      }
     | { description: `${string | undefined}${'(obligatorisk)'}`; validation: (rule: Rule) => Rule }
     | { description: `${string | undefined}${'(frivillig)'}`; validation?: (rule: Rule) => Rule }
   );
