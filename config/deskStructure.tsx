@@ -47,6 +47,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
         ]),
         stegItem(Steg.OM_DEG, [
+          documentListItem(DokumentNavn.OM_DEG_TITTEL),
           documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
           spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
