@@ -13,7 +13,7 @@ export default () =>
     .items([
       steglisteItem,
       modalerlisteItem,
-      flettefelterlisteItem,
+      frittstaendeOrdlisteItem,
       documentListItem(DokumentNavn.NAVIGASJON),
     ]);
 
@@ -52,17 +52,18 @@ const steglisteItem = S.listItem()
           spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
         stegItem(Steg.DIN_LIVSSITUASJON, [
+          documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
       ]),
   );
 
-const flettefelterlisteItem = S.listItem()
-  .title('Flettefelter')
+const frittstaendeOrdlisteItem = S.listItem()
+  .title('Frittstående ord')
   .child(
     S.list()
-      .title('Flettefelter')
-      .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSE)]),
+      .title('Frittstående ord')
+      .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
   );
 
 const modalerlisteItem = S.listItem()

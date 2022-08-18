@@ -5,11 +5,11 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
+import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
 import modalerDokumenter from './felles/modaler/modalerDokumenter';
 import navigasjon from './felles/navigasjon';
 import fieldsBase from './fieldsBase';
 import fieldsBaseForSteg from './fieldsBaseForSteg';
-import flettefelterDokumenter from './flettefelter/flettefelterDokumenter';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
@@ -26,12 +26,14 @@ const dokumenterForSteg = [
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
 }));
 
-const dokumenterPåTversAvSteg = [...modalerDokumenter, ...flettefelterDokumenter, navigasjon].map(
-  (dok: DokumentBase) => ({
-    ...dok,
-    fields: [...fieldsBase, ...dok.fields],
-  }),
-);
+const dokumenterPåTversAvSteg = [
+  ...modalerDokumenter,
+  ...frittstaendeOrdDokumenter,
+  navigasjon,
+].map((dok: DokumentBase) => ({
+  ...dok,
+  fields: [...fieldsBase, ...dok.fields],
+}));
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
