@@ -74,5 +74,6 @@ const modalerlisteItem = S.listItem()
       .items([
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
+        documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
       ]),
   );
