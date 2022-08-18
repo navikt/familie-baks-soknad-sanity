@@ -18,8 +18,13 @@ export interface StegDokument extends DokumentBase {
   steg: Steg;
 }
 
-type Field = FieldBase &
+export type Field = FieldBase &
   (
+    | {
+        type: SanityTyper.OBJECT;
+        description?: string;
+        validation?: (rule: Rule) => Rule;
+      }
     | { description: `${string | undefined}${'(obligatorisk)'}`; validation: (rule: Rule) => Rule }
     | { description: `${string | undefined}${'(frivillig)'}`; validation?: (rule: Rule) => Rule }
   );
@@ -58,13 +63,19 @@ export enum DokumentNavn {
   FORSIDE_BEKREFTELSESBOKS = 'FORSIDE_BEKREFTELSESBOKS',
   FORSIDE_PUNKTLISTE = 'FORSIDE_PUNKTLISTE',
   FORSIDE_PERSONOPPLYSNINGSLENKE = 'FORSIDE_PERSONOPPLYSNINGSLENKE',
+  OM_DEG_TITTEL = 'OM_DEG_TITTEL',
   OM_DEG_PERSONOPPLYSNINGER = 'OM_DEG_PERSONOPPLYSNINGER',
   OM_DEG_SPORSMAL = 'OM_DEG_SPORSMAL',
+  DIN_LIVSSITUASJON_TITTEL = 'DIN_LIVSSITUASJON_TITTEL',
   DIN_LIVSSITUASJON_SPORSMAL = 'DIN_LIVSSITUASJON_SPORSMAL',
+  MODAL_UTENLANDSOPPHOLD_SOKER = 'MODAL_UTENLANDSOPPHOLD_SOKER',
+  MODAL_UTENLANDSOPPHOLD_BARN = 'MODAL_UTENLANDSOPPHOLD_BARN',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
+  MODAL_UTENLANDSOPPHOLD_SOKER: 'Utenlandsopphold søker',
+  MODAL_UTENLANDSOPPHOLD_BARN: 'Utenlandsopphold barn',
   FRITTSTAENDEORD_YTELSE: 'Ytelse',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
@@ -72,8 +83,10 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   FORSIDE_BEKREFTELSESBOKS: 'Bekreftelsesboks',
   FORSIDE_PUNKTLISTE: 'Punktliste',
   FORSIDE_PERSONOPPLYSNINGSLENKE: 'Personopplysningslenke',
+  OM_DEG_TITTEL: 'Stegtittel',
   OM_DEG_PERSONOPPLYSNINGER: 'Personopplysninger',
   OM_DEG_SPORSMAL: 'Spørsmål',
+  DIN_LIVSSITUASJON_TITTEL: 'Stegtittel',
   DIN_LIVSSITUASJON_SPORSMAL: 'Spørsmål',
 };
 

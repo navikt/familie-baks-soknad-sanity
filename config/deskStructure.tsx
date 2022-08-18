@@ -10,7 +10,12 @@ import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer
 export default () =>
   S.list()
     .title('Søknadsdialog')
-    .items([steglisteItem, frittstaendeOrdlisteItem, documentListItem(DokumentNavn.NAVIGASJON)]);
+    .items([
+      steglisteItem,
+      modalerlisteItem,
+      frittstaendeOrdlisteItem,
+      documentListItem(DokumentNavn.NAVIGASJON),
+    ]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
@@ -42,10 +47,12 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
         ]),
         stegItem(Steg.OM_DEG, [
+          documentListItem(DokumentNavn.OM_DEG_TITTEL),
           documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
           spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
         stegItem(Steg.DIN_LIVSSITUASJON, [
+          documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
       ]),
@@ -57,4 +64,15 @@ const frittstaendeOrdlisteItem = S.listItem()
     S.list()
       .title('Frittstående ord')
       .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
+  );
+
+const modalerlisteItem = S.listItem()
+  .title('Modaler')
+  .child(
+    S.list()
+      .title('Modaler')
+      .items([
+        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
+        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
+      ]),
   );
