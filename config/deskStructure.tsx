@@ -10,7 +10,12 @@ import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer
 export default () =>
   S.list()
     .title('Søknadsdialog')
-    .items([steglisteItem, flettefelterlisteItem, documentListItem(DokumentNavn.NAVIGASJON)]);
+    .items([
+      steglisteItem,
+      modalerlisteItem,
+      flettefelterlisteItem,
+      documentListItem(DokumentNavn.NAVIGASJON),
+    ]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
@@ -57,4 +62,15 @@ const flettefelterlisteItem = S.listItem()
     S.list()
       .title('Flettefelter')
       .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSE)]),
+  );
+
+const modalerlisteItem = S.listItem()
+  .title('Modaler')
+  .child(
+    S.list()
+      .title('Modaler')
+      .items([
+        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
+        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
+      ]),
   );

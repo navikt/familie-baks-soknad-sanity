@@ -18,8 +18,13 @@ export interface StegDokument extends DokumentBase {
   steg: Steg;
 }
 
-type Field = FieldBase &
+export type Field = FieldBase &
   (
+    | {
+        type: SanityTyper.OBJECT;
+        description?: string;
+        validation?: (rule: Rule) => Rule;
+      }
     | { description: `${string | undefined}${'(obligatorisk)'}`; validation: (rule: Rule) => Rule }
     | { description: `${string | undefined}${'(frivillig)'}`; validation?: (rule: Rule) => Rule }
   );
@@ -61,11 +66,15 @@ export enum DokumentNavn {
   OM_DEG_PERSONOPPLYSNINGER = 'OM_DEG_PERSONOPPLYSNINGER',
   OM_DEG_SPORSMAL = 'OM_DEG_SPORSMAL',
   DIN_LIVSSITUASJON_SPORSMAL = 'DIN_LIVSSITUASJON_SPORSMAL',
+  MODAL_UTENLANDSOPPHOLD_SOKER = 'MODAL_UTENLANDSOPPHOLD_SOKER',
+  MODAL_UTENLANDSOPPHOLD_BARN = 'MODAL_UTENLANDSOPPHOLD_BARN',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
   NAVIGASJON: 'Navigasjon',
   FLETTEFELT_YTELSE: 'Ytelse',
+  MODAL_UTENLANDSOPPHOLD_SOKER: 'Utenlandsopphold søker',
+  MODAL_UTENLANDSOPPHOLD_BARN: 'Utenlandsopphold barn',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
   FORSIDE_SPRAKVELGER: 'Språkvelger',
@@ -114,6 +123,5 @@ export enum Ytelse {
 export enum EFlettefelt {
   BARN_NAVN = 'BARN_NAVN',
   SØKER_NAVN = 'SØKER_NAVN',
-  ANDRE_FORELDER_NAVN = 'ANDRE_FORELDER_NAVN',
   YTELSE = 'YTELSE',
 }
