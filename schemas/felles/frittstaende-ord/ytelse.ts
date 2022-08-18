@@ -4,11 +4,11 @@ import {
   DokumentNavn,
   dokumentTittel,
   SanityTyper,
-} from '../typer';
+} from '../../typer';
 
 const ytelse: DokumentBase = {
-  title: dokumentTittel.FLETTEFELT_YTELSE,
-  name: DokumentNavn.FLETTEFELT_YTELSE,
+  title: dokumentTittel.FRITTSTAENDEORD_YTELSE,
+  name: DokumentNavn.FRITTSTAENDEORD_YTELSE,
   type: SanityTyper.DOCUMENT,
   fields: [
     {

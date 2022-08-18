@@ -5,10 +5,10 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
+import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
 import navigasjon from './felles/navigasjon';
 import fieldsBase from './fieldsBase';
 import fieldsBaseForSteg from './fieldsBaseForSteg';
-import flettefelterDokumenter from './flettefelter/flettefelterDokumenter';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
@@ -25,7 +25,7 @@ const dokumenterForSteg = [
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
 }));
 
-const dokumenterPåTversAvSteg = [...flettefelterDokumenter, navigasjon].map(
+const dokumenterPåTversAvSteg = [...frittstaendeOrdDokumenter, navigasjon].map(
   (dok: DokumentBase) => ({
     ...dok,
     fields: [...fieldsBase, ...dok.fields],

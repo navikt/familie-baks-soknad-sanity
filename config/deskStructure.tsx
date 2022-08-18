@@ -10,7 +10,7 @@ import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer
 export default () =>
   S.list()
     .title('Søknadsdialog')
-    .items([steglisteItem, flettefelterlisteItem, documentListItem(DokumentNavn.NAVIGASJON)]);
+    .items([steglisteItem, frittstaendeOrdlisteItem, documentListItem(DokumentNavn.NAVIGASJON)]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
   S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
@@ -51,10 +51,10 @@ const steglisteItem = S.listItem()
       ]),
   );
 
-const flettefelterlisteItem = S.listItem()
-  .title('Flettefelter')
+const frittstaendeOrdlisteItem = S.listItem()
+  .title('Frittstående ord')
   .child(
     S.list()
-      .title('Flettefelter')
-      .items([documentListItem(DokumentNavn.FLETTEFELT_YTELSE)]),
+      .title('Frittstående ord')
+      .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
   );
