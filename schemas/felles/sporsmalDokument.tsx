@@ -40,7 +40,7 @@ const sporsmalDokument: SpørsmålDokumentBase = {
       name: 'alert',
       title: 'Alert',
       description: '(frivillig)',
-      type: CustomSanityTyper.ALERT_STRING,
+      type: CustomSanityTyper.ALERT_BLOCK,
     },
   ],
 };
