@@ -63,7 +63,10 @@ const frittstaendeOrdlisteItem = S.listItem()
   .child(
     S.list()
       .title('Frittstående ord')
-      .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
+      .items([
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_FRA_UTLANDET_NORGE),
+      ]),
   );
 
 const modalerlisteItem = S.listItem()
@@ -75,5 +78,6 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
         documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
+        documentListItem(DokumentNavn.MODAL_PENSJON),
       ]),
   );
