@@ -1,5 +1,6 @@
 import { DokumentNavn, dokumentTittel } from '../../typer';
 import barnehageplassModal from './barnehageplassModal/barnehageplassModal';
+import eosYtelseModal from './eøsYtelseModal/eosYtelseModal';
 import utenlandsoppholdModal from './utenlandsoppholdModal/utenlandsoppholdModal';
 
 const modalerDokumenter = [
@@ -14,6 +15,7 @@ const modalerDokumenter = [
     ...utenlandsoppholdModal,
   },
   barnehageplassModal,
+  eosYtelseModal,
 ];
 
 export default modalerDokumenter;

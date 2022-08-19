@@ -71,6 +71,7 @@ export enum DokumentNavn {
   MODAL_UTENLANDSOPPHOLD_SOKER = 'MODAL_UTENLANDSOPPHOLD_SOKER',
   MODAL_UTENLANDSOPPHOLD_BARN = 'MODAL_UTENLANDSOPPHOLD_BARN',
   MODAL_BARNEHAGEPLASS = 'MODAL_BARNEHAGEPLASS',
+  MODAL_EOS_YTELSE = 'MODAL_EOS_YTELSE',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -78,6 +79,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   MODAL_UTENLANDSOPPHOLD_SOKER: 'Utenlandsopphold søker',
   MODAL_UTENLANDSOPPHOLD_BARN: 'Utenlandsopphold barn',
   MODAL_BARNEHAGEPLASS: 'Barnehageplass',
+  MODAL_EOS_YTELSE: 'EØS ytelse',
   FRITTSTAENDEORD_YTELSE: 'Ytelse',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
