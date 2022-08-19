@@ -134,4 +134,5 @@ export enum EFlettefelt {
   BARN_NAVN = 'BARN_NAVN',
   SØKER_NAVN = 'SØKER_NAVN',
   YTELSE = 'YTELSE',
+  FRA_UTLANDET_NORGE = 'FRA_UTLANDET_NORGE',
 }
