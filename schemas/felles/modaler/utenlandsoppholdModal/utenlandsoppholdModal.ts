@@ -1,4 +1,5 @@
 import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
+import fellesFelterModal from '../fellesFelterModal';
 import arsak from './arsak';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
@@ -6,13 +7,10 @@ import hvilketLand from './hvilketLand';
 const utenlandsoppholdModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
-    {
-      title: 'Modal tittel',
-      name: 'tittel',
-      type: CustomSanityTyper.LOCALE_BLOCK,
-      description: '(obligatorisk)',
-      validation: Rule => Rule.required().error('Du må fylle inn en tittel'),
-    },
+    ...fellesFelterModal,
+    ...arsak,
+    ...hvilketLand,
+    ...datoer,
     {
       title: 'Legg til flere perioder spørsmål',
       name: 'flerePerioderSporsmal',
@@ -20,35 +18,6 @@ const utenlandsoppholdModal: SpørsmålDokumentBase = {
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
     },
-    {
-      title: 'Knapper',
-      name: 'knapper',
-      type: SanityTyper.OBJECT,
-      options: {
-        collapsable: true,
-        collapsed: true,
-      },
-      validation: Rule => Rule.required().error('Du må fylle inn knapper'),
-      fields: [
-        {
-          title: 'Legg til-knapp',
-          name: 'leggTil',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn tekst for legg til-knappen'),
-        },
-        {
-          title: 'Fjern-knapp',
-          name: 'fjern',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn tekst for fjern-knappen'),
-        },
-      ],
-    },
-    ...arsak,
-    ...hvilketLand,
-    ...datoer,
   ],
 };
 

@@ -58,7 +58,6 @@ const customBlock = {
                   list: [
                     { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
                     { title: 'Søkers navn', value: EFlettefelt.SØKER_NAVN },
-                    { title: 'Andre forelders navn', value: EFlettefelt.ANDRE_FORELDER_NAVN },
                     { title: 'Ytelse', value: EFlettefelt.YTELSE },
                   ],
                 },
