@@ -71,6 +71,7 @@ export enum DokumentNavn {
   MODAL_UTENLANDSOPPHOLD_SOKER = 'MODAL_UTENLANDSOPPHOLD_SOKER',
   MODAL_UTENLANDSOPPHOLD_BARN = 'MODAL_UTENLANDSOPPHOLD_BARN',
   MODAL_BARNEHAGEPLASS = 'MODAL_BARNEHAGEPLASS',
+  MODAL_ARBEIDSPERIODE = 'MODAL_ARBEIDSPERIODE',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -78,6 +79,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   MODAL_UTENLANDSOPPHOLD_SOKER: 'Utenlandsopphold søker',
   MODAL_UTENLANDSOPPHOLD_BARN: 'Utenlandsopphold barn',
   MODAL_BARNEHAGEPLASS: 'Barnehageplass',
+  MODAL_ARBEIDSPERIODE: 'Arbeidsperiode',
   FRITTSTAENDEORD_YTELSE: 'Ytelse',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
   FORSIDE_TITTEL: 'Søknadstittel',
@@ -130,4 +132,6 @@ export enum EFlettefelt {
   BARN_NAVN = 'BARN_NAVN',
   SØKER_NAVN = 'SØKER_NAVN',
   YTELSE = 'YTELSE',
+  PERSONTYPE = 'PERSONTYPE',
+  I_UTENFOR = 'I_UTENFOR',
 }
