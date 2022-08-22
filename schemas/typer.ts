@@ -74,6 +74,7 @@ export enum DokumentNavn {
   MODAL_UTENLANDSOPPHOLD_SOKER = 'MODAL_UTENLANDSOPPHOLD_SOKER',
   MODAL_UTENLANDSOPPHOLD_BARN = 'MODAL_UTENLANDSOPPHOLD_BARN',
   MODAL_BARNEHAGEPLASS = 'MODAL_BARNEHAGEPLASS',
+  MODAL_LEGG_TIL_BARN = 'MODAL_LEGG_TIL_BARN',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -96,6 +97,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   VELG_BARN_TITTEL: 'Stegtittel',
   VELG_BARN_LENKER: 'Lenker',
   VELG_BARN_KORT: 'Barnekort',
+  MODAL_LEGG_TIL_BARN: 'Legg til barn',
 };
 
 export enum Steg {
