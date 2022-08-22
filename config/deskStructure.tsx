@@ -64,6 +64,10 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_BARNA_TITTEL),
           spørsmålListItem(DokumentNavn.OM_BARNA_SPORSMAL),
         ]),
+        stegItem(Steg.OM_BARNET, [
+          documentListItem(DokumentNavn.OM_BARNET_TITTEL),
+          spørsmålListItem(DokumentNavn.OM_BARNET_SPORSMAL),
+        ]),
       ]),
   );
 
