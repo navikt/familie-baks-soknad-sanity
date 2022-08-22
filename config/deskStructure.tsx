@@ -55,6 +55,11 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
+        stegItem(Steg.VELG_BARN, [
+          documentListItem(DokumentNavn.VELG_BARN_TITTEL),
+          documentListItem(DokumentNavn.VELG_BARN_LENKER),
+          documentListItem(DokumentNavn.VELG_BARN_KORT),
+        ]),
       ]),
   );
 
@@ -63,7 +68,10 @@ const frittstaendeOrdlisteItem = S.listItem()
   .child(
     S.list()
       .title('Frittstående ord')
-      .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
+      .items([
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
+      ]),
   );
 
 const modalerlisteItem = S.listItem()
@@ -75,6 +83,9 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
         documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
+        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE),
+        documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
+        documentListItem(DokumentNavn.MODAL_PENSJON),
         documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
       ]),
   );

@@ -59,6 +59,12 @@ const customBlock = {
                     { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
                     { title: 'Søkers navn', value: EFlettefelt.SØKER_NAVN },
                     { title: 'Ytelse', value: EFlettefelt.YTELSE },
+                    { title: 'i/utenfor', value: EFlettefelt.I_UTENFOR },
+                    {
+                      title: 'du / den andre forelderen / omsorgspersonen',
+                      value: EFlettefelt.PERSONTYPE,
+                    },
+                    { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
                   ],
                 },
               },
