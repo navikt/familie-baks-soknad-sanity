@@ -62,7 +62,7 @@ const antallTimer: Field[] = [
         ],
       },
       {
-        title: 'Hvor mange timer i uken har x fått delt i barnehagen',
+        title: 'Hvor mange timer i uken har x fått tildelt i barnehagen',
         name: 'fattTildeltAntallTimer',
         type: SanityTyper.OBJECT,
         description: '(obligatorisk)',

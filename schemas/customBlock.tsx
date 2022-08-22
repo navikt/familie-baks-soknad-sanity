@@ -64,6 +64,7 @@ const customBlock = {
                       title: 'du / den andre forelderen / omsorgspersonen',
                       value: EFlettefelt.PERSONTYPE,
                     },
+                    { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
                   ],
                 },
               },
