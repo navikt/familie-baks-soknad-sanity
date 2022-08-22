@@ -9,7 +9,7 @@ import fellesFelterModal from '../fellesFelterModal';
 import belop from './belop';
 import datoer from './datoer';
 import farEosYtelseNa from './farYtelseNa';
-import hvilketLand from './hvilketLand';
+import land from './land';
 
 const eosYtelseModal: DokumentBase = {
   name: DokumentNavn.MODAL_EOS_YTELSE,
@@ -18,13 +18,13 @@ const eosYtelseModal: DokumentBase = {
   fields: [
     ...fellesFelterModal,
     ...farEosYtelseNa,
-    ...hvilketLand,
+    ...land,
     ...datoer,
     ...belop,
     {
       title: 'Legg til flere perioder spørsmål',
       name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
     },

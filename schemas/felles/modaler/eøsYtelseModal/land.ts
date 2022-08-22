@@ -1,6 +1,6 @@
 import { CustomSanityTyper, Field, SanityTyper } from '../../../typer';
 
-const hvilketLand: Field[] = [
+const land: Field[] = [
   {
     title: 'Hvilket land får x EØS ytelse fra',
     name: 'land',
@@ -65,4 +65,4 @@ const hvilketLand: Field[] = [
   },
 ];
 
-export default hvilketLand;
+export default land;
