@@ -55,6 +55,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
           spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
+        stegItem(Steg.VELG_BARN, [documentListItem(DokumentNavn.VELG_BARN_TITTEL)]),
       ]),
   );
 
