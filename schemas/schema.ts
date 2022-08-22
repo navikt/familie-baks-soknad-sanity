@@ -15,12 +15,14 @@ import localeString from './localeString';
 import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
 import forsideDokumenter from './steg/forside/forsideDokumenter';
 import omDegDokumenter from './steg/om-deg/omDegDokumenter';
+import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
 import { DokumentBase, StegDokument } from './typer';
 
 const dokumenterForSteg = [
   ...forsideDokumenter,
   ...omDegDokumenter,
   ...dinLivssituasjonDokumenter,
+  ...velgBarnDokumenter,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
