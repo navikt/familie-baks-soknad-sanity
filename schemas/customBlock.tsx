@@ -61,7 +61,7 @@ const customBlock = {
                     { title: 'Ytelse', value: EFlettefelt.YTELSE },
                     { title: 'i/utenfor', value: EFlettefelt.I_UTENFOR },
                     {
-                      title: 'du/den andre forelderen/omsorgspersonen',
+                      title: 'du / den andre forelderen / omsorgspersonen',
                       value: EFlettefelt.PERSONTYPE,
                     },
                   ],
