@@ -60,6 +60,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.VELG_BARN_LENKER),
           documentListItem(DokumentNavn.VELG_BARN_KORT),
         ]),
+        stegItem(Steg.OM_BARNA, [documentListItem(DokumentNavn.OM_BARNA_TITTEL)]),
       ]),
   );
 
