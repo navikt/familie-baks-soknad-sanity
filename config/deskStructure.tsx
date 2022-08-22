@@ -65,7 +65,7 @@ const frittstaendeOrdlisteItem = S.listItem()
       .title('Frittstående ord')
       .items([
         documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_FRA_UTLANDET_NORGE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
       ]),
   );
 

@@ -59,7 +59,7 @@ const customBlock = {
                     { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
                     { title: 'Søkers navn', value: EFlettefelt.SØKER_NAVN },
                     { title: 'Ytelse', value: EFlettefelt.YTELSE },
-                    { title: 'Fra utlandet/Norge', value: EFlettefelt.FRA_UTLANDET_NORGE },
+                    { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
                   ],
                 },
               },

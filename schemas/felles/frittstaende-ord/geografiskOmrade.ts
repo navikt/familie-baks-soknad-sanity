@@ -6,21 +6,21 @@ import {
   SanityTyper,
 } from '../../typer';
 
-const fraUtlandetNorge: DokumentBase = {
-  title: dokumentTittel.FRITTSTAENDEORD_FRA_UTLANDET_NORGE,
-  name: DokumentNavn.FRITTSTAENDEORD_FRA_UTLANDET_NORGE,
+const geografiskOmrade: DokumentBase = {
+  title: dokumentTittel.FRITTSTAENDEORD_GEOGRAFISK_OMRADE,
+  name: DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE,
   type: SanityTyper.DOCUMENT,
   fields: [
     {
-      title: 'Fra utlandet',
-      name: 'fraUtlandet',
+      title: 'Utlandet',
+      name: 'utlandet',
       description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
       validation: Rule => Rule.required().error('Du må fylle inn fra utlandet tekst'),
     },
     {
-      title: 'Fra Norge',
-      name: 'fraNorge',
+      title: 'Norge',
+      name: 'norge',
       description: '(obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
       validation: Rule => Rule.required().error('Du må fylle inn fra Norge tekst'),
@@ -28,4 +28,4 @@ const fraUtlandetNorge: DokumentBase = {
   ],
 };
 
-export default fraUtlandetNorge;
+export default geografiskOmrade;

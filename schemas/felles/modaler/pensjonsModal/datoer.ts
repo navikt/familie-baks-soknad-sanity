@@ -9,7 +9,7 @@ const datoer: Field[] = [
       collapsable: true,
       collapsed: true,
     },
-    validation: Rule => Rule.required().error('Du må fylle startdato'),
+    validation: Rule => Rule.required().error('Du må fylle inn startdato'),
     fields: [
       {
         title: 'Når har x fått pensjon fra',
