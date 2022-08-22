@@ -31,14 +31,6 @@ const spørsmål: StegDokument = {
       validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
     },
     {
-      name: 'hvemAvBarna',
-      title: 'Hvem av barna spørsmål',
-      description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
-      validation: Rule =>
-        Rule.required().error('Du må fylle inn oppfølgningspørsmålet "Hvem av barna.."'),
-    },
-    {
       name: 'vedleggsnotis',
       title: (
         <span>
@@ -53,6 +45,33 @@ const spørsmål: StegDokument = {
       title: 'Alert',
       description: '(frivillig)',
       type: CustomSanityTyper.ALERT_BLOCK,
+    },
+    {
+      name: 'oppfolgning',
+      title: 'Oppfølgning ("Hvem av barna...")',
+      type: SanityTyper.OBJECT,
+      validation: Rule =>
+        Rule.required().error('Du må fylle inn oppfølgningspørsmålet "Hvem av barna.."'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule =>
+            Rule.required().error('Du må fylle inn oppfølgningspørsmålet "Hvem av barna.."'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule =>
+            Rule.required().error(
+              'Du må fylle inn feilmelding for oppfølgningspørsmålet "Hvem av barna.."',
+            ),
+        },
+      ],
     },
   ],
 };
