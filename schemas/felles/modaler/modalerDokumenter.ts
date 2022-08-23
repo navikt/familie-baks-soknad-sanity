@@ -2,6 +2,7 @@ import { DokumentNavn, dokumentTittel } from '../../typer';
 import arbeidsperiodeModal from './arbeidsperiodeModal/arbeidsperiodeModal';
 import barnehageplassModal from './barnehageplassModal/barnehageplassModal';
 import pensjonsModal from './pensjonsModal/pensjonsModal';
+import eosYtelseModal from './eøsYtelseModal/eosYtelseModal';
 import utenlandsoppholdModal from './utenlandsoppholdModal/utenlandsoppholdModal';
 import leggTilBarnModal from './velgBarnModal/leggTilBarnModal';
 
@@ -20,6 +21,7 @@ const modalerDokumenter = [
   pensjonsModal,
   arbeidsperiodeModal,
   leggTilBarnModal,
+  eosYtelseModal,
 ];
 
 export default modalerDokumenter;

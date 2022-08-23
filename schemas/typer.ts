@@ -78,6 +78,7 @@ export enum DokumentNavn {
   MODAL_PENSJON = 'MODAL_PENSJON',
   MODAL_LEGG_TIL_BARN = 'MODAL_LEGG_TIL_BARN',
   MODAL_ARBEIDSPERIODE = 'MODAL_ARBEIDSPERIODE',
+  MODAL_EOS_YTELSE = 'MODAL_EOS_YTELSE',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -88,6 +89,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   MODAL_PENSJON: 'Pensjon',
   MODAL_ARBEIDSPERIODE: 'Arbeidsperiode',
   MODAL_LEGG_TIL_BARN: 'Legg til barn',
+  MODAL_EOS_YTELSE: 'EØS ytelse',
   FRITTSTAENDEORD_YTELSE: 'Ytelse',
   FRITTSTAENDEORD_GEOGRAFISK_OMRADE: 'Geografisk område',
   FORSIDE_VEILEDERHILSEN: 'Veilederhilsen',
