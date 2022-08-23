@@ -2,7 +2,7 @@ import { CustomSanityTyper, Field, SanityTyper } from '../../../typer';
 
 const antallTimer: Field[] = [
   {
-    title: 'antall timer',
+    title: 'Antall timer',
     name: 'antallTimer',
     type: SanityTyper.OBJECT,
     description: '(obligatorisk)',
