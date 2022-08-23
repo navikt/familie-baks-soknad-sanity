@@ -1,4 +1,5 @@
 import { DokumentNavn, dokumentTittel } from '../../typer';
+import andreUtbetalingerModal from './andreUtbetalingerModal/andreUtbetalingerModal';
 import arbeidsperiodeModal from './arbeidsperiodeModal/arbeidsperiodeModal';
 import barnehageplassModal from './barnehageplassModal/barnehageplassModal';
 import eosYtelseModal from './eøsYtelseModal/eosYtelseModal';
@@ -16,6 +17,21 @@ const modalerDokumenter = [
     name: DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN,
     title: dokumentTittel.MODAL_UTENLANDSOPPHOLD_BARN,
     ...utenlandsoppholdModal,
+  },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_SOKER,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_SOKER,
+    ...andreUtbetalingerModal,
+  },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
+    ...andreUtbetalingerModal,
+  },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
+    ...andreUtbetalingerModal,
   },
   barnehageplassModal,
   {
