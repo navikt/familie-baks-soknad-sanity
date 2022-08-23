@@ -1,6 +1,3 @@
-import React from 'react';
-
-import FileContentIcon from '../../../images/FileContentIcon';
 import {
   CustomSanityTyper,
   DokumentNavn,
@@ -8,12 +5,12 @@ import {
   SanityTyper,
   Steg,
   StegDokument,
-} from '../../typer';
+} from '../../../typer';
 
-const oppfolgning: StegDokument = {
+const institusjon: StegDokument = {
   steg: Steg.OM_BARNET,
-  title: dokumentTittel.OM_BARNET_OPPFOLGNING,
-  name: DokumentNavn.OM_BARNET_OPPFOLGNING,
+  title: dokumentTittel.OM_BARNET_INSTITUSJON,
+  name: DokumentNavn.OM_BARNET_INSTITUSJON,
   type: SanityTyper.DOCUMENT,
   fields: [
     {
@@ -33,4 +30,4 @@ const oppfolgning: StegDokument = {
   ],
 };
 
-export default oppfolgning;
+export default institusjon;
