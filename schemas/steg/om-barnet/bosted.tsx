@@ -16,6 +16,13 @@ const bosted: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
+      name: 'tittel',
+      title: 'Tittel',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(obligatorisk)',
+      validation: Rule => Rule.required().error('Du må fylle inn tittel for bosted'),
+    },
+    {
       name: 'sporsmal',
       title: 'Spørsmål',
       description: '(obligatorisk)',
