@@ -14,18 +14,11 @@ const institusjon: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
-      name: 'sporsmal',
-      title: 'Spørsmål',
-      description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-    },
-    {
-      name: 'feilmelding',
-      title: 'Feilmelding',
-      description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
-      validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+      name: 'opplysningsPaminnelse',
+      title: 'Påminnelse om hva som er opplyst i om barna',
+      description: 'F.eks. "Du har opplyst at..." (obligatorisk)',
+      type: CustomSanityTyper.LOCALE_BLOCK,
+      validation: Rule => Rule.required().error('Du må fylle inn tekst for opplysningspåminnelse'),
     },
   ],
 };
