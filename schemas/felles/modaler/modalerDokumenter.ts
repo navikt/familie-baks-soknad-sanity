@@ -18,12 +18,26 @@ const modalerDokumenter = [
     title: dokumentTittel.MODAL_UTENLANDSOPPHOLD_BARN,
     ...utenlandsoppholdModal,
   },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_SOKER,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_SOKER,
+    ...andreUtbetalingerModal,
+  },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
+    ...andreUtbetalingerModal,
+  },
+  {
+    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
+    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
+    ...andreUtbetalingerModal,
+  },
   barnehageplassModal,
   pensjonsModal,
   arbeidsperiodeModal,
   leggTilBarnModal,
   eosYtelseModal,
-  andreUtbetalingerModal,
 ];
 
 export default modalerDokumenter;

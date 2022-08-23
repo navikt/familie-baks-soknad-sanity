@@ -4,15 +4,14 @@ import {
   DokumentNavn,
   dokumentTittel,
   SanityTyper,
+  SpørsmålDokumentBase,
 } from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
 import mottarNå from './mottarNå';
 
-const andreUtbetalingerModal: DokumentBase = {
-  name: DokumentNavn.MODAL_ANDRE_UTBETALINGER,
-  title: dokumentTittel.MODAL_ANDRE_UTBETALINGER,
+const andreUtbetalingerModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     ...fellesFelterModal,
