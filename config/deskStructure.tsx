@@ -91,5 +91,6 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
         documentListItem(DokumentNavn.MODAL_PENSJON),
         documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
+        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER),
       ]),
   );
