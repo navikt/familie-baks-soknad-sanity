@@ -90,8 +90,10 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON),
+        documentListItem(DokumentNavn.MODAL_PENSJON_SOKER),
+        documentListItem(DokumentNavn.MODAL_PENSJON_ANDRE_FORELDER),
+        documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
         documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
-        documentListItem(DokumentNavn.MODAL_PENSJON),
         documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
       ]),
   );

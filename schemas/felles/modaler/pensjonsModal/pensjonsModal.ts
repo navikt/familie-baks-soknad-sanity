@@ -1,18 +1,10 @@
-import {
-  CustomSanityTyper,
-  DokumentBase,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-} from '../../../typer';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
 import datoer from './datoer';
 import farPensjonNa from './farPensjonNa';
 import hvilketLand from './hvilketLand';
 
-const pensjonsModal: DokumentBase = {
-  name: DokumentNavn.MODAL_PENSJON,
-  title: dokumentTittel.MODAL_PENSJON,
+const pensjonsModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     ...fellesFelterModal,
