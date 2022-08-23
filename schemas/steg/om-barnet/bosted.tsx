@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FileContentIcon from '../../../images/FileContentIcon';
+import sporsmalMedFeilmeldingBlock from '../../felles/sporsmalMedFeilmeldingBlock';
 import {
   CustomSanityTyper,
   DokumentNavn,
@@ -10,7 +11,6 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
-import sporsmalMedFeilmeldingBlock from './sporsmalMedFeilmeldingBlock';
 
 const spørsmålMedVedlegg: Field[] = [
   ...sporsmalMedFeilmeldingBlock,

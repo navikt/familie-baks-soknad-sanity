@@ -1,3 +1,4 @@
+import sporsmalMedFeilmeldingString from '../../../felles/sporsmalMedFeilmeldingString';
 import {
   CustomSanityTyper,
   DokumentNavn,
@@ -6,7 +7,6 @@ import {
   Steg,
   StegDokument,
 } from '../../../typer';
-import sporsmalMedFeilmeldingString from '../sporsmalMedFeilmeldingString';
 import opplysningspaminnelse from './opplysningspaminnelse';
 
 const institusjon: StegDokument = {

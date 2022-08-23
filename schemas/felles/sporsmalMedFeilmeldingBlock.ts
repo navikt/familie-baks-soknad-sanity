@@ -1,10 +1,10 @@
-import { CustomSanityTyper } from '../../typer';
+import { CustomSanityTyper, Field } from '../typer';
 
-const sporsmalMedFeilmeldingString = [
+const sporsmalMedFeilmeldingBlock: Field[] = [
   {
     name: 'sporsmal',
     title: 'Spørsmål',
-    type: CustomSanityTyper.LOCALE_STRING,
+    type: CustomSanityTyper.LOCALE_BLOCK,
     description: '(obligatorisk)',
     validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
   },
@@ -12,9 +12,9 @@ const sporsmalMedFeilmeldingString = [
     name: 'feilmelding',
     title: 'Feilmelding',
     description: '(obligatorisk)',
-    type: CustomSanityTyper.LOCALE_STRING,
+    type: CustomSanityTyper.LOCALE_BLOCK,
     validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
   },
 ];
 
-export default sporsmalMedFeilmeldingString;
+export default sporsmalMedFeilmeldingBlock;

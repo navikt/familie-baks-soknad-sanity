@@ -1,5 +1,5 @@
+import sporsmalMedFeilmeldingString from '../../../felles/sporsmalMedFeilmeldingString';
 import { DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../../../typer';
-import sporsmalMedFeilmeldingString from '../sporsmalMedFeilmeldingString';
 import opplysningspaminnelse from './opplysningspaminnelse';
 
 const adopsjon: StegDokument = {

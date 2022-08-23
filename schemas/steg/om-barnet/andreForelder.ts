@@ -1,5 +1,5 @@
-import React from 'react';
-
+import sporsmalMedFeilmeldingBlock from '../../felles/sporsmalMedFeilmeldingBlock';
+import sporsmalMedFeilmeldingString from '../../felles/sporsmalMedFeilmeldingString';
 import {
   CustomSanityTyper,
   DokumentNavn,
@@ -9,8 +9,6 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
-import sporsmalMedFeilmeldingBlock from './sporsmalMedFeilmeldingBlock';
-import sporsmalMedFeilmeldingString from './sporsmalMedFeilmeldingString';
 
 const spørsmålMedAlert: Field[] = [
   ...sporsmalMedFeilmeldingBlock,
