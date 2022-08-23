@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   CustomSanityTyper,
   DokumentNavn,
@@ -6,6 +8,8 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
+import sporsmalMedFeilmeldingBlock from './sporsmalMedFeilmeldingBlock';
+import sporsmalMedFeilmeldingString from './sporsmalMedFeilmeldingString';
 
 const andreForelder: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -49,22 +53,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingString],
     },
     {
       name: 'ident',
@@ -76,20 +65,7 @@ const andreForelder: StegDokument = {
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
       fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
+        ...sporsmalMedFeilmeldingString,
         {
           name: 'ukjentLabel',
           title: 'Ukjent ident checkbox',
@@ -109,20 +85,7 @@ const andreForelder: StegDokument = {
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
       fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
+        ...sporsmalMedFeilmeldingString,
         {
           name: 'ukjentLabel',
           title: 'Ukjent fødselsdato checkbox',
@@ -142,19 +105,33 @@ const andreForelder: StegDokument = {
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
       fields: [
+        ...sporsmalMedFeilmeldingBlock,
         {
-          name: 'sporsmal',
-          title: 'Spørsmål',
+          name: 'alert',
+          title: 'Alert',
+          type: CustomSanityTyper.ALERT_STRING,
           description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+          validation: Rule => Rule.required().error('Du må fylle inn alert'),
         },
+      ],
+    },
+    {
+      name: 'oppholdIUtland',
+      title: 'Opphold i utlandet',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        ...sporsmalMedFeilmeldingBlock,
         {
-          name: 'feilmelding',
-          title: 'Feilmelding',
+          name: 'alert',
+          title: 'Alert',
+          type: CustomSanityTyper.ALERT_STRING,
           description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+          validation: Rule => Rule.required().error('Du må fylle inn alert'),
         },
       ],
     },
@@ -167,22 +144,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingBlock],
     },
     {
       name: 'arbeidIUtlandGjenlevende',
@@ -193,22 +155,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingBlock],
     },
     {
       name: 'pensjonFraUtland',
@@ -219,22 +166,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingBlock],
     },
     {
       name: 'pensjonFraUtlandGjenlevende',
@@ -245,22 +177,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_BLOCK,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingBlock],
     },
   ],
 };
