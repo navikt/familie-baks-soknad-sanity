@@ -1,19 +1,11 @@
-import {
-  CustomSanityTyper,
-  DokumentBase,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-} from '../../../typer';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
 import arbeidsgiver from './arbeidsgiver';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
 import periodeAvsluttet from './periodeAvsluttet';
 
-const arbeidsperiodeModal: DokumentBase = {
-  name: DokumentNavn.MODAL_ARBEIDSPERIODE,
-  title: dokumentTittel.MODAL_ARBEIDSPERIODE,
+const arbeidsperiodeModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     ...fellesFelterModal,
