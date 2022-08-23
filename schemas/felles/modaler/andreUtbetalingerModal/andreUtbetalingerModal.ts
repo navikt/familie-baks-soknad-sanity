@@ -1,26 +1,31 @@
-import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
+import {
+  CustomSanityTyper,
+  DokumentBase,
+  DokumentNavn,
+  dokumentTittel,
+  SanityTyper,
+  SpørsmålDokumentBase,
+} from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
-import arbeidsgiver from './arbeidsgiver';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
-import periodeAvsluttet from './periodeAvsluttet';
+import mottarNå from './mottarNå';
 
-const arbeidsperiodeModal: SpørsmålDokumentBase = {
+const andreUtbetalingerModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     ...fellesFelterModal,
-    ...periodeAvsluttet,
+    ...mottarNå,
     ...hvilketLand,
-    ...arbeidsgiver,
     ...datoer,
     {
       title: 'Legg til flere perioder spørsmål',
       name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_BLOCK,
+      type: CustomSanityTyper.LOCALE_STRING,
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
     },
   ],
 };
 
-export default arbeidsperiodeModal;
+export default andreUtbetalingerModal;

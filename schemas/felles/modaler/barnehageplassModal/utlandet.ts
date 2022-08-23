@@ -12,8 +12,8 @@ const utlandet: Field[] = [
     validation: Rule => Rule.required().error('Du må fylle inn spørsmål om spørsmål'),
     fields: [
       {
-        title: 'Har x barnehageplass i utlandet',
-        name: 'harBarnehageplassUtlandet',
+        title: 'Er barnehagen utenfor Norge',
+        name: 'barnehageUtlandet',
         type: SanityTyper.OBJECT,
         description: '(obligatorisk)',
         validation: Rule => Rule.required().error('Du må fylle inn spørsmål om barnehageplass'),
@@ -32,60 +32,6 @@ const utlandet: Field[] = [
             validation: Rule =>
               Rule.required().error(
                 'Du må fylle inn en feilmelding for spørsmål om barnehageplass i utlandet',
-              ),
-          },
-        ],
-      },
-      {
-        title: 'Har x hatt barnehageplass i utlandet',
-        name: 'harHattBarnehageplassUtlandet',
-        type: SanityTyper.OBJECT,
-        description: '(obligatorisk)',
-        validation: Rule =>
-          Rule.required().error('Du må fylle inn spørsmål om har hatt barnehageplass i utlandet'),
-        fields: [
-          {
-            title: 'Spørsmål',
-            name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_STRING,
-            validation: Rule =>
-              Rule.required().error(
-                'Du må fylle inn spørsmål om har hatt barnhageplass i utlandet',
-              ),
-          },
-          {
-            title: 'Feilmelding',
-            name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_STRING,
-            validation: Rule =>
-              Rule.required().error(
-                'Du må fylle inn en feilmelding for spørsmål om har hatt barnehageplass i utlandet',
-              ),
-          },
-        ],
-      },
-      {
-        title: 'Har x fått tildelt barnehageplass i utlandet',
-        name: 'fattTildeltBarnehageplassUtlandet',
-        type: SanityTyper.OBJECT,
-        description: '(obligatorisk)',
-        validation: Rule =>
-          Rule.required().error('Du må fylle inn spørsmål om tildelt barnehageplass i utlandet'),
-        fields: [
-          {
-            title: 'Spørsmål',
-            name: 'sporsmal',
-            type: CustomSanityTyper.LOCALE_STRING,
-            validation: Rule =>
-              Rule.required().error('Du må fylle inn spørsmål om tildelt barnhageplass i utlandet'),
-          },
-          {
-            title: 'Feilmelding',
-            name: 'feilmelding',
-            type: CustomSanityTyper.LOCALE_STRING,
-            validation: Rule =>
-              Rule.required().error(
-                'Du må fylle inn en feilmelding for spørsmål om tildelt barnehageplass i utlandet',
               ),
           },
         ],
