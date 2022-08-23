@@ -9,6 +9,7 @@ import {
   Steg,
   StegDokument,
 } from '../../../typer';
+import opplysningspaminnelse from './opplysningspaminnelse';
 
 const fosterbarn: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -16,13 +17,7 @@ const fosterbarn: StegDokument = {
   name: DokumentNavn.OM_BARNET_FOSTERBARN,
   type: SanityTyper.DOCUMENT,
   fields: [
-    {
-      name: 'opplysningsPaminnelse',
-      title: 'Påminnelse om hva som er opplyst i om barna',
-      description: 'F.eks. "Du har opplyst at..." (obligatorisk)',
-      type: CustomSanityTyper.LOCALE_BLOCK,
-      validation: Rule => Rule.required().error('Du må fylle inn tekst for opplysningspåminnelse'),
-    },
+    opplysningspaminnelse,
     {
       name: 'vedleggsnotis',
       title: (
@@ -30,6 +25,10 @@ const fosterbarn: StegDokument = {
           <FileContentIcon /> Vedleggsnotis
         </span>
       ),
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       description: 'Beskjed om at vedlegg må lastes opp. (obligatorisk)',
       type: CustomSanityTyper.LOCALE_STRING,
       validation: Rule => Rule.required().error('Du må fylle inn vedleggsnotis'),
@@ -38,6 +37,10 @@ const fosterbarn: StegDokument = {
       name: 'bekreftelseBeskrivelse',
       title: 'Beskrivelse av hva som må være med i bekreftelse',
       description: '(obligatorisk)',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule =>
         Rule.required().error('Du må fylle inn tekst for beskrivelse av bekreftelse'),

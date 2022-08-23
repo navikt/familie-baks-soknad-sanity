@@ -6,6 +6,7 @@ import {
   Steg,
   StegDokument,
 } from '../../../typer';
+import opplysningspaminnelse from './opplysningspaminnelse';
 
 const institusjon: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -13,12 +14,163 @@ const institusjon: StegDokument = {
   name: DokumentNavn.OM_BARNET_INSTITUSJON,
   type: SanityTyper.DOCUMENT,
   fields: [
+    opplysningspaminnelse,
     {
-      name: 'opplysningsPaminnelse',
-      title: 'Påminnelse om hva som er opplyst i om barna',
-      description: 'F.eks. "Du har opplyst at..." (obligatorisk)',
-      type: CustomSanityTyper.LOCALE_BLOCK,
-      validation: Rule => Rule.required().error('Du må fylle inn tekst for opplysningspåminnelse'),
+      name: 'institusjonIUtland',
+      title: 'Institusjon er i utlandet checkbox',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule =>
+        Rule.required().error('Du må fylle inn checkboxlabel for institusjon i utland'),
+      fields: [
+        {
+          name: 'label',
+          title: 'Label',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn label'),
+        },
+      ],
+    },
+    {
+      name: 'navn',
+      title: 'Navn på institusjon',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+        },
+      ],
+    },
+    {
+      name: 'adresse',
+      title: 'Adresse til institusjon',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+        },
+      ],
+    },
+    {
+      name: 'postnummer',
+      title: 'Postnummer til institusjon',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+        },
+      ],
+    },
+    {
+      name: 'oppholdStartdato',
+      title: 'Startdato for opphold',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+        },
+      ],
+    },
+    {
+      name: 'oppholdSluttdato',
+      title: 'Sluttdato for opphold',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        {
+          name: 'sporsmal',
+          title: 'Spørsmål',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+        },
+        {
+          name: 'feilmelding',
+          title: 'Feilmelding',
+          description: '(obligatorisk)',
+          type: CustomSanityTyper.LOCALE_STRING,
+          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+        },
+        {
+          name: 'ukjentSluttdatoLabel',
+          title: 'Label for ukjent sluttdato checkbox',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn label'),
+        },
+      ],
     },
   ],
 };
