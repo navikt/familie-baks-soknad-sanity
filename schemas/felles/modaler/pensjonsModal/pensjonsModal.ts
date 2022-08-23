@@ -1,17 +1,15 @@
 import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
-import arbeidsgiver from './arbeidsgiver';
 import datoer from './datoer';
+import farPensjonNa from './farPensjonNa';
 import hvilketLand from './hvilketLand';
-import periodeAvsluttet from './periodeAvsluttet';
 
-const arbeidsperiodeModal: SpørsmålDokumentBase = {
+const pensjonsModal: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     ...fellesFelterModal,
-    ...periodeAvsluttet,
+    ...farPensjonNa,
     ...hvilketLand,
-    ...arbeidsgiver,
     ...datoer,
     {
       title: 'Legg til flere perioder spørsmål',
@@ -23,4 +21,4 @@ const arbeidsperiodeModal: SpørsmålDokumentBase = {
   ],
 };
 
-export default arbeidsperiodeModal;
+export default pensjonsModal;

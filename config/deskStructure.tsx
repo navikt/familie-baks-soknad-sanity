@@ -78,7 +78,10 @@ const frittstaendeOrdlisteItem = S.listItem()
   .child(
     S.list()
       .title('Frittstående ord')
-      .items([documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE)]),
+      .items([
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
+      ]),
   );
 
 const modalerlisteItem = S.listItem()
@@ -90,7 +93,13 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
         documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
         documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE),
+        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
+        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),
+        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON),
+        documentListItem(DokumentNavn.MODAL_PENSJON_SOKER),
+        documentListItem(DokumentNavn.MODAL_PENSJON_ANDRE_FORELDER),
+        documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
         documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
+        documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
       ]),
   );
