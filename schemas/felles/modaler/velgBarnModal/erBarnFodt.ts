@@ -19,8 +19,16 @@ const erBarnFodt: Field[] = [
         validation: Rule => Rule.required().error('Du må fylle inn spørsmål om barnet er født'),
       },
       {
-        title: 'Feilmelding',
-        name: 'feilmelding',
+        title: 'Feilmelding ikke besvart',
+        name: 'feilmeldingUbesvart',
+        description: '(obligatorisk)',
+        type: CustomSanityTyper.LOCALE_STRING,
+        validation: Rule =>
+          Rule.required().error('Du må fylle inn en feilmelding for om barnet er født'),
+      },
+      {
+        title: 'Feilmelding barn ikke født',
+        name: 'feilmeldingIkkeFodt',
         description: '(obligatorisk)',
         type: CustomSanityTyper.LOCALE_STRING,
         validation: Rule =>

@@ -12,6 +12,12 @@ const barnetsNavn: Field[] = [
     validation: Rule => Rule.required().error('Du må fylle inn spørsmål om barnets navn'),
     fields: [
       {
+        title: 'Tittel',
+        name: 'tittel',
+        type: CustomSanityTyper.LOCALE_STRING,
+        validation: Rule => Rule.required().error('Du må fylle inn tittel om navn'),
+      },
+      {
         title: 'Fornavn',
         name: 'fornavn',
         type: SanityTyper.OBJECT,

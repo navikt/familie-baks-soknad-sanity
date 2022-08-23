@@ -16,7 +16,7 @@ const arbeidsperiodeModal: SpørsmålDokumentBase = {
     {
       title: 'Legg til flere perioder spørsmål',
       name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
     },
