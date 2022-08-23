@@ -1,6 +1,6 @@
-import { CustomSanityTyper } from '../../typer';
+import { CustomSanityTyper, Field } from '../../typer';
 
-const sporsmalMedFeilmeldingBlock = [
+const sporsmalMedFeilmeldingBlock: Field[] = [
   {
     name: 'sporsmal',
     title: 'Spørsmål',

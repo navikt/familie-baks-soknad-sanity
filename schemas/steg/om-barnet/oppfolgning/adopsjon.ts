@@ -1,11 +1,5 @@
-import {
-  CustomSanityTyper,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-  Steg,
-  StegDokument,
-} from '../../../typer';
+import { DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../../../typer';
+import sporsmalMedFeilmeldingString from '../sporsmalMedFeilmeldingString';
 import opplysningspaminnelse from './opplysningspaminnelse';
 
 const adopsjon: StegDokument = {
@@ -24,22 +18,7 @@ const adopsjon: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        {
-          name: 'sporsmal',
-          title: 'Spørsmål',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-        },
-        {
-          name: 'feilmelding',
-          title: 'Feilmelding',
-          description: '(obligatorisk)',
-          type: CustomSanityTyper.LOCALE_STRING,
-          validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-        },
-      ],
+      fields: [...sporsmalMedFeilmeldingString],
     },
   ],
 };

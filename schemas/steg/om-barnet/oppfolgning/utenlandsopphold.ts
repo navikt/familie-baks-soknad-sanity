@@ -1,11 +1,4 @@
-import {
-  CustomSanityTyper,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-  Steg,
-  StegDokument,
-} from '../../../typer';
+import { DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../../../typer';
 import opplysningspaminnelse from './opplysningspaminnelse';
 
 const utenlandsopphold: StegDokument = {

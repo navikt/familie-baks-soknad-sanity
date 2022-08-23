@@ -10,22 +10,10 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
+import sporsmalMedFeilmeldingBlock from './sporsmalMedFeilmeldingBlock';
 
 const spørsmålMedVedlegg: Field[] = [
-  {
-    name: 'sporsmal',
-    title: 'Spørsmål',
-    description: '(obligatorisk)',
-    type: CustomSanityTyper.LOCALE_BLOCK,
-    validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-  },
-  {
-    name: 'feilmelding',
-    title: 'Feilmelding',
-    description: '(obligatorisk)',
-    type: CustomSanityTyper.LOCALE_BLOCK,
-    validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
-  },
+  ...sporsmalMedFeilmeldingBlock,
   {
     name: 'vedleggsnotis',
     title: (

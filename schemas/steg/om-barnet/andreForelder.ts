@@ -4,12 +4,24 @@ import {
   CustomSanityTyper,
   DokumentNavn,
   dokumentTittel,
+  Field,
   SanityTyper,
   Steg,
   StegDokument,
 } from '../../typer';
 import sporsmalMedFeilmeldingBlock from './sporsmalMedFeilmeldingBlock';
 import sporsmalMedFeilmeldingString from './sporsmalMedFeilmeldingString';
+
+const spørsmålMedAlert: Field[] = [
+  ...sporsmalMedFeilmeldingBlock,
+  {
+    name: 'alert',
+    title: 'Alert',
+    type: CustomSanityTyper.ALERT_STRING,
+    description: '(obligatorisk)',
+    validation: Rule => Rule.required().error('Du må fylle inn alert'),
+  },
+];
 
 const andreForelder: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -104,16 +116,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        ...sporsmalMedFeilmeldingBlock,
-        {
-          name: 'alert',
-          title: 'Alert',
-          type: CustomSanityTyper.ALERT_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn alert'),
-        },
-      ],
+      fields: [...spørsmålMedAlert],
     },
     {
       name: 'oppholdIUtland',
@@ -124,16 +127,7 @@ const andreForelder: StegDokument = {
         collapsed: true,
       },
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        ...sporsmalMedFeilmeldingBlock,
-        {
-          name: 'alert',
-          title: 'Alert',
-          type: CustomSanityTyper.ALERT_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn alert'),
-        },
-      ],
+      fields: [...spørsmålMedAlert],
     },
     {
       name: 'arbeidIUtland',
