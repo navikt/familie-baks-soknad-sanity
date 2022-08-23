@@ -1,13 +1,43 @@
 import React from 'react';
 
+import FileContentIcon from '../../../images/FileContentIcon';
 import {
   CustomSanityTyper,
   DokumentNavn,
   dokumentTittel,
+  Field,
   SanityTyper,
   Steg,
   StegDokument,
 } from '../../typer';
+
+const spørsmålMedVedlegg: Field[] = [
+  {
+    name: 'sporsmal',
+    title: 'Spørsmål',
+    description: '(obligatorisk)',
+    type: CustomSanityTyper.LOCALE_BLOCK,
+    validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+  },
+  {
+    name: 'feilmelding',
+    title: 'Feilmelding',
+    description: '(obligatorisk)',
+    type: CustomSanityTyper.LOCALE_BLOCK,
+    validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+  },
+  {
+    name: 'vedleggsnotis',
+    title: (
+      <span>
+        <FileContentIcon /> Vedleggsnotis
+      </span>
+    ),
+    description: 'Beskjed om at vedlegg må lastes opp. (obligatorisk)',
+    type: CustomSanityTyper.LOCALE_STRING,
+    validation: Rule => Rule.required().error('Du må fylle inn vedleggsnotis'),
+  },
+];
 
 const bosted: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -23,18 +53,33 @@ const bosted: StegDokument = {
       validation: Rule => Rule.required().error('Du må fylle inn tittel for bosted'),
     },
     {
-      name: 'sporsmal',
-      title: 'Spørsmål',
+      name: 'brodtekst',
+      title: 'Brødtekst',
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      validation: Rule => Rule.required().error('Du må fylle inn brødtekst for bosted'),
     },
     {
-      name: 'feilmelding',
-      title: 'Feilmelding',
-      description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
-      validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
+      name: 'borFastMedSoker',
+      title: 'Bor barn fast med søker',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [...spørsmålMedVedlegg],
+    },
+    {
+      name: 'skriftligAvtaleDeltBosted',
+      title: 'Skriftlig avtale om delt bosted',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      type: SanityTyper.OBJECT,
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [...spørsmålMedVedlegg],
     },
   ],
 };
