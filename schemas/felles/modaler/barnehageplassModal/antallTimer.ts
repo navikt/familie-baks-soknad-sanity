@@ -2,10 +2,14 @@ import { CustomSanityTyper, Field, SanityTyper } from '../../../typer';
 
 const antallTimer: Field[] = [
   {
-    title: 'Hvor mange timer i uken har barnet fått tildelt barnehageplass?',
+    title: 'antall timer',
     name: 'antallTimer',
     type: SanityTyper.OBJECT,
     description: '(obligatorisk)',
+    options: {
+      collapsable: true,
+      collapsed: true,
+    },
     validation: Rule => Rule.required().error('Du må fylle inn spørsmål om timer i barnehagen'),
     fields: [
       {
