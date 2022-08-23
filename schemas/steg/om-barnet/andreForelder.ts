@@ -35,6 +35,33 @@ const andreForelder: StegDokument = {
       validation: Rule => Rule.required().error('Du må fylle inn tittel for andre forelder'),
     },
     {
+      name: 'hvemErAndreForelder',
+      title: 'Hvem er andre forelder',
+      type: SanityTyper.OBJECT,
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
+      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
+      fields: [
+        ...sporsmalMedFeilmeldingString,
+        {
+          name: 'svarAlternativSammesom',
+          title: 'Svaralternativ for samme forelder som annet barn',
+          type: CustomSanityTyper.LOCALE_BLOCK,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn svaralternativ'),
+        },
+        {
+          name: 'svarAlternativAnnenForelder',
+          title: 'Svaralternativ for annen forelder',
+          type: CustomSanityTyper.LOCALE_STRING,
+          description: '(obligatorisk)',
+          validation: Rule => Rule.required().error('Du må fylle inn svaralternativ'),
+        },
+      ],
+    },
+    {
       name: 'kanIkkeGiOpplysninger',
       title: 'Kan ikke gi opplysninger checkbox',
       type: SanityTyper.OBJECT,
