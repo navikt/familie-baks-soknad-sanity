@@ -1,6 +1,8 @@
-import spørsmål from './spørsmål';
+import andreForelder from './andreForelder';
+import bosted from './bosted';
+import oppfolgning from './oppfolgning';
 import tittel from './tittel';
 
-const omBarnetDokumenter = [tittel, spørsmål];
+const omBarnetDokumenter = [tittel, oppfolgning, andreForelder, bosted];
 
 export default omBarnetDokumenter;

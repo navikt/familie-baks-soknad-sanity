@@ -66,7 +66,9 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.OM_BARNET, [
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
-          spørsmålListItem(DokumentNavn.OM_BARNET_SPORSMAL),
+          documentListItem(DokumentNavn.OM_BARNET_OPPFOLGNING),
+          documentListItem(DokumentNavn.OM_BARNET_ANDRE_FORELDER),
+          documentListItem(DokumentNavn.OM_BARNET_BOSTED),
         ]),
       ]),
   );
