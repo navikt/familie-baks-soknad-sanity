@@ -93,6 +93,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
           documentListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_FORELDER),
           documentListItem(DokumentNavn.EOS_FOR_BARN_OMSORGSPERSON),
+          documentListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
         ]),
         stegItem(Steg.OPPSUMMERING, [documentListItem(DokumentNavn.OPPSUMMERING_TITTEL)]),
         stegItem(Steg.DOKUMENTASJON, [documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL)]),

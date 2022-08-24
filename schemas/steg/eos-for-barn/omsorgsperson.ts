@@ -8,6 +8,7 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
+import slektsforhold from './slektsforhold';
 
 const omsorgsperson: StegDokument = {
   steg: Steg.EØS_FOR_BARN,
