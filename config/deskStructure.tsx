@@ -99,6 +99,7 @@ const steglisteItem = S.listItem()
         documentListItem(DokumentNavn.OPPSUMMERING),
         stegItem(Steg.DOKUMENTASJON, [
           documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
+          documentListItem(DokumentNavn.DOKUMENTASJON_INFO),
           documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
         ]),
         stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
