@@ -8,7 +8,8 @@ import {
   Steg,
   StegDokument,
 } from '../../typer';
-import slektsforhold from './slektsforhold';
+import adresse from './adresse';
+import idnummer from './idnummer';
 
 const omsorgsperson: StegDokument = {
   steg: Steg.EØS_FOR_BARN,
@@ -38,46 +39,8 @@ const omsorgsperson: StegDokument = {
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
       fields: [...sporsmalMedFeilmeldingBlock],
     },
-    {
-      name: 'idnummer',
-      title: 'Idnummer',
-      type: SanityTyper.OBJECT,
-      options: {
-        collapsable: true,
-        collapsed: true,
-      },
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        ...sporsmalMedFeilmeldingString,
-        {
-          name: 'ukjentLabel',
-          title: 'Ukjent idnummer checkbox',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn label'),
-        },
-      ],
-    },
-    {
-      name: 'adresse',
-      title: 'Adresse',
-      type: SanityTyper.OBJECT,
-      options: {
-        collapsable: true,
-        collapsed: true,
-      },
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [
-        ...sporsmalMedFeilmeldingString,
-        {
-          name: 'ukjentLabel',
-          title: 'Ukjent adresse checkbox',
-          type: CustomSanityTyper.LOCALE_STRING,
-          description: '(obligatorisk)',
-          validation: Rule => Rule.required().error('Du må fylle inn label'),
-        },
-      ],
-    },
+    idnummer,
+    adresse,
     {
       name: 'arbeidIUtland',
       title: 'Arbeid i utlandet',
