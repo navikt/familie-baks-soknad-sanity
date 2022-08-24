@@ -1398,14 +1398,14 @@
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
-"@sanity/dashboard@^2.30.4":
-  version "2.30.4"
-  resolved "https://registry.yarnpkg.com/@sanity/dashboard/-/dashboard-2.30.4.tgz#21a880e47720bb0b819602befeeb8fd32dc2e474"
-  integrity sha512-B15MJ8hD2U1m9XNKuOK0K7+ZRh4+OCTsfyAESNjrnxPpRsTpwbRDb5ucOvPGd5gM5WDI/DK4hkQdoFEwVrGbfg==
+"@sanity/dashboard@^2.31.0":
+  version "2.31.0"
+  resolved "https://registry.yarnpkg.com/@sanity/dashboard/-/dashboard-2.31.0.tgz#d990a6d537a127ab74d0e9b5836efbd40d0be1bb"
+  integrity sha512-fAJLt2MmThEV7YmfEJiwtvPgVCOec09jQ9E9X0y7Ds/NFKpTdMCrGRAyCcyykZTiL/k7eDGsIP3O0yoGR90dLQ==
   dependencies:
     "@sanity/icons" "^1.2.6"
     "@sanity/image-url" "^1.0.1"
-    "@sanity/types" "2.30.3"
+    "@sanity/types" "2.31.0"
     "@sanity/ui" "^0.37.9"
     lodash "^4.17.15"
     rxjs "^6.5.3"
@@ -1829,10 +1829,10 @@
     "@types/react" "^17.0.42"
     rxjs "^6.5.3"
 
-"@sanity/types@2.30.3":
-  version "2.30.3"
-  resolved "https://registry.yarnpkg.com/@sanity/types/-/types-2.30.3.tgz#107808cd2a23677eadd12c9061f5419760801026"
-  integrity sha512-PS/2PPTVXE3mS4eAMCUbbrVuf+uPCpKxP4XRpTP2YN1LWVW64yCrx3FE3TNm82HMFnm1HmngBpEVEFx0XuZJGQ==
+"@sanity/types@2.31.0":
+  version "2.31.0"
+  resolved "https://registry.yarnpkg.com/@sanity/types/-/types-2.31.0.tgz#31964058e52cb5fafd5939635c8062563ae4ace2"
+  integrity sha512-2CmVMkZMwvG8vuCZtVfz++C/0SIhRUkUym4pKEyOhLjmJJjmHj9c2FW56gUqiMB6Mr2B//i0ICrCa3DyllXIug==
   dependencies:
     "@sanity/client" "^3.3.3"
     "@sanity/color" "^2.1.8"
