@@ -97,17 +97,6 @@ const omsorgsperson: StegDokument = {
       fields: [...sporsmalMedFeilmeldingBlock],
     },
     {
-      name: 'andreUtbetalingerGjenlevende',
-      title: 'Andre utbetalinger gjenlevende',
-      type: SanityTyper.OBJECT,
-      options: {
-        collapsable: true,
-        collapsed: true,
-      },
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [...sporsmalMedFeilmeldingBlock],
-    },
-    {
       name: 'pagaendeSoknadOmYtelseFraEos',
       title: 'Pågående søknad om ytelse fra eøs-land',
       type: SanityTyper.OBJECT,
