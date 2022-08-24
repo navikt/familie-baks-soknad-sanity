@@ -101,6 +101,8 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
           documentListItem(DokumentNavn.DOKUMENTASJON_INFO),
           documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
+          documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
+          documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
         ]),
         stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
       ]),
