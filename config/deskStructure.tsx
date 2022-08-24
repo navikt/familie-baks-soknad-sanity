@@ -85,6 +85,11 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_BARNET_BOSTED),
           oppfølgningOmBarnetListeItem,
         ]),
+        stegItem(Steg.EØS_FOR_SØKER, [documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL)]),
+        stegItem(Steg.EØS_FOR_BARN, [documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL)]),
+        stegItem(Steg.OPPSUMMERING, [documentListItem(DokumentNavn.OPPSUMMERING_TITTEL)]),
+        stegItem(Steg.DOKUMENTASJON, [documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL)]),
+        stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
       ]),
   );
 
