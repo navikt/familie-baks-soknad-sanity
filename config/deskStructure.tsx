@@ -91,7 +91,10 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.EØS_FOR_BARN, [documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL)]),
         stegItem(Steg.OPPSUMMERING, [documentListItem(DokumentNavn.OPPSUMMERING_TITTEL)]),
-        stegItem(Steg.DOKUMENTASJON, [documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL)]),
+        stegItem(Steg.DOKUMENTASJON, [
+          documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
+          documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
+        ]),
         stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
       ]),
   );
