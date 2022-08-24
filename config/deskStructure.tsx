@@ -89,8 +89,14 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
           spørsmålListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
         ]),
-        stegItem(Steg.EØS_FOR_BARN, [documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL)]),
-        stegItem(Steg.OPPSUMMERING, [documentListItem(DokumentNavn.OPPSUMMERING_TITTEL)]),
+        stegItem(Steg.EØS_FOR_BARN, [
+          documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
+          documentListItem(DokumentNavn.EOS_FOR_BARN_BARNET),
+          documentListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_FORELDER),
+          documentListItem(DokumentNavn.EOS_FOR_BARN_OMSORGSPERSON),
+          documentListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+        ]),
+        documentListItem(DokumentNavn.OPPSUMMERING),
         stegItem(Steg.DOKUMENTASJON, [
           documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
           documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
