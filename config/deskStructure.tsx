@@ -85,7 +85,10 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_BARNET_BOSTED),
           oppfølgningOmBarnetListeItem,
         ]),
-        stegItem(Steg.EØS_FOR_SØKER, [documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL)]),
+        stegItem(Steg.EØS_FOR_SØKER, [
+          documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
+          spørsmålListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
+        ]),
         stegItem(Steg.EØS_FOR_BARN, [
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
           documentListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_FORELDER),
