@@ -65,6 +65,8 @@ const customBlock = {
                       value: EFlettefelt.PERSONTYPE,
                     },
                     { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
+                    { title: 'Antall', value: EFlettefelt.ANTALL },
+                    { title: 'Total antall', value: EFlettefelt.TOTAL_ANTALL },
                   ],
                 },
               },
