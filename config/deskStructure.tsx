@@ -15,6 +15,7 @@ export default () =>
       modalerlisteItem,
       frittstaendeOrdlisteItem,
       documentListItem(DokumentNavn.NAVIGASJON),
+      documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
