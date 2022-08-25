@@ -39,6 +39,20 @@ const navigasjon: DokumentBase = {
       description: '(obligatorisk)',
       validation: Rule => Rule.required().error('Du må fylle inn avbrytknapp-tekst'),
     },
+    {
+      title: 'Fortsett på søknad-knapp',
+      name: 'fortsettPaSoknad',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(obligatorisk)',
+      validation: Rule => Rule.required().error('Du må fylle inn fortsett på søknad-tekst'),
+    },
+    {
+      title: 'Start på nytt-knapp',
+      name: 'startPaNytt',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(obligatorisk)',
+      validation: Rule => Rule.required().error('Du må fylle inn start på nytt-tekst'),
+    },
   ],
 };
 
