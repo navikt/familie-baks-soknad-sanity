@@ -1,13 +1,6 @@
 import sporsmalMedFeilmeldingBlock from '../../felles/sporsmalMedFeilmeldingBlock';
 import sporsmalMedFeilmeldingString from '../../felles/sporsmalMedFeilmeldingString';
-import {
-  CustomSanityTyper,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-  Steg,
-  StegDokument,
-} from '../../typer';
+import { DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../../typer';
 import adresse from './adresse';
 import idnummer from './idnummer';
 import slektsforhold from './slektsforhold';
