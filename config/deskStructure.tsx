@@ -97,7 +97,13 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
         ]),
         documentListItem(DokumentNavn.OPPSUMMERING),
-        stegItem(Steg.DOKUMENTASJON, [documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL)]),
+        stegItem(Steg.DOKUMENTASJON, [
+          documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
+          documentListItem(DokumentNavn.DOKUMENTASJON_INFO),
+          documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
+          documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
+          documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
+        ]),
         documentListItem(DokumentNavn.KVITTERING),
       ]),
   );
