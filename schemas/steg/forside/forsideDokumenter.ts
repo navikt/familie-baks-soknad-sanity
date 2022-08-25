@@ -1,4 +1,5 @@
 import bekreftelsesboks from './bekreftelsesboks';
+import mellomlagretAlert from './mellomlagretAlert';
 import personopplysningslenke from './personopplysningslenke';
 import punktliste from './punktliste';
 import soknadstittel from './soknadstittel';
@@ -12,6 +13,7 @@ const forsideDokumenter = [
   bekreftelsesboks,
   punktliste,
   personopplysningslenke,
+  mellomlagretAlert,
 ];
 
 export default forsideDokumenter;

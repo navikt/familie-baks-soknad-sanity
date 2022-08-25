@@ -61,6 +61,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
           documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
+          documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
         ]),
         stegItem(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
