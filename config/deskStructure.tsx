@@ -104,7 +104,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
           documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
         ]),
-        stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
+        documentListItem(DokumentNavn.KVITTERING),
       ]),
   );
 
