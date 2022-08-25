@@ -20,6 +20,13 @@ const kvitteringsdokument: StegDokument = {
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn tittel til steget'),
     },
+    {
+      title: 'Alert',
+      name: 'alert',
+      type: CustomSanityTyper.ALERT_BLOCK,
+      description: '(obligatorisk)',
+      validation: rule => rule.required().error('Du må fylle inn alert'),
+    },
   ],
 };
 

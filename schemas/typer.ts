@@ -207,4 +207,6 @@ export enum EFlettefelt {
   I_UTENFOR = 'I_UTENFOR',
   ANTALL = 'ANTALL',
   TOTAL_ANTALL = 'TOTAL_ANTALL',
+  DATO = 'DATO',
+  KLOKKESLETT = 'KLOKKESLETT',
 }
