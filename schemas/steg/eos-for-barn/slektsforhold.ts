@@ -3,8 +3,8 @@ import { Field, SanityTyper } from '../../typer';
 
 const slektsforhold: Field[] = [
   {
-    name: 'slektsforholdMedSoker',
-    title: 'Slektsforhold med søker',
+    name: 'slektsforhold',
+    title: 'Slektsforhold',
     type: SanityTyper.OBJECT,
     options: {
       collapsable: true,
