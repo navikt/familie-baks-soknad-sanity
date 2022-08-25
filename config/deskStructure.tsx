@@ -15,6 +15,7 @@ export default () =>
       modalerlisteItem,
       frittstaendeOrdlisteItem,
       documentListItem(DokumentNavn.NAVIGASJON),
+      documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
 const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
@@ -116,6 +117,8 @@ const frittstaendeOrdlisteItem = S.listItem()
       .items([
         documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
         documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_SVARALTERNATIVER),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_PREPOSISJONER),
       ]),
   );
 

@@ -10,6 +10,7 @@ import {
 } from '../../typer';
 import adresse from './adresse';
 import idnummer from './idnummer';
+import slektsforhold from './slektsforhold';
 
 const omsorgsperson: StegDokument = {
   steg: Steg.EØS_FOR_BARN,
@@ -28,17 +29,7 @@ const omsorgsperson: StegDokument = {
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
       fields: [...sporsmalMedFeilmeldingString],
     },
-    {
-      name: 'slektsforhold',
-      title: 'Slektsforhold',
-      type: SanityTyper.OBJECT,
-      options: {
-        collapsable: true,
-        collapsed: true,
-      },
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
-      fields: [...sporsmalMedFeilmeldingBlock],
-    },
+    ...slektsforhold,
     idnummer,
     adresse,
     {

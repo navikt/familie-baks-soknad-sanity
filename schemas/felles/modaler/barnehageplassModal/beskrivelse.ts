@@ -36,6 +36,12 @@ const beskrivelse: Field[] = [
         description: '(obligatorisk)',
         fields: [
           {
+            title: 'Placeholder',
+            name: 'placeholder',
+            type: CustomSanityTyper.LOCALE_STRING,
+            validation: Rule => Rule.required().error('Du må fylle inn placeholder for dropdown'),
+          },
+          {
             title: 'Barnet har barnehageplass nå',
             name: 'barnehageplassNa',
             type: CustomSanityTyper.LOCALE_STRING,

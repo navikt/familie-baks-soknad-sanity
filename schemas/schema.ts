@@ -8,6 +8,7 @@ import customBlock from './customBlock';
 import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
 import modalerDokumenter from './felles/modaler/modalerDokumenter';
 import navigasjon from './felles/navigasjon';
+import teksterForDato from './felles/teksterForDato';
 import fieldsBase from './fieldsBase';
 import fieldsBaseForSteg from './fieldsBaseForSteg';
 import localeBlock from './localeBlock';
@@ -46,6 +47,7 @@ const dokumenterPåTversAvSteg = [
   ...modalerDokumenter,
   ...frittstaendeOrdDokumenter,
   navigasjon,
+  teksterForDato,
 ].map((dok: DokumentBase) => ({
   ...dok,
   fields: [...fieldsBase, ...dok.fields],
