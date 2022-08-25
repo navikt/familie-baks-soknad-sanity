@@ -16,6 +16,10 @@ const kvitteringsdokument: StegDokument = {
     {
       title: 'Tittel',
       name: 'tittel',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.LOCALE_STRING,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn tittel til steget'),
@@ -23,6 +27,10 @@ const kvitteringsdokument: StegDokument = {
     {
       title: 'Alert',
       name: 'alert',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.ALERT_BLOCK,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn alert'),
@@ -30,6 +38,10 @@ const kvitteringsdokument: StegDokument = {
     {
       title: 'Generell info',
       name: 'generellInfo',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn generell info'),
@@ -37,6 +49,10 @@ const kvitteringsdokument: StegDokument = {
     {
       title: 'Kontonummer',
       name: 'kontonummer',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn kontonummer'),
@@ -44,6 +60,10 @@ const kvitteringsdokument: StegDokument = {
     {
       title: 'Ettersending',
       name: 'ettersending',
+      options: {
+        collapsable: true,
+        collapsed: true,
+      },
       type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn ettersending'),
