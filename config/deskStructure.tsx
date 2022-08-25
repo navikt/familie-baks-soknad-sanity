@@ -98,7 +98,7 @@ const steglisteItem = S.listItem()
         ]),
         documentListItem(DokumentNavn.OPPSUMMERING),
         stegItem(Steg.DOKUMENTASJON, [documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL)]),
-        stegItem(Steg.KVITTERING, [documentListItem(DokumentNavn.KVITTERING_TITTEL)]),
+        documentListItem(DokumentNavn.KVITTERING),
       ]),
   );
 
