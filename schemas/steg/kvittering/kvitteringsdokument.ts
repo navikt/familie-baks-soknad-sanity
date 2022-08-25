@@ -20,7 +20,7 @@ const kvitteringsdokument: StegDokument = {
         collapsable: true,
         collapsed: true,
       },
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(obligatorisk)',
       validation: rule => rule.required().error('Du må fylle inn tittel til steget'),
     },
