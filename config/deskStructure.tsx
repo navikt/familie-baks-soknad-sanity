@@ -116,6 +116,8 @@ const frittstaendeOrdlisteItem = S.listItem()
       .items([
         documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
         documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_SVARALTERNATIVER),
+        documentListItem(DokumentNavn.FRITTSTAENDEORD_PREPOSISJONER),
       ]),
   );
 
