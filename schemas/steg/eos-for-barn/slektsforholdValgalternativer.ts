@@ -14,6 +14,13 @@ const slektsforholdValgalternativer: StegDokument = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
+      title: 'Placeholder',
+      name: 'placeholder',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(obligatorisk)',
+      validation: Rule => Rule.required().error('Du må fylle inn placeholder for dropdown'),
+    },
+    {
       title: 'Forelder',
       name: 'forelder',
       type: CustomSanityTyper.LOCALE_STRING,

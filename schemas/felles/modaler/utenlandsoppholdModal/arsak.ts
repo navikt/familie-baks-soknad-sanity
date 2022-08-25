@@ -36,6 +36,12 @@ const arsak: Field[] = [
         description: '(obligatorisk)',
         fields: [
           {
+            title: 'Placeholder',
+            name: 'placeholder',
+            type: CustomSanityTyper.LOCALE_STRING,
+            validation: Rule => Rule.required().error('Du må fylle inn placeholder for dropdown'),
+          },
+          {
             title: 'Flyttet permanent til Norge',
             name: 'permanentTilNorge',
             type: CustomSanityTyper.LOCALE_STRING,

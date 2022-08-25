@@ -1,11 +1,4 @@
-import {
-  CustomSanityTyper,
-  DokumentBase,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-  SpørsmålDokumentBase,
-} from '../../../typer';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
 import fellesFelterModal from '../fellesFelterModal';
 import datoer from './datoer';
 import hvilketLand from './hvilketLand';
