@@ -26,6 +26,13 @@ const fellesFelterModal: Field[] = [
         validation: Rule => Rule.required().error('Du må fylle inn tekst for legg til-knappen'),
       },
       {
+        title: 'Legg til-knapp feilmelding',
+        name: 'leggTilFeilmelding',
+        type: CustomSanityTyper.LOCALE_BLOCK,
+        description: '(obligatorisk)',
+        validation: Rule => Rule.required().error('Du må fylle feilmelding for legg til-knappen'),
+      },
+      {
         title: 'Fjern-knapp',
         name: 'fjern',
         type: CustomSanityTyper.LOCALE_BLOCK,
