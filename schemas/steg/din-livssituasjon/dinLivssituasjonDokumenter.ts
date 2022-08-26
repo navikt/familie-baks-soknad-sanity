@@ -1,10 +1,10 @@
 import localeblock from '../../felles/localeblock';
+import sporsmalDokument from '../../felles/sporsmalDokument';
 import { DokumentNavn, Steg } from '../../typer';
-import spørsmål from './spørsmål';
 
 const dinLivssituasjonDokumenter = [
   localeblock(Steg.DIN_LIVSSITUASJON, DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
-  spørsmål,
+  sporsmalDokument(Steg.DIN_LIVSSITUASJON, DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
 ];
 
 export default dinLivssituasjonDokumenter;

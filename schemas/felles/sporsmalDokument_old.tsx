@@ -1,19 +1,9 @@
 import React from 'react';
 
 import FileContentIcon from '../../images/FileContentIcon';
-import {
-  CustomSanityTyper,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-  Steg,
-  StegDokument,
-} from '../typer';
+import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../typer';
 
-const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
-  steg: steg,
-  title: dokumentTittel[dokumentNavn],
-  name: dokumentNavn,
+const sporsmalDokument_old: SpørsmålDokumentBase = {
   type: SanityTyper.DOCUMENT,
   fields: [
     {
@@ -53,6 +43,6 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
       type: CustomSanityTyper.ALERT_BLOCK,
     },
   ],
-});
+};
 
-export default sporsmalDokument;
+export default sporsmalDokument_old;
