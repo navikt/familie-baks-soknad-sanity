@@ -22,6 +22,7 @@ import kvitteringsdokument from './steg/kvittering/kvitteringsdokument';
 import omBarnaDokumenter from './steg/om-barna/omBarnaDokumenter';
 import omBarnetDokumenter from './steg/om-barnet/omBarnetDokumenter';
 import omDegDokumenter from './steg/om-deg/omDegDokumenter';
+import oppsummeringDokumenter from './steg/oppsummering/oppsummeringDokumenter';
 import oppsummeringsdokument from './steg/oppsummering/oppsummeringsdokument';
 import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
 import { DokumentBase, StegDokument } from './typer';
@@ -35,7 +36,7 @@ const dokumenterForSteg = [
   ...omBarnetDokumenter,
   ...eosForSokerDokumenter,
   ...eosForBarnDokumenter,
-  oppsummeringsdokument,
+  ...oppsummeringDokumenter,
   ...dokumentasjonDokumenter,
   kvitteringsdokument,
 ].map((dok: StegDokument) => ({
