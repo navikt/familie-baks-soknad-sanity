@@ -1,8 +1,8 @@
-import localeblock from '../../felles/localeblock';
-import localestring from '../../felles/localestring';
-import { DokumentNavn, Steg } from '../../typer';
+import localeblock from '../felles/localeblock';
+import localestring from '../felles/localestring';
+import { DokumentNavn, Steg } from '../typer';
 
-const forsideDokumenter = [
+const forside = [
   localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDERHILSEN),
   localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL),
   localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_SPRAKVELGER),
@@ -13,4 +13,4 @@ const forsideDokumenter = [
   localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
 ];
 
-export default forsideDokumenter;
+export default forside;

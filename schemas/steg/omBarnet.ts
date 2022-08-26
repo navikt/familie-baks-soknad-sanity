@@ -1,9 +1,9 @@
-import localeblock from '../../felles/localeblock';
-import localestring from '../../felles/localestring';
-import sporsmalDokument from '../../felles/sporsmalDokument';
-import { DokumentNavn, Steg } from '../../typer';
+import localeblock from '../felles/localeblock';
+import localestring from '../felles/localestring';
+import sporsmalDokument from '../felles/sporsmalDokument';
+import { DokumentNavn, Steg } from '../typer';
 
-const omBarnetDokumenter = [
+const omBarnet = [
   localeblock(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL),
   localestring(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SUBTITLER),
   sporsmalDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SPORSMAL),
@@ -11,4 +11,4 @@ const omBarnetDokumenter = [
   localeblock(Steg.OM_BARNET, DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
 ];
 
-export default omBarnetDokumenter;
+export default omBarnet;

@@ -13,31 +13,31 @@ import fieldsBase from './fieldsBase';
 import fieldsBaseForSteg from './fieldsBaseForSteg';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
-import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
+import dinLivssituasjon from './steg/dinLivssituasjon';
 import dokumentasjonDokumenter from './steg/dokumentasjon/dokumentasjonDokumenter';
 import eosForBarnDokumenter from './steg/eos-for-barn/eosForBarnDokumenter';
-import eosForSokerDokumenter from './steg/eos-for-soker/eosForSokerDokumenter';
-import forsideDokumenter from './steg/forside/forsideDokumenter';
-import kvitteringDokumenter from './steg/kvittering/kvitteringDokumenter';
-import omBarnaDokumenter from './steg/om-barna/omBarnaDokumenter';
-import omBarnetDokumenter from './steg/om-barnet/omBarnetDokumenter';
-import omDegDokumenter from './steg/om-deg/omDegDokumenter';
-import oppsummeringDokumenter from './steg/oppsummering/oppsummeringDokumenter';
+import eosForSoker from './steg/eosForSoker';
+import forside from './steg/forside';
+import kvittering from './steg/kvittering';
+import omBarna from './steg/omBarna';
+import omBarnet from './steg/omBarnet';
+import omDeg from './steg/omDeg';
+import oppsummering from './steg/oppsummering';
 import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
 import { DokumentBase, StegDokument } from './typer';
 
 const dokumenterForSteg = [
-  ...forsideDokumenter,
-  ...omDegDokumenter,
-  ...dinLivssituasjonDokumenter,
+  ...forside,
+  ...omDeg,
+  ...dinLivssituasjon,
   ...velgBarnDokumenter,
-  ...omBarnaDokumenter,
-  ...omBarnetDokumenter,
-  ...eosForSokerDokumenter,
+  ...omBarna,
+  ...omBarnet,
+  ...eosForSoker,
   ...eosForBarnDokumenter,
-  ...oppsummeringDokumenter,
+  ...oppsummering,
   ...dokumentasjonDokumenter,
-  ...kvitteringDokumenter,
+  ...kvittering,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
