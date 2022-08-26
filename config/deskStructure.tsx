@@ -60,8 +60,8 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
-          documentListItem(DokumentNavn.VELG_BARN_LENKER),
-          documentListItem(DokumentNavn.VELG_BARN_KORT),
+          mappeListItem(DokumentNavn.VELG_BARN_LENKER),
+          mappeListItem(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
         ]),
         stegItem(Steg.OM_BARNA, [
           documentListItem(DokumentNavn.OM_BARNA_TITTEL),
