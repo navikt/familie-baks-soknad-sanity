@@ -18,12 +18,11 @@ import dokumentasjonDokumenter from './steg/dokumentasjon/dokumentasjonDokumente
 import eosForBarnDokumenter from './steg/eos-for-barn/eosForBarnDokumenter';
 import eosForSokerDokumenter from './steg/eos-for-soker/eosForSokerDokumenter';
 import forsideDokumenter from './steg/forside/forsideDokumenter';
-import kvitteringsdokument from './steg/kvittering/kvitteringsdokument';
+import kvitteringDokumenter from './steg/kvittering/kvitteringDokumenter';
 import omBarnaDokumenter from './steg/om-barna/omBarnaDokumenter';
 import omBarnetDokumenter from './steg/om-barnet/omBarnetDokumenter';
 import omDegDokumenter from './steg/om-deg/omDegDokumenter';
 import oppsummeringDokumenter from './steg/oppsummering/oppsummeringDokumenter';
-import oppsummeringsdokument from './steg/oppsummering/oppsummeringsdokument';
 import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
 import { DokumentBase, StegDokument } from './typer';
 
@@ -38,7 +37,7 @@ const dokumenterForSteg = [
   ...eosForBarnDokumenter,
   ...oppsummeringDokumenter,
   ...dokumentasjonDokumenter,
-  kvitteringsdokument,
+  ...kvitteringDokumenter,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],

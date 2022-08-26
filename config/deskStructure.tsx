@@ -96,7 +96,10 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
           documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
         ]),
-        documentListItem(DokumentNavn.KVITTERING),
+        stegItem(Steg.KVITTERING, [
+          documentListItem(DokumentNavn.KVITTERING_TITTEL),
+          mappeListItem(DokumentNavn.KVITTERING_ANDRE_TEKSTER),
+        ]),
       ]),
   );
 
