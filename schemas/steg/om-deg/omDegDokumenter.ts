@@ -1,7 +1,12 @@
-import personopplysninger from './personopplysninger';
+import localeblock from '../../felles/localeblock';
+import localestring from '../../felles/localestring';
+import { DokumentNavn, Steg } from '../../typer';
 import spørsmål from './spørsmål';
-import tittel from './tittel';
 
-const omDegDokumenter = [tittel, personopplysninger, spørsmål];
+const omDegDokumenter = [
+  localeblock(Steg.OM_DEG, DokumentNavn.OM_DEG_TITTEL),
+  localestring(Steg.OM_DEG, DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+  spørsmål,
+];
 
 export default omDegDokumenter;

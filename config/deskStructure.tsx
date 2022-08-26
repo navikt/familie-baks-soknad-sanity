@@ -28,7 +28,7 @@ const documentListItem = (dokumentNavn: DokumentNavn) => {
     .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
-const spørsmålListItem = (dokumentNavn: DokumentNavn) =>
+const mappeListItem = (dokumentNavn: DokumentNavn) =>
   S.listItem()
     .title(dokumentTittel[dokumentNavn])
     .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
@@ -59,18 +59,19 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.FORSIDE_TITTEL),
           documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
-          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
           documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
         ]),
         stegItem(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
-          documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
-          spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
+          mappeListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+          mappeListItem(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
         stegItem(Steg.DIN_LIVSSITUASJON, [
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
-          spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
+          mappeListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
         stegItem(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
@@ -79,7 +80,7 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.OM_BARNA, [
           documentListItem(DokumentNavn.OM_BARNA_TITTEL),
-          spørsmålListItem(DokumentNavn.OM_BARNA_SPORSMAL),
+          mappeListItem(DokumentNavn.OM_BARNA_SPORSMAL),
         ]),
         stegItem(Steg.OM_BARNET, [
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
@@ -89,7 +90,7 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.EØS_FOR_SØKER, [
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
-          spørsmålListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
+          mappeListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
         ]),
         stegItem(Steg.EØS_FOR_BARN, [
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
