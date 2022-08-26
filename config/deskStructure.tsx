@@ -60,7 +60,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
           documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
-          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
+          mappeListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
           documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
         ]),
@@ -84,8 +84,8 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.OM_BARNET, [
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
-          documentListItem(DokumentNavn.OM_BARNET_ANDRE_FORELDER),
-          documentListItem(DokumentNavn.OM_BARNET_BOSTED),
+          mappeListItem(DokumentNavn.OM_BARNET_SUBTITLER),
+          mappeListItem(DokumentNavn.OM_BARNET_SPORSMAL),
           oppfølgningOmBarnetListeItem,
         ]),
         stegItem(Steg.EØS_FOR_SØKER, [

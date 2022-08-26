@@ -20,14 +20,14 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
       name: 'sporsmal',
       title: 'Spørsmål',
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
     },
     {
       name: 'feilmelding',
       title: 'Feilmelding',
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
     },
     {
@@ -35,6 +35,12 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
       title: 'Beskrivelse av spørsmål',
       description: 'F.eks. dd.mm.åååå under spørsmål om dato. (frivillig)',
       type: CustomSanityTyper.LOCALE_STRING,
+    },
+    {
+      name: 'label',
+      title: 'Label',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(frivillig)',
     },
     {
       name: 'vedleggsnotis',
