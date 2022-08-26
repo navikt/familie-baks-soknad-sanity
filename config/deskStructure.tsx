@@ -72,6 +72,7 @@ const steglisteItem = S.listItem()
           mappeListItem(DokumentNavn.OM_BARNET_SUBTITLER),
           mappeListItem(DokumentNavn.OM_BARNET_SPORSMAL),
           mappeListItem(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
+          mappeListItem(DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
         ]),
         stegItem(Steg.EØS_FOR_SØKER, [
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),

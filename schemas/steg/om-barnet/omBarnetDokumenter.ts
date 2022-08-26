@@ -8,6 +8,7 @@ const omBarnetDokumenter = [
   localestring(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SUBTITLER),
   sporsmalDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SPORSMAL),
   localeblock(Steg.OM_BARNET, DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
+  localeblock(Steg.OM_BARNET, DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
 ];
 
 export default omBarnetDokumenter;
