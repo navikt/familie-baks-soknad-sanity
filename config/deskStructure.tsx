@@ -33,21 +33,6 @@ const mappeListItem = (dokumentNavn: DokumentNavn) =>
     .title(dokumentTittel[dokumentNavn])
     .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
 
-const oppfølgningOmBarnetListeItem = S.listItem()
-  .title('Oppfølgning fra om barna')
-  .child(
-    S.list()
-      .title('Oppfølgning fra om barna')
-      .items([
-        documentListItem(DokumentNavn.OM_BARNET_FOSTERBARN),
-        documentListItem(DokumentNavn.OM_BARNET_INSTITUSJON),
-        documentListItem(DokumentNavn.OM_BARNET_UTENLANDSOPPHOLD),
-        documentListItem(DokumentNavn.OM_BARNET_ADOPSJON),
-        documentListItem(DokumentNavn.OM_BARNET_YTELSE_FRA_EOS),
-        documentListItem(DokumentNavn.OM_BARNET_BARNEHAGEPLASS),
-      ]),
-  );
-
 const steglisteItem = S.listItem()
   .title('Steg')
   .child(
@@ -86,7 +71,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
           mappeListItem(DokumentNavn.OM_BARNET_SUBTITLER),
           mappeListItem(DokumentNavn.OM_BARNET_SPORSMAL),
-          oppfølgningOmBarnetListeItem,
+          mappeListItem(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
         ]),
         stegItem(Steg.EØS_FOR_SØKER, [
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),

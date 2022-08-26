@@ -9,7 +9,6 @@ import {
   Steg,
   StegDokument,
 } from '../../../typer';
-import opplysningspaminnelse from './opplysningspaminnelse';
 
 const fosterbarn: StegDokument = {
   steg: Steg.OM_BARNET,
@@ -17,7 +16,6 @@ const fosterbarn: StegDokument = {
   name: DokumentNavn.OM_BARNET_FOSTERBARN,
   type: SanityTyper.DOCUMENT,
   fields: [
-    opplysningspaminnelse,
     {
       name: 'vedleggsnotis',
       title: (
