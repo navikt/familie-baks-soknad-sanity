@@ -185,9 +185,22 @@ const modalerlisteItem = S.listItem()
           documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_OMSORGSPERSON),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
         ]),
-        documentListItem(DokumentNavn.MODAL_PENSJON_SOKER),
-        documentListItem(DokumentNavn.MODAL_PENSJON_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
-        documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode søker', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode andre forelder', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Legg til barn', [
+          documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_ANDRE_TEKSTER),
+        ]),
       ]),
   );

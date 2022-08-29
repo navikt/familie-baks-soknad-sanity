@@ -10,8 +10,9 @@ import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal/andr
 import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal/barnehageplassModal';
 import eosYtelseModal from './felles/modaler/eøsYtelseModal/eosYtelseModal';
-import modalerDokumenter from './felles/modaler/modalerDokumenter';
+import pensjonModal from './felles/modaler/pensjonsModal/pensjonModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal/utenlandsoppholdModal';
+import leggTilBarnModal from './felles/modaler/velgBarnModal/leggTilBarnModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
 import fieldsBase from './fieldsBase';
@@ -48,6 +49,8 @@ const dokumenterForSteg = [
   ...andreUtbetalingerModal,
   ...arbeidsperiodeModal,
   ...eosYtelseModal,
+  ...pensjonModal,
+  ...leggTilBarnModal,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
