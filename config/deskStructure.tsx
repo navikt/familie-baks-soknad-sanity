@@ -135,16 +135,32 @@ const modalerlisteItem = S.listItem()
       .title('Modaler')
       .items([
         mappeMedForskjelligTypeDokument('Utenlandsopphold søker', [
-          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_SOKER),
+          documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_SOKER),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_SOKER),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER),
         ]),
         mappeMedForskjelligTypeDokument('Utenlandsopphold barn', [
-          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
+          documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_BARN),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_BARN),
         ]),
-        documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
+        mappeMedForskjelligTypeDokument('Barnehageplass', [
+          documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNEHAGEPLASS_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNEHAGEPLASS_BESKRIVELSE_VALGALTERNATIVER),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger søker', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger andre forelder', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON),
@@ -153,8 +169,5 @@ const modalerlisteItem = S.listItem()
         documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
         documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
         documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SOKER),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON),
       ]),
   );

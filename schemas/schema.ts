@@ -6,6 +6,8 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
 import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
+import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal/andreUtbetalingerModal';
+import barnehageplassModal from './felles/modaler/barnehageplassModal/barnehageplassModal';
 import modalerDokumenter from './felles/modaler/modalerDokumenter';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
@@ -39,20 +41,20 @@ const dokumenterForSteg = [
   ...oppsummering,
   ...dokumentasjon,
   ...kvittering,
+  ...utenlandsoppholdModal,
+  ...barnehageplassModal,
+  ...andreUtbetalingerModal,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
 }));
 
-const dokumenterPåTversAvSteg = [
-  ...utenlandsoppholdModal,
-  ...frittstaendeOrdDokumenter,
-  navigasjon,
-  teksterForDato,
-].map((dok: DokumentBase) => ({
-  ...dok,
-  fields: [...fieldsBase, ...dok.fields],
-}));
+const dokumenterPåTversAvSteg = [...frittstaendeOrdDokumenter, navigasjon, teksterForDato].map(
+  (dok: DokumentBase) => ({
+    ...dok,
+    fields: [...fieldsBase, ...dok.fields],
+  }),
+);
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
