@@ -1,8 +1,8 @@
-import localeblock from '../../felles/localeblock';
-import localestring from '../../felles/localestring';
-import { DokumentNavn, Steg } from '../../typer';
+import localeblock from '../felles/localeblock';
+import localestring from '../felles/localestring';
+import { DokumentNavn, Steg } from '../typer';
 
-const dokumentasjonDokumenter = [
+const dokumentasjon = [
   localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_TITTEL),
   localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_INFO),
   localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
@@ -12,4 +12,4 @@ const dokumentasjonDokumenter = [
   localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_VEDLEGG_BESKRIVELSE),
 ];
 
-export default dokumentasjonDokumenter;
+export default dokumentasjon;

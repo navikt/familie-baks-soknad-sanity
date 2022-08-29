@@ -14,8 +14,8 @@ import fieldsBaseForSteg from './fieldsBaseForSteg';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import dinLivssituasjon from './steg/dinLivssituasjon';
-import dokumentasjonDokumenter from './steg/dokumentasjon/dokumentasjonDokumenter';
-import eosForBarnDokumenter from './steg/eos-for-barn/eosForBarnDokumenter';
+import dokumentasjon from './steg/dokumentasjon';
+import eosForBarn from './steg/eosForBarn';
 import eosForSoker from './steg/eosForSoker';
 import forside from './steg/forside';
 import kvittering from './steg/kvittering';
@@ -23,20 +23,20 @@ import omBarna from './steg/omBarna';
 import omBarnet from './steg/omBarnet';
 import omDeg from './steg/omDeg';
 import oppsummering from './steg/oppsummering';
-import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
+import velgBarn from './steg/velgBarn';
 import { DokumentBase, StegDokument } from './typer';
 
 const dokumenterForSteg = [
   ...forside,
   ...omDeg,
   ...dinLivssituasjon,
-  ...velgBarnDokumenter,
+  ...velgBarn,
   ...omBarna,
   ...omBarnet,
   ...eosForSoker,
-  ...eosForBarnDokumenter,
+  ...eosForBarn,
   ...oppsummering,
-  ...dokumentasjonDokumenter,
+  ...dokumentasjon,
   ...kvittering,
 ].map((dok: StegDokument) => ({
   ...dok,
