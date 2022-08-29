@@ -134,8 +134,16 @@ const modalerlisteItem = S.listItem()
     S.list()
       .title('Modaler')
       .items([
-        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
-        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
+        mappeMedForskjelligTypeDokument('Utenlandsopphold søker', [
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER),
+        ]),
+        mappeMedForskjelligTypeDokument('Utenlandsopphold barn', [
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_BARN),
+        ]),
         documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
         documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),

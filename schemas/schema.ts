@@ -7,6 +7,7 @@ import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
 import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
 import modalerDokumenter from './felles/modaler/modalerDokumenter';
+import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
 import fieldsBase from './fieldsBase';
@@ -44,7 +45,7 @@ const dokumenterForSteg = [
 }));
 
 const dokumenterPåTversAvSteg = [
-  ...modalerDokumenter,
+  ...utenlandsoppholdModal,
   ...frittstaendeOrdDokumenter,
   navigasjon,
   teksterForDato,

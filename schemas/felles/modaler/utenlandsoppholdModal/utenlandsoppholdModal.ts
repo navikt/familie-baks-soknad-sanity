@@ -1,24 +1,13 @@
-import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
-import fellesFelterModal from '../fellesFelterModal';
-import arsak from './arsak';
-import datoer from './datoer';
-import hvilketLand from './hvilketLand';
+import { DokumentNavn, Steg } from '../../../typer';
+import localeblock from '../../localeblock';
 
-const utenlandsoppholdModal: SpørsmålDokumentBase = {
-  type: SanityTyper.DOCUMENT,
-  fields: [
-    ...fellesFelterModal,
-    ...arsak,
-    ...hvilketLand,
-    ...datoer,
-    {
-      title: 'Legg til flere perioder spørsmål',
-      name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_STRING,
-      description: '(obligatorisk)',
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
-    },
-  ],
-};
+const utenlandsoppholdModal = [
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_BARN),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_BARN),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER),
+];
 
 export default utenlandsoppholdModal;
