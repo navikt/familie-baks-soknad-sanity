@@ -1,6 +1,6 @@
-import { DokumentNavn, Steg } from '../../../typer';
-import localeblock from '../../localeblock';
-import sporsmalDokument from '../../sporsmalDokument';
+import { DokumentNavn, Steg } from '../../typer';
+import localeblock from '../localeblock';
+import sporsmalDokument from '../sporsmalDokument';
 
 const eosYtelseModal = [
   localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_TITTEL_SOKER),

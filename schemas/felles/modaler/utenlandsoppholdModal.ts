@@ -1,6 +1,6 @@
-import { DokumentNavn, Steg } from '../../../typer';
-import localeblock from '../../localeblock';
-import sporsmalDokument from '../../sporsmalDokument';
+import { DokumentNavn, Steg } from '../../typer';
+import localeblock from '../localeblock';
+import sporsmalDokument from '../sporsmalDokument';
 
 const utenlandsoppholdModal = [
   localeblock(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
