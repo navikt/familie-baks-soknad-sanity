@@ -80,10 +80,11 @@ const steglisteItem = S.listItem()
         ]),
         stegItem(Steg.EØS_FOR_BARN, [
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_BARNET),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_FORELDER),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_OMSORGSPERSON),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
+          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
+          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
+          mappeListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+          mappeListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
         ]),
         stegItem(Steg.OPPSUMMERING, [
           documentListItem(DokumentNavn.OPPSUMMERING_TITTEL),

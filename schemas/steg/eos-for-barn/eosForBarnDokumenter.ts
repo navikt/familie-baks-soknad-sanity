@@ -1,16 +1,15 @@
+import localeblock from '../../felles/localeblock';
 import localestring from '../../felles/localestring';
+import sporsmalDokument from '../../felles/sporsmalDokument';
 import { DokumentNavn, Steg } from '../../typer';
-import andreForelder from './andreForelder';
-import barn from './barn';
-import omsorgsperson from './omsorgsperson';
-import slektsforhold from './slektsforholdValgalternativer';
 
 const eosForBarnDokumenter = [
-  localestring(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_TITTEL),
-  barn,
-  andreForelder,
-  omsorgsperson,
-  slektsforhold,
+  localeblock(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_TITTEL),
+  sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
+  sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
+  sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
+  localestring(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+  localestring(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
 ];
 
 export default eosForBarnDokumenter;
