@@ -18,8 +18,13 @@ export default () =>
       documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
-const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
-  S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
+const mappeMedForskjelligTypeDokument = (
+  tittel: string,
+  items: (ListItemBuilder | ListItem | Divider)[],
+) => S.listItem().title(tittel).child(S.list().title(tittel).items(items));
+
+const stegMappe = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
+  mappeMedForskjelligTypeDokument(stegTittel[steg], items);
 
 const documentListItem = (dokumentNavn: DokumentNavn) => {
   return S.listItem()
@@ -28,7 +33,7 @@ const documentListItem = (dokumentNavn: DokumentNavn) => {
     .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
-const mappeListItem = (dokumentNavn: DokumentNavn) =>
+const mappeMedEnTypeDokument = (dokumentNavn: DokumentNavn) =>
   S.listItem()
     .title(dokumentTittel[dokumentNavn])
     .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
@@ -39,67 +44,73 @@ const steglisteItem = S.listItem()
     S.list()
       .title('Steg')
       .items([
-        stegItem(Steg.FORSIDE, [
+        stegMappe(Steg.FORSIDE, [
           documentListItem(DokumentNavn.FORSIDE_VEILEDERHILSEN),
           documentListItem(DokumentNavn.FORSIDE_TITTEL),
           documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
           documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
-          mappeListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
           documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
         ]),
-        stegItem(Steg.OM_DEG, [
+        stegMappe(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
-          mappeListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
-          mappeListItem(DokumentNavn.OM_DEG_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
-        stegItem(Steg.DIN_LIVSSITUASJON, [
+        stegMappe(Steg.DIN_LIVSSITUASJON, [
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
-          mappeListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
-        stegItem(Steg.VELG_BARN, [
+        stegMappe(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
-          mappeListItem(DokumentNavn.VELG_BARN_LENKER),
-          mappeListItem(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_LENKER),
+          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.OM_BARNA, [
+        stegMappe(Steg.OM_BARNA, [
           documentListItem(DokumentNavn.OM_BARNA_TITTEL),
-          mappeListItem(DokumentNavn.OM_BARNA_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNA_SPORSMAL),
         ]),
-        stegItem(Steg.OM_BARNET, [
+        stegMappe(Steg.OM_BARNET, [
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
-          mappeListItem(DokumentNavn.OM_BARNET_SUBTITLER),
-          mappeListItem(DokumentNavn.OM_BARNET_SPORSMAL),
-          mappeListItem(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
-          mappeListItem(DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SUBTITLER),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.EØS_FOR_SØKER, [
+        stegMappe(Steg.EØS_FOR_SØKER, [
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
-          mappeListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
         ]),
-        stegItem(Steg.EØS_FOR_BARN, [
+        stegMappe(Steg.EØS_FOR_BARN, [
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
-          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
-          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
-          mappeListItem(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
-          mappeListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
-          mappeListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.OPPSUMMERING, [
+        stegMappe(Steg.OPPSUMMERING, [
           documentListItem(DokumentNavn.OPPSUMMERING_TITTEL),
-          mappeListItem(DokumentNavn.OPPSUMMERING_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.OPPSUMMERING_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.DOKUMENTASJON, [
+        stegMappe(Steg.DOKUMENTASJON, [
           documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
-          documentListItem(DokumentNavn.DOKUMENTASJON_INFO),
-          documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
-          documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
-          documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
+          mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_INFO),
+          mappeMedForskjelligTypeDokument('Bilde scanning guide', [
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_ENKLE_TEKSTER),
+          ]),
+          mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
+          mappeMedForskjelligTypeDokument('Vedlegg', [
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_VEDLEGG_TITTEL),
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_VEDLEGG_BESKRIVELSE),
+          ]),
         ]),
-        stegItem(Steg.KVITTERING, [
+        stegMappe(Steg.KVITTERING, [
           documentListItem(DokumentNavn.KVITTERING_TITTEL),
-          mappeListItem(DokumentNavn.KVITTERING_ANDRE_TEKSTER),
+          mappeMedEnTypeDokument(DokumentNavn.KVITTERING_ANDRE_TEKSTER),
         ]),
       ]),
   );

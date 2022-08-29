@@ -1,9 +1,15 @@
-import info from './info';
-import knapperOgCheckbox from './knapperOgCheckbox';
-import scanningGuide from './scanningGuide';
-import tittel from './tittel';
-import vedlegg from './vedlegg';
+import localeblock from '../../felles/localeblock';
+import localestring from '../../felles/localestring';
+import { DokumentNavn, Steg } from '../../typer';
 
-const dokumentasjonDokumenter = [tittel, info, scanningGuide, knapperOgCheckbox, vedlegg];
+const dokumentasjonDokumenter = [
+  localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_TITTEL),
+  localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_INFO),
+  localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
+  localestring(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_ENKLE_TEKSTER),
+  localestring(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
+  localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_VEDLEGG_TITTEL),
+  localeblock(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_VEDLEGG_BESKRIVELSE),
+];
 
 export default dokumentasjonDokumenter;
