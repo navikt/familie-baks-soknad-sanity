@@ -1,43 +1,8 @@
 import { DokumentNavn, dokumentTittel } from '../../typer';
-import andreUtbetalingerModal from './andreUtbetalingerModal/andreUtbetalingerModal';
-import arbeidsperiodeModal from './arbeidsperiodeModal/arbeidsperiodeModal';
-import barnehageplassModal from './barnehageplassModal/barnehageplassModal';
-import eosYtelseModal from './eøsYtelseModal/eosYtelseModal';
 import pensjonsModal from './pensjonsModal/pensjonsModal';
 import leggTilBarnModal from './velgBarnModal/leggTilBarnModal';
 
 const modalerDokumenter = [
-  {
-    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_SOKER,
-    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_SOKER,
-    ...andreUtbetalingerModal,
-  },
-  {
-    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
-    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER,
-    ...andreUtbetalingerModal,
-  },
-  {
-    name: DokumentNavn.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
-    title: dokumentTittel.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON,
-    ...andreUtbetalingerModal,
-  },
-  barnehageplassModal,
-  {
-    name: DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER,
-    title: dokumentTittel.MODAL_ARBEIDSPERIODE_SOKER,
-    ...arbeidsperiodeModal,
-  },
-  {
-    name: DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER,
-    title: dokumentTittel.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER,
-    ...arbeidsperiodeModal,
-  },
-  {
-    name: DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON,
-    title: dokumentTittel.MODAL_ARBEIDSPERIODE_OMSORGSPERSON,
-    ...arbeidsperiodeModal,
-  },
   {
     name: DokumentNavn.MODAL_PENSJON_SOKER,
     title: dokumentTittel.MODAL_PENSJON_SOKER,
@@ -54,7 +19,6 @@ const modalerDokumenter = [
     ...pensjonsModal,
   },
   leggTilBarnModal,
-  eosYtelseModal,
 ];
 
 export default modalerDokumenter;

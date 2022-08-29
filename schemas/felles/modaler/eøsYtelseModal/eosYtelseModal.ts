@@ -1,34 +1,13 @@
-import {
-  CustomSanityTyper,
-  DokumentBase,
-  DokumentNavn,
-  dokumentTittel,
-  SanityTyper,
-} from '../../../typer';
-import fellesFelterModal from '../fellesFelterModal';
-import belop from './belop';
-import datoer from './datoer';
-import farEosYtelseNa from './farYtelseNa';
-import land from './land';
+import { DokumentNavn, Steg } from '../../../typer';
+import localeblock from '../../localeblock';
 
-const eosYtelseModal: DokumentBase = {
-  name: DokumentNavn.MODAL_EOS_YTELSE,
-  title: dokumentTittel.MODAL_EOS_YTELSE,
-  type: SanityTyper.DOCUMENT,
-  fields: [
-    ...fellesFelterModal,
-    ...farEosYtelseNa,
-    ...land,
-    ...datoer,
-    ...belop,
-    {
-      title: 'Legg til flere perioder spørsmål',
-      name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_BLOCK,
-      description: '(obligatorisk)',
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
-    },
-  ],
-};
+const eosYtelseModal = [
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_TITTEL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_TITTEL_ANDRE_FORELDER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_TITTEL_OMSORGSPERSON),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_ANDRE_FORELDER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+];
 
 export default eosYtelseModal;

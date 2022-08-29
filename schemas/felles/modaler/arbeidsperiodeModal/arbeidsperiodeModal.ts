@@ -1,26 +1,13 @@
-import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../../../typer';
-import fellesFelterModal from '../fellesFelterModal';
-import arbeidsgiver from './arbeidsgiver';
-import datoer from './datoer';
-import hvilketLand from './hvilketLand';
-import periodeAvsluttet from './periodeAvsluttet';
+import { DokumentNavn, Steg } from '../../../typer';
+import localeblock from '../../localeblock';
 
-const arbeidsperiodeModal: SpørsmålDokumentBase = {
-  type: SanityTyper.DOCUMENT,
-  fields: [
-    ...fellesFelterModal,
-    ...periodeAvsluttet,
-    ...hvilketLand,
-    ...arbeidsgiver,
-    ...datoer,
-    {
-      title: 'Legg til flere perioder spørsmål',
-      name: 'flerePerioderSporsmal',
-      type: CustomSanityTyper.LOCALE_BLOCK,
-      description: '(obligatorisk)',
-      validation: Rule => Rule.required().error('Du må fylle inn spørsmål for flere perioder'),
-    },
-  ],
-};
+const arbeidsperiodeModal = [
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_ANDRE_FORELDER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_OMSORGSPERSON),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_SOKER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_ANDRE_FORELDER),
+  localeblock(Steg.FELLES, DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+];
 
 export default arbeidsperiodeModal;

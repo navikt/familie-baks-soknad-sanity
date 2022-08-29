@@ -7,7 +7,9 @@ import { alertBlock, alertString } from './alert';
 import customBlock from './customBlock';
 import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal/andreUtbetalingerModal';
+import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal/barnehageplassModal';
+import eosYtelseModal from './felles/modaler/eøsYtelseModal/eosYtelseModal';
 import modalerDokumenter from './felles/modaler/modalerDokumenter';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
@@ -44,6 +46,8 @@ const dokumenterForSteg = [
   ...utenlandsoppholdModal,
   ...barnehageplassModal,
   ...andreUtbetalingerModal,
+  ...arbeidsperiodeModal,
+  ...eosYtelseModal,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],

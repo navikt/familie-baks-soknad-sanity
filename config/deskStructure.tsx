@@ -161,13 +161,33 @@ const modalerlisteItem = S.listItem()
           documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_OMSORGSPERSON),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
         ]),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode søker', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode andre forelder', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse søker', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse andre forelder', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
         documentListItem(DokumentNavn.MODAL_PENSJON_SOKER),
         documentListItem(DokumentNavn.MODAL_PENSJON_ANDRE_FORELDER),
         documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
         documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
-        documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
       ]),
   );
