@@ -13,8 +13,8 @@ export default () =>
     .items([
       steglisteItem,
       modalerlisteItem,
-      frittstaendeOrdlisteItem,
-      documentListItem(DokumentNavn.NAVIGASJON),
+      mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
+      mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
       documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
@@ -112,19 +112,6 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.KVITTERING_TITTEL),
           mappeMedEnTypeDokument(DokumentNavn.KVITTERING_ANDRE_TEKSTER),
         ]),
-      ]),
-  );
-
-const frittstaendeOrdlisteItem = S.listItem()
-  .title('Frittstående ord')
-  .child(
-    S.list()
-      .title('Frittstående ord')
-      .items([
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_SVARALTERNATIVER),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_PREPOSISJONER),
       ]),
   );
 
