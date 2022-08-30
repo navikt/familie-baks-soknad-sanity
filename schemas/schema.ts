@@ -3,54 +3,58 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
-import { alertBlock, alertString } from './alert';
-import customBlock from './customBlock';
-import frittstaendeOrdDokumenter from './felles/frittstaende-ord/frittstaendeOrdDokumenter';
-import modalerDokumenter from './felles/modaler/modalerDokumenter';
+import customBlock from './felles/customBlock';
+import fieldsBase from './felles/fieldsBase';
+import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
+import localeBlock from './felles/localeBlock';
+import localeString from './felles/localeString';
+import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
+import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
+import barnehageplassModal from './felles/modaler/barnehageplassModal';
+import eosYtelseModal from './felles/modaler/eosYtelseModal';
+import leggTilBarnModal from './felles/modaler/leggTilBarnModal';
+import pensjonModal from './felles/modaler/pensjonModal';
+import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
-import fieldsBase from './fieldsBase';
-import fieldsBaseForSteg from './fieldsBaseForSteg';
-import localeBlock from './localeBlock';
-import localeString from './localeString';
-import dinLivssituasjonDokumenter from './steg/din-livssituasjon/dinLivssituasjonDokumenter';
-import dokumentasjonDokumenter from './steg/dokumentasjon/dokumentasjonDokumenter';
-import eosForBarnDokumenter from './steg/eos-for-barn/eosForBarnDokumenter';
-import eosForSokerDokumenter from './steg/eos-for-soker/eosForSokerDokumenter';
-import forsideDokumenter from './steg/forside/forsideDokumenter';
-import kvitteringsdokument from './steg/kvittering/kvitteringsdokument';
-import omBarnaDokumenter from './steg/om-barna/omBarnaDokumenter';
-import omBarnetDokumenter from './steg/om-barnet/omBarnetDokumenter';
-import omDegDokumenter from './steg/om-deg/omDegDokumenter';
-import oppsummeringsdokument from './steg/oppsummering/oppsummeringsdokument';
-import velgBarnDokumenter from './steg/velg-barn/velgBarnDokumenter';
-import { DokumentBase, StegDokument } from './typer';
+import dinLivssituasjon from './steg/dinLivssituasjon';
+import dokumentasjon from './steg/dokumentasjon';
+import eosForBarn from './steg/eosForBarn';
+import eosForSoker from './steg/eosForSoker';
+import forside from './steg/forside';
+import kvittering from './steg/kvittering';
+import omBarna from './steg/omBarna';
+import omBarnet from './steg/omBarnet';
+import omDeg from './steg/omDeg';
+import oppsummering from './steg/oppsummering';
+import velgBarn from './steg/velgBarn';
+import { StegDokument } from './typer';
 
-const dokumenterForSteg = [
-  ...forsideDokumenter,
-  ...omDegDokumenter,
-  ...dinLivssituasjonDokumenter,
-  ...velgBarnDokumenter,
-  ...omBarnaDokumenter,
-  ...omBarnetDokumenter,
-  ...eosForSokerDokumenter,
-  ...eosForBarnDokumenter,
-  oppsummeringsdokument,
-  ...dokumentasjonDokumenter,
-  kvitteringsdokument,
+const dokumenterMedFellesFelter = [
+  ...forside,
+  ...omDeg,
+  ...dinLivssituasjon,
+  ...velgBarn,
+  ...omBarna,
+  ...omBarnet,
+  ...eosForSoker,
+  ...eosForBarn,
+  ...oppsummering,
+  ...dokumentasjon,
+  ...kvittering,
+  ...utenlandsoppholdModal,
+  ...barnehageplassModal,
+  ...andreUtbetalingerModal,
+  ...arbeidsperiodeModal,
+  ...eosYtelseModal,
+  ...pensjonModal,
+  ...leggTilBarnModal,
+  ...frittstaendeOrdDokumenter,
+  ...navigasjon,
+  ...teksterForDato,
 ].map((dok: StegDokument) => ({
   ...dok,
-  fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
-}));
-
-const dokumenterPåTversAvSteg = [
-  ...modalerDokumenter,
-  ...frittstaendeOrdDokumenter,
-  navigasjon,
-  teksterForDato,
-].map((dok: DokumentBase) => ({
-  ...dok,
-  fields: [...fieldsBase, ...dok.fields],
+  fields: [...fieldsBase(dok.steg), ...dok.fields],
 }));
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -65,10 +69,7 @@ export default createSchema({
       customBlock,
       localeString,
       localeBlock,
-      alertString,
-      alertBlock,
     ],
-    dokumenterForSteg,
-    dokumenterPåTversAvSteg,
+    dokumenterMedFellesFelter,
   ),
 });

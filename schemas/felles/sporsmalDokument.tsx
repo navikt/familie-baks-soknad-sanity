@@ -1,23 +1,33 @@
 import React from 'react';
 
 import FileContentIcon from '../../images/FileContentIcon';
-import { CustomSanityTyper, SanityTyper, SpørsmålDokumentBase } from '../typer';
+import {
+  CustomSanityTyper,
+  DokumentNavn,
+  dokumentTittel,
+  SanityTyper,
+  Steg,
+  StegDokument,
+} from '../typer';
 
-const sporsmalDokument: SpørsmålDokumentBase = {
+const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
+  steg: steg,
+  title: dokumentTittel[dokumentNavn],
+  name: dokumentNavn,
   type: SanityTyper.DOCUMENT,
   fields: [
     {
       name: 'sporsmal',
       title: 'Spørsmål',
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn spørsmålsteksten'),
     },
     {
       name: 'feilmelding',
       title: 'Feilmelding',
       description: '(obligatorisk)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       validation: Rule => Rule.required().error('Du må fylle inn feilmelding'),
     },
     {
@@ -25,6 +35,12 @@ const sporsmalDokument: SpørsmålDokumentBase = {
       title: 'Beskrivelse av spørsmål',
       description: 'F.eks. dd.mm.åååå under spørsmål om dato. (frivillig)',
       type: CustomSanityTyper.LOCALE_STRING,
+    },
+    {
+      name: 'label',
+      title: 'Label',
+      type: CustomSanityTyper.LOCALE_STRING,
+      description: '(frivillig)',
     },
     {
       name: 'vedleggsnotis',
@@ -40,9 +56,9 @@ const sporsmalDokument: SpørsmålDokumentBase = {
       name: 'alert',
       title: 'Alert',
       description: '(frivillig)',
-      type: CustomSanityTyper.ALERT_BLOCK,
+      type: CustomSanityTyper.LOCALE_BLOCK,
     },
   ],
-};
+});
 
 export default sporsmalDokument;

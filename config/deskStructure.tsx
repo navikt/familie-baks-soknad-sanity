@@ -13,13 +13,18 @@ export default () =>
     .items([
       steglisteItem,
       modalerlisteItem,
-      frittstaendeOrdlisteItem,
-      documentListItem(DokumentNavn.NAVIGASJON),
-      documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
+      mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
+      mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
+      mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
-const stegItem = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
-  S.listItem().title(stegTittel[steg]).child(S.list().title(stegTittel[steg]).items(items));
+const mappeMedForskjelligTypeDokument = (
+  tittel: string,
+  items: (ListItemBuilder | ListItem | Divider)[],
+) => S.listItem().title(tittel).child(S.list().title(tittel).items(items));
+
+const stegMappe = (steg: Steg, items: (ListItemBuilder | ListItem | Divider)[]) =>
+  mappeMedForskjelligTypeDokument(stegTittel[steg], items);
 
 const documentListItem = (dokumentNavn: DokumentNavn) => {
   return S.listItem()
@@ -28,25 +33,10 @@ const documentListItem = (dokumentNavn: DokumentNavn) => {
     .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
-const spørsmålListItem = (dokumentNavn: DokumentNavn) =>
+const mappeMedEnTypeDokument = (dokumentNavn: DokumentNavn) =>
   S.listItem()
     .title(dokumentTittel[dokumentNavn])
     .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
-
-const oppfølgningOmBarnetListeItem = S.listItem()
-  .title('Oppfølgning fra om barna')
-  .child(
-    S.list()
-      .title('Oppfølgning fra om barna')
-      .items([
-        documentListItem(DokumentNavn.OM_BARNET_FOSTERBARN),
-        documentListItem(DokumentNavn.OM_BARNET_INSTITUSJON),
-        documentListItem(DokumentNavn.OM_BARNET_UTENLANDSOPPHOLD),
-        documentListItem(DokumentNavn.OM_BARNET_ADOPSJON),
-        documentListItem(DokumentNavn.OM_BARNET_YTELSE_FRA_EOS),
-        documentListItem(DokumentNavn.OM_BARNET_BARNEHAGEPLASS),
-      ]),
-  );
 
 const steglisteItem = S.listItem()
   .title('Steg')
@@ -54,72 +44,74 @@ const steglisteItem = S.listItem()
     S.list()
       .title('Steg')
       .items([
-        stegItem(Steg.FORSIDE, [
+        stegMappe(Steg.FORSIDE, [
           documentListItem(DokumentNavn.FORSIDE_VEILEDERHILSEN),
           documentListItem(DokumentNavn.FORSIDE_TITTEL),
           documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
           documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
-          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS),
+          documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
+          mappeMedEnTypeDokument(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
           documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
           documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
         ]),
-        stegItem(Steg.OM_DEG, [
+        stegMappe(Steg.OM_DEG, [
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
-          documentListItem(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
-          spørsmålListItem(DokumentNavn.OM_DEG_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_SPORSMAL),
         ]),
-        stegItem(Steg.DIN_LIVSSITUASJON, [
+        stegMappe(Steg.DIN_LIVSSITUASJON, [
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
-          spørsmålListItem(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
         ]),
-        stegItem(Steg.VELG_BARN, [
+        stegMappe(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
-          documentListItem(DokumentNavn.VELG_BARN_LENKER),
-          documentListItem(DokumentNavn.VELG_BARN_KORT),
+          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_LENKER),
+          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.OM_BARNA, [
+        stegMappe(Steg.OM_BARNA, [
           documentListItem(DokumentNavn.OM_BARNA_TITTEL),
-          spørsmålListItem(DokumentNavn.OM_BARNA_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNA_SPORSMAL),
         ]),
-        stegItem(Steg.OM_BARNET, [
+        stegMappe(Steg.OM_BARNET, [
           documentListItem(DokumentNavn.OM_BARNET_TITTEL),
-          documentListItem(DokumentNavn.OM_BARNET_ANDRE_FORELDER),
-          documentListItem(DokumentNavn.OM_BARNET_BOSTED),
-          oppfølgningOmBarnetListeItem,
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SUBTITLER),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
+          mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
         ]),
-        stegItem(Steg.EØS_FOR_SØKER, [
+        stegMappe(Steg.EØS_FOR_SØKER, [
           documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
-          spørsmålListItem(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
         ]),
-        stegItem(Steg.EØS_FOR_BARN, [
+        stegMappe(Steg.EØS_FOR_BARN, [
           documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_BARNET),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_ANDRE_FORELDER),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_OMSORGSPERSON),
-          documentListItem(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER),
+          mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
         ]),
-        documentListItem(DokumentNavn.OPPSUMMERING),
-        stegItem(Steg.DOKUMENTASJON, [
+        stegMappe(Steg.OPPSUMMERING, [
+          documentListItem(DokumentNavn.OPPSUMMERING_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.OPPSUMMERING_ANDRE_TEKSTER),
+        ]),
+        stegMappe(Steg.DOKUMENTASJON, [
           documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
-          documentListItem(DokumentNavn.DOKUMENTASJON_INFO),
-          documentListItem(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE),
-          documentListItem(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
-          documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG),
+          mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_INFO),
+          mappeMedForskjelligTypeDokument('Bilde scanning guide', [
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_ENKLE_TEKSTER),
+          ]),
+          mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_KNAPPER_OG_CHECKBOX),
+          mappeMedForskjelligTypeDokument('Vedlegg', [
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_VEDLEGG_TITTEL),
+            mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_VEDLEGG_BESKRIVELSE),
+          ]),
         ]),
-        documentListItem(DokumentNavn.KVITTERING),
-      ]),
-  );
-
-const frittstaendeOrdlisteItem = S.listItem()
-  .title('Frittstående ord')
-  .child(
-    S.list()
-      .title('Frittstående ord')
-      .items([
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_YTELSE),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_GEOGRAFISK_OMRADE),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_SVARALTERNATIVER),
-        documentListItem(DokumentNavn.FRITTSTAENDEORD_PREPOSISJONER),
+        stegMappe(Steg.KVITTERING, [
+          documentListItem(DokumentNavn.KVITTERING_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.KVITTERING_ANDRE_TEKSTER),
+        ]),
       ]),
   );
 
@@ -129,19 +121,73 @@ const modalerlisteItem = S.listItem()
     S.list()
       .title('Modaler')
       .items([
-        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SOKER),
-        documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_BARN),
-        documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_SOKER),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_OMSORGSPERSON),
-        documentListItem(DokumentNavn.MODAL_PENSJON_SOKER),
-        documentListItem(DokumentNavn.MODAL_PENSJON_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_PENSJON_OMSORGSPERSON),
-        documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN),
-        documentListItem(DokumentNavn.MODAL_EOS_YTELSE),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SOKER),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_ANDRE_FORELDER),
-        documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_OMSORGSPERSON),
+        mappeMedForskjelligTypeDokument('Utenlandsopphold søker', [
+          documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER),
+        ]),
+        mappeMedForskjelligTypeDokument('Utenlandsopphold barn', [
+          documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_BARN),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_BARN),
+        ]),
+        mappeMedForskjelligTypeDokument('Barnehageplass', [
+          documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNEHAGEPLASS_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNEHAGEPLASS_BESKRIVELSE_VALGALTERNATIVER),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger søker', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger andre forelder', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Andre utbetalinger omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_ANDRE_UTBETALINGER_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ANDRE_UTBETALINGER_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode søker', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode andre forelder', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Arbeidsperiode omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_ARBEIDSPERIODE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_ARBEIDSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse søker', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse andre forelder', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('EØS-ytelse omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_EOS_YTELSE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode søker', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_SOKER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode andre forelder', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Pensjonsperiode omsorgsperson', [
+          documentListItem(DokumentNavn.MODAL_PENSJONSPERIODE_TITTEL_OMSORGSPERSON),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
+        ]),
+        mappeMedForskjelligTypeDokument('Legg til barn', [
+          documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_ANDRE_TEKSTER),
+        ]),
       ]),
   );
