@@ -16,7 +16,6 @@ import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
 import fieldsBase from './fieldsBase';
-import fieldsBaseForSteg from './fieldsBaseForSteg';
 import localeBlock from './localeBlock';
 import localeString from './localeString';
 import dinLivssituasjon from './steg/dinLivssituasjon';
@@ -30,9 +29,9 @@ import omBarnet from './steg/omBarnet';
 import omDeg from './steg/omDeg';
 import oppsummering from './steg/oppsummering';
 import velgBarn from './steg/velgBarn';
-import { DokumentBase, StegDokument } from './typer';
+import { StegDokument } from './typer';
 
-const dokumenterForSteg = [
+const dokumenterMedFellesFelter = [
   ...forside,
   ...omDeg,
   ...dinLivssituasjon,
@@ -53,14 +52,10 @@ const dokumenterForSteg = [
   ...leggTilBarnModal,
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
+  ...teksterForDato,
 ].map((dok: StegDokument) => ({
   ...dok,
-  fields: [...fieldsBaseForSteg(dok.steg), ...dok.fields],
-}));
-
-const dokumenterPåTversAvSteg = [teksterForDato].map((dok: DokumentBase) => ({
-  ...dok,
-  fields: [...fieldsBase, ...dok.fields],
+  fields: [...fieldsBase(dok.steg), ...dok.fields],
 }));
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -78,7 +73,6 @@ export default createSchema({
       alertString,
       alertBlock,
     ],
-    dokumenterForSteg,
-    dokumenterPåTversAvSteg,
+    dokumenterMedFellesFelter,
   ),
 });

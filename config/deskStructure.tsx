@@ -15,7 +15,7 @@ export default () =>
       modalerlisteItem,
       mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
       mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
-      documentListItem(DokumentNavn.TEKSTER_FOR_DATO),
+      mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
     ]);
 
 const mappeMedForskjelligTypeDokument = (
