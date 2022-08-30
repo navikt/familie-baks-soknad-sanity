@@ -1,6 +1,6 @@
 import { DokumentNavn, dokumentTittel, SanityTyper, StegDokument, Steg } from '../typer';
 
-const localestring = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
+const localeStringForStegDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
   steg: steg,
   title: dokumentTittel[dokumentNavn],
   name: dokumentNavn,
@@ -30,4 +30,4 @@ const localestring = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => (
   ],
 });
 
-export default localestring;
+export default localeStringForStegDokument;

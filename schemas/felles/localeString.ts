@@ -1,4 +1,4 @@
-import { CustomSanityTyper, SanityTyper } from './typer';
+import { CustomSanityTyper, SanityTyper } from '../typer';
 
 const localeString = {
   title: 'Localized string',

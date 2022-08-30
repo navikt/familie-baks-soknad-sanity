@@ -1,12 +1,15 @@
 import { DokumentNavn, Steg } from '../../typer';
-import localeblock from '../localeblock';
-import localestring from '../localestring';
+import localeBlockForStegDokument from '../localeBlockForStegDokument';
+import localeStringForStegDokument from '../localeStringForStegDokument';
 import sporsmalDokument from '../sporsmalDokument';
 
 const barnehageplassModal = [
-  localeblock(Steg.FELLES, DokumentNavn.MODAL_BARNEHAGEPLASS_TITTEL),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_BARNEHAGEPLASS_TITTEL),
   sporsmalDokument(Steg.FELLES, DokumentNavn.MODAL_BARNEHAGEPLASS_SPORSMAL),
-  localestring(Steg.FELLES, DokumentNavn.MODAL_BARNEHAGEPLASS_BESKRIVELSE_VALGALTERNATIVER),
+  localeStringForStegDokument(
+    Steg.FELLES,
+    DokumentNavn.MODAL_BARNEHAGEPLASS_BESKRIVELSE_VALGALTERNATIVER,
+  ),
 ];
 
 export default barnehageplassModal;

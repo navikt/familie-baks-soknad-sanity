@@ -1,5 +1,5 @@
-import { apiNavnValideringer } from '../util/valideringer';
-import { SanityTyper, Steg, Ytelse } from './typer';
+import { apiNavnValideringer } from '../../util/valideringer';
+import { SanityTyper, Steg, Ytelse } from '../typer';
 
 const fieldsBase = (steg: Steg) => [
   {

@@ -1,6 +1,6 @@
 import { DokumentNavn, Steg } from '../typer';
-import localestring from './localestring';
+import localeStringForStegDokument from './localeStringForStegDokument';
 
-const navigasjon = [localestring(Steg.FELLES, DokumentNavn.NAVIGASJON)];
+const navigasjon = [localeStringForStegDokument(Steg.FELLES, DokumentNavn.NAVIGASJON)];
 
 export default navigasjon;

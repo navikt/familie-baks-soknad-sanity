@@ -1,16 +1,16 @@
-import localeblock from '../felles/localeblock';
-import localestring from '../felles/localestring';
+import localeBlockForStegDokument from '../felles/localeBlockForStegDokument';
+import localeStringForStegDokument from '../felles/localeStringForStegDokument';
 import { DokumentNavn, Steg } from '../typer';
 
 const forside = [
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDERHILSEN),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_SPRAKVELGER),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_PUNKTLISTE),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
-  localestring(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
-  localeblock(Steg.FORSIDE, DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDERHILSEN),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_SPRAKVELGER),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_PUNKTLISTE),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
+  localeStringForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
 ];
 
 export default forside;

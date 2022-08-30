@@ -1,9 +1,9 @@
-import localeblock from '../felles/localeblock';
+import localeBlockForStegDokument from '../felles/localeBlockForStegDokument';
 import sporsmalDokument from '../felles/sporsmalDokument';
 import { DokumentNavn, Steg } from '../typer';
 
 const dinLivssituasjon = [
-  localeblock(Steg.DIN_LIVSSITUASJON, DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
+  localeBlockForStegDokument(Steg.DIN_LIVSSITUASJON, DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
   sporsmalDokument(Steg.DIN_LIVSSITUASJON, DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
 ];
 

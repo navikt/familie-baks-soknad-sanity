@@ -1,6 +1,8 @@
 import { DokumentNavn, Steg } from '../typer';
-import localestring from './localestring';
+import localeStringForStegDokument from './localeStringForStegDokument';
 
-const frittstaendeOrdDokumenter = [localestring(Steg.FELLES, DokumentNavn.FRITTSTAENDEORD)];
+const frittstaendeOrdDokumenter = [
+  localeStringForStegDokument(Steg.FELLES, DokumentNavn.FRITTSTAENDEORD),
+];
 
 export default frittstaendeOrdDokumenter;

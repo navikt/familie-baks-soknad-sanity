@@ -2,19 +2,11 @@ import { ReactNode } from 'react';
 
 import { Rule } from '@sanity/types';
 
-import localeblock from './felles/localeblock';
-import sporsmalDokument from './felles/sporsmalDokument';
-
 export interface DokumentBase {
   title: string;
   type: SanityTyper.DOCUMENT;
   fields: Field[];
   name: DokumentNavn;
-}
-
-export interface SpørsmålDokumentBase {
-  type: SanityTyper.DOCUMENT;
-  fields: Field[];
 }
 
 export interface StegDokument extends DokumentBase {
@@ -53,8 +45,6 @@ export enum CustomSanityTyper {
   CUSTOM_BLOCK = 'customBlock',
   LOCALE_STRING = 'localeString',
   LOCALE_BLOCK = 'localeBlock',
-  ALERT_STRING = 'alertString',
-  ALERT_BLOCK = 'alertBlock',
 }
 
 export enum DokumentNavn {

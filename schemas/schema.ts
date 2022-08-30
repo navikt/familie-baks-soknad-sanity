@@ -3,9 +3,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
-import { alertBlock, alertString } from './alert';
-import customBlock from './customBlock';
+import customBlock from './felles/customBlock';
+import fieldsBase from './felles/fieldsBase';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
+import localeBlock from './felles/localeBlock';
+import localeString from './felles/localeString';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
 import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal';
@@ -15,9 +17,6 @@ import pensjonModal from './felles/modaler/pensjonModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
-import fieldsBase from './fieldsBase';
-import localeBlock from './localeBlock';
-import localeString from './localeString';
 import dinLivssituasjon from './steg/dinLivssituasjon';
 import dokumentasjon from './steg/dokumentasjon';
 import eosForBarn from './steg/eosForBarn';
@@ -70,8 +69,6 @@ export default createSchema({
       customBlock,
       localeString,
       localeBlock,
-      alertString,
-      alertBlock,
     ],
     dokumenterMedFellesFelter,
   ),

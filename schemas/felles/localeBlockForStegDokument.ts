@@ -7,7 +7,7 @@ import {
   CustomSanityTyper,
 } from '../typer';
 
-const localeblock = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
+const localeBlockForStegDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
   steg: steg,
   title: dokumentTittel[dokumentNavn],
   name: dokumentNavn,
@@ -37,4 +37,4 @@ const localeblock = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
   ],
 });
 
-export default localeblock;
+export default localeBlockForStegDokument;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { rgba } from 'polished';
 
-import { CustomSanityTyper, EFlettefelt, SanityTyper, Ytelse } from './typer';
+import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
 
 const customBlock = {
   title: 'Custom block',

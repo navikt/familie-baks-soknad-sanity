@@ -56,7 +56,7 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
       name: 'alert',
       title: 'Alert',
       description: '(frivillig)',
-      type: CustomSanityTyper.ALERT_BLOCK,
+      type: CustomSanityTyper.LOCALE_BLOCK,
     },
   ],
 });
