@@ -15,6 +15,8 @@ const utenlandsoppholdModal = [
     Steg.FELLES,
     DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER,
   ),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_BARN),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_SOKER),
 ];
 
 export default utenlandsoppholdModal;

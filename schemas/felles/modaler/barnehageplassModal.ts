@@ -10,6 +10,7 @@ const barnehageplassModal = [
     Steg.FELLES,
     DokumentNavn.MODAL_BARNEHAGEPLASS_BESKRIVELSE_VALGALTERNATIVER,
   ),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_BARNEHAGEPLASS_ANDRE_TEKSTER),
 ];
 
 export default barnehageplassModal;
