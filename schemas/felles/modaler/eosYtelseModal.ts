@@ -9,6 +9,15 @@ const eosYtelseModal = [
   sporsmalDokument(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_SOKER),
   sporsmalDokument(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_ANDRE_FORELDER),
   sporsmalDokument(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_SPORSMAL_OMSORGSPERSON),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_EOS_YTELSE_ANDRE_TEKSTER_SOKER),
+  localeBlockForStegDokument(
+    Steg.FELLES,
+    DokumentNavn.MODAL_EOS_YTELSE_ANDRE_TEKSTER_ANDRE_FORELDER,
+  ),
+  localeBlockForStegDokument(
+    Steg.FELLES,
+    DokumentNavn.MODAL_EOS_YTELSE_ANDRE_TEKSTER_OMSORGSPERSON,
+  ),
 ];
 
 export default eosYtelseModal;
