@@ -58,6 +58,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
           mappeMedEnTypeDokument(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
           mappeMedEnTypeDokument(DokumentNavn.OM_DEG_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_ANDRE_TEKSTER),
         ]),
         stegMappe(Steg.DIN_LIVSSITUASJON, [
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
