@@ -6,6 +6,7 @@ import { DokumentNavn, Steg } from '../typer';
 const omDeg = [
   localeBlockForStegDokument(Steg.OM_DEG, DokumentNavn.OM_DEG_TITTEL),
   localeStringForStegDokument(Steg.OM_DEG, DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
+  localeBlockForStegDokument(Steg.OM_DEG, DokumentNavn.OM_DEG_ANDRE_TEKSTER),
   sporsmalDokument(Steg.OM_DEG, DokumentNavn.OM_DEG_SPORSMAL),
 ];
 
