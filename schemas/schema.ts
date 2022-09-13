@@ -13,7 +13,9 @@ import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal';
 import eosYtelseModal from './felles/modaler/eosYtelseModal';
 import leggTilBarnModal from './felles/modaler/leggTilBarnModal';
+import mistetInformajsonenDinModal from './felles/modaler/mistetInformajsonenDinModal';
 import pensjonModal from './felles/modaler/pensjonModal';
+import startPåNyttModal from './felles/modaler/startPåNyttModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import teksterForDato from './felles/teksterForDato';
@@ -27,6 +29,7 @@ import omBarna from './steg/omBarna';
 import omBarnet from './steg/omBarnet';
 import omDeg from './steg/omDeg';
 import oppsummering from './steg/oppsummering';
+import vedlikeholdsarbeid from './steg/vedlikeholdsarbeid';
 import velgBarn from './steg/velgBarn';
 import { StegDokument } from './typer';
 
@@ -52,6 +55,9 @@ const dokumenterMedFellesFelter = [
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
   ...teksterForDato,
+  ...startPåNyttModal,
+  ...mistetInformajsonenDinModal,
+  ...vedlikeholdsarbeid,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg), ...dok.fields],
