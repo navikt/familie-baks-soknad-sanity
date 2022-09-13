@@ -35,23 +35,23 @@
     "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/vision": "^2.33.0",
     "groq": "^2.29.3",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "styled-components": "^5.2.0"
+    "react": "^17.x",
+    "react-dom": "^17.x",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
-    "eslint": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-prettier": "^4.1.0",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-app": "^6.2.2",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.3"
   }
 }
