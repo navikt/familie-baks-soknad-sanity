@@ -16,6 +16,7 @@ export default () =>
       mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
       mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
       mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
+      mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
     ]);
 
 const mappeMedForskjelligTypeDokument = (
@@ -33,7 +34,7 @@ const documentListItem = (dokumentNavn: DokumentNavn) => {
     .child(S.defaultDocument({ documentId: dokumentNavn, schemaType: dokumentNavn }));
 };
 
-const mappeMedEnTypeDokument = (dokumentNavn: DokumentNavn) =>
+const mappeMedEnTypeDokument = (dokumentNavn: DokumentNavn): ListItemBuilder =>
   S.listItem()
     .title(dokumentTittel[dokumentNavn])
     .child(S.documentTypeList(dokumentNavn).title(dokumentTittel[dokumentNavn]));
@@ -58,6 +59,7 @@ const steglisteItem = S.listItem()
           documentListItem(DokumentNavn.OM_DEG_TITTEL),
           mappeMedEnTypeDokument(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
           mappeMedEnTypeDokument(DokumentNavn.OM_DEG_SPORSMAL),
+          mappeMedEnTypeDokument(DokumentNavn.OM_DEG_ANDRE_TEKSTER),
         ]),
         stegMappe(Steg.DIN_LIVSSITUASJON, [
           documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
@@ -205,6 +207,14 @@ const modalerlisteItem = S.listItem()
           documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN_TITTEL),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_SPORSMAL),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_ANDRE_TEKSTER),
+        ]),
+        mappeMedForskjelligTypeDokument('Start på nytt', [
+          documentListItem(DokumentNavn.MODAL_START_PAA_NYTT_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_START_PAA_NYTT_ANDRE_TEKSTER),
+        ]),
+        mappeMedForskjelligTypeDokument('Mistet informasjonen din', [
+          documentListItem(DokumentNavn.MODAL_MISTET_INFORMASJONEN_DIN_TITTEL),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_MISTET_INFORMASJONEN_DIN_ANDRE_TEKSTER),
         ]),
       ]),
   );
