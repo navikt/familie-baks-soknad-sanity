@@ -60,7 +60,7 @@ const dokumenterMedFellesFelter = [
   ...vedlikeholdsarbeid,
 ].map((dok: StegDokument) => ({
   ...dok,
-  fields: [...fieldsBase(dok.steg), ...dok.fields],
+  fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],
 }));
 
 // Then we give our schema to the builder and provide the result to Sanity

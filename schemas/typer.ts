@@ -306,3 +306,5 @@ export enum EFlettefelt {
   DATO = 'DATO',
   KLOKKESLETT = 'KLOKKESLETT',
 }
+
+export const modalPrefix = 'MODAL';
