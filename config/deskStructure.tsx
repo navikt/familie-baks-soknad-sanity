@@ -67,7 +67,6 @@ const steglisteItem = S.listItem()
         ]),
         stegMappe(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
-          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_LENKER),
           mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
         ]),
         stegMappe(Steg.OM_BARNA, [
