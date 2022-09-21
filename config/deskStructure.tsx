@@ -67,7 +67,6 @@ const steglisteItem = S.listItem()
         ]),
         stegMappe(Steg.VELG_BARN, [
           documentListItem(DokumentNavn.VELG_BARN_TITTEL),
-          mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_LENKER),
           mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
         ]),
         stegMappe(Steg.OM_BARNA, [
@@ -134,6 +133,14 @@ const modalerlisteItem = S.listItem()
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_BARN),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_BARN),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_BARN),
+        ]),
+        mappeMedForskjelligTypeDokument('Utenlandsopphold andre forelder', [
+          documentListItem(DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_ANDRE_FORELDER),
+          mappeMedEnTypeDokument(
+            DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_ANDRE_FORELDER,
+          ),
+          mappeMedEnTypeDokument(DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_ANDRE_FORELDER),
         ]),
         mappeMedForskjelligTypeDokument('Barnehageplass', [
           documentListItem(DokumentNavn.MODAL_BARNEHAGEPLASS_TITTEL),
