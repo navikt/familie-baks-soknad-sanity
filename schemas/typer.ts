@@ -311,6 +311,7 @@ export enum EFlettefelt {
   TOTAL_ANTALL = 'TOTAL_ANTALL',
   DATO = 'DATO',
   KLOKKESLETT = 'KLOKKESLETT',
+  LAND = 'LAND',
 }
 
 export const modalPrefix = 'MODAL';

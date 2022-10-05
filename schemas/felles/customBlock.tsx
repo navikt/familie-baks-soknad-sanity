@@ -69,6 +69,7 @@ const customBlock = {
                     { title: 'Total antall', value: EFlettefelt.TOTAL_ANTALL },
                     { title: 'Klokkeslett', value: EFlettefelt.KLOKKESLETT },
                     { title: 'Dato', value: EFlettefelt.DATO },
+                    { title: 'Land', value: EFlettefelt.LAND },
                   ],
                 },
               },
