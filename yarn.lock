@@ -2104,7 +2104,7 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
-"@typescript-eslint/eslint-plugin@^5.37.0", "@typescript-eslint/eslint-plugin@^5.9.1":
+"@typescript-eslint/eslint-plugin@^5.39.0", "@typescript-eslint/eslint-plugin@^5.9.1":
   version "5.39.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.39.0.tgz#778b2d9e7f293502c7feeea6c74dca8eb3e67511"
   integrity sha512-xVfKOkBm5iWMNGKQ2fwX5GVgBuHmZBO1tCRwXmY5oAIsPscfwm2UADDuNB8ZVYCtpQvJK4xpjrK7jEhcJ0zY9A==
@@ -2138,7 +2138,7 @@
     "@typescript-eslint/typescript-estree" "2.34.0"
     eslint-visitor-keys "^1.1.0"
 
-"@typescript-eslint/parser@^5.37.0", "@typescript-eslint/parser@^5.9.1":
+"@typescript-eslint/parser@^5.39.0", "@typescript-eslint/parser@^5.9.1":
   version "5.39.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.39.0.tgz#93fa0bc980a3a501e081824f6097f7ca30aaa22b"
   integrity sha512-PhxLjrZnHShe431sBAGHaNe6BDdxAASDySgsBCGxcBecVCi8NQWxQZMcizNA4g0pN51bBAn/FUfkWG3SDVcGlA==
@@ -5574,9 +5574,9 @@ groq-js@^0.2.0:
   resolved "https://registry.npmjs.org/groq-js/-/groq-js-0.2.0.tgz#abd4870014a1ccdf0936d5d75a78063aff9197c0"
   integrity sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==
 
-groq@^2.29.3:
+groq@^2.33.2:
   version "2.33.2"
-  resolved "https://registry.npmjs.org/groq/-/groq-2.33.2.tgz#3a85c85a1e43e79bba77f171f23997f541d61010"
+  resolved "https://registry.yarnpkg.com/groq/-/groq-2.33.2.tgz#3a85c85a1e43e79bba77f171f23997f541d61010"
   integrity sha512-5pf4c91JESCS28IJCgolJq/WBw4Xvf2m8FgZVUlrCig17I+qERosALAHLyyutXu403EYnyCD3DdCLaPb3aGneA==
 
 gunzip-maybe@^1.4.1:
