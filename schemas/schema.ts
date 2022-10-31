@@ -4,8 +4,8 @@ import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
 import customBlock from './felles/customBlock';
-import feiltekster from './felles/feiltekster';
 import fieldsBase from './felles/fieldsBase';
+import formateringsfeilmelidinger from './felles/formateringsfeilmelidinger';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
@@ -56,7 +56,7 @@ const dokumenterMedFellesFelter = [
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
   ...teksterForDato,
-  ...feiltekster,
+  ...formateringsfeilmelidinger,
   ...startPåNyttModal,
   ...mistetInformajsonenDinModal,
   ...vedlikeholdsarbeid,
