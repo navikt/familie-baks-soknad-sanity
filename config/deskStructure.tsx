@@ -16,6 +16,7 @@ export default () =>
       mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
       mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
       mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
+      mappeMedEnTypeDokument(DokumentNavn.FORMATERINGSFEILMELDINGER),
       mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
     ]);
 
