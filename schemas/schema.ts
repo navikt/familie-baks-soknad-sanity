@@ -12,6 +12,7 @@ import localeString from './felles/localeString';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
 import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal';
+import blokkerTilbakeKnappModal from './felles/modaler/blokkerTilbakeKnappModal';
 import eosYtelseModal from './felles/modaler/eosYtelseModal';
 import leggTilBarnModal from './felles/modaler/leggTilBarnModal';
 import mistetInformajsonenDinModal from './felles/modaler/mistetInformajsonenDinModal';
@@ -60,6 +61,7 @@ const dokumenterMedFellesFelter = [
   ...startPåNyttModal,
   ...mistetInformajsonenDinModal,
   ...vedlikeholdsarbeid,
+  ...blokkerTilbakeKnappModal,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],

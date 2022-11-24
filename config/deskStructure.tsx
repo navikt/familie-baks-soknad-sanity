@@ -216,5 +216,11 @@ const modalerlisteItem = S.listItem()
           documentListItem(DokumentNavn.MODAL_MISTET_INFORMASJONEN_DIN_TITTEL),
           mappeMedEnTypeDokument(DokumentNavn.MODAL_MISTET_INFORMASJONEN_DIN_ANDRE_TEKSTER),
         ]),
+        mappeMedForskjelligTypeDokument('Blokker tilbakeknapp', [
+          documentListItem(DokumentNavn.MODAL_BLOKKER_TILBAKE_KNAPP_TITTEL),
+          documentListItem(DokumentNavn.MODAL_BLOKKER_TILBAKE_KNAPP_TEKST),
+          documentListItem(DokumentNavn.MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV),
+          documentListItem(DokumentNavn.MODAL_BLOKKER_TILBAKE_KNAPP_AVBRYT),
+        ]),
       ]),
   );
