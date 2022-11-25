@@ -18,6 +18,7 @@ export default () =>
       mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
       mappeMedEnTypeDokument(DokumentNavn.FORMATERINGSFEILMELDINGER),
       mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
+      documentListItem(DokumentNavn.BANNER),
     ]);
 
 const mappeMedForskjelligTypeDokument = (
