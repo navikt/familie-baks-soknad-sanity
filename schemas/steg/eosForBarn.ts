@@ -12,7 +12,7 @@ const eosForBarn = [
     Steg.EØS_FOR_BARN,
     DokumentNavn.EOS_FOR_BARN_SLEKTSFORHOLD_ALTERNATIVER,
   ),
-  localeStringForStegDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
+  localeBlockForStegDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_ANDRE_TEKSTER),
 ];
 
 export default eosForBarn;
