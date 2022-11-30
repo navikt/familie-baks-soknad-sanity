@@ -156,6 +156,7 @@ export enum DokumentNavn {
   MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV = 'MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV',
   MODAL_BLOKKER_TILBAKE_KNAPP_AVBRYT = 'MODAL_BLOKKER_TILBAKE_KNAPP_AVBRYT',
   BANNER = 'BANNER',
+  KAN_IKKE_BRUKE_SOKNAD = 'KAN_IKKE_BRUKE_SOKNAD',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -266,6 +267,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   KVITTERING_ANDRE_TEKSTER: 'Andre tekster',
   VEDLIKEHOLDSARBEID: 'Vedlikeholdsarbeid',
   BANNER: 'Banner',
+  KAN_IKKE_BRUKE_SOKNAD: 'Kan ikke bruke søknad',
 };
 
 export enum Steg {

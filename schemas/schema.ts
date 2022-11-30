@@ -8,6 +8,7 @@ import customBlock from './felles/customBlock';
 import fieldsBase from './felles/fieldsBase';
 import formateringsfeilmelidinger from './felles/formateringsfeilmelidinger';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
+import kanIkkeBrukeSoknad from './felles/kanIkkeBrukeSoknad';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
@@ -64,6 +65,7 @@ const dokumenterMedFellesFelter = [
   ...vedlikeholdsarbeid,
   ...blokkerTilbakeKnappModal,
   ...banner,
+  ...kanIkkeBrukeSoknad,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],

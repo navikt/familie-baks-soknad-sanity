@@ -19,6 +19,7 @@ export default () =>
       mappeMedEnTypeDokument(DokumentNavn.FORMATERINGSFEILMELDINGER),
       mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
       documentListItem(DokumentNavn.BANNER),
+      mappeMedEnTypeDokument(DokumentNavn.KAN_IKKE_BRUKE_SOKNAD),
     ]);
 
 const mappeMedForskjelligTypeDokument = (
