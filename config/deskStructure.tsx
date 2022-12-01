@@ -21,6 +21,7 @@ export default () =>
       documentListItem(DokumentNavn.BANNER),
       mappeMedEnTypeDokument(DokumentNavn.KAN_IKKE_BRUKE_SOKNAD),
       mappeMedEnTypeDokument(DokumentNavn.ALTERNATIVE_TEKSTER),
+      mappeMedEnTypeDokument(DokumentNavn.HJELPETEKSTER_FOR_INPUT),
     ]);
 
 const mappeMedForskjelligTypeDokument = (

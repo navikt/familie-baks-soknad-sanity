@@ -158,6 +158,7 @@ export enum DokumentNavn {
   BANNER = 'BANNER',
   KAN_IKKE_BRUKE_SOKNAD = 'KAN_IKKE_BRUKE_SOKNAD',
   ALTERNATIVE_TEKSTER = 'ALTERNATIVE_TEKSTER',
+  HJELPETEKSTER_FOR_INPUT = 'HJELPETEKSTER_FOR_INPUT',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -270,6 +271,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   BANNER: 'Banner',
   KAN_IKKE_BRUKE_SOKNAD: 'Kan ikke bruke søknad',
   ALTERNATIVE_TEKSTER: 'Alternative tekster',
+  HJELPETEKSTER_FOR_INPUT: 'Hjelpetekster for inputfelt',
 };
 
 export enum Steg {

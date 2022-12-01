@@ -9,6 +9,8 @@ import customBlock from './felles/customBlock';
 import fieldsBase from './felles/fieldsBase';
 import formateringsfeilmelidinger from './felles/formateringsfeilmelidinger';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
+import hjelpeteksterInputfelt from './felles/hjelpeteksterInputfelt';
+import hjelpeteksterInputfeltgammel from './felles/hjelpeteksterInputfeltgammel';
 import kanIkkeBrukeSoknad from './felles/kanIkkeBrukeSoknad';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
@@ -23,7 +25,6 @@ import pensjonModal from './felles/modaler/pensjonModal';
 import startPåNyttModal from './felles/modaler/startPåNyttModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
-import teksterForDato from './felles/teksterForDato';
 import dinLivssituasjon from './steg/dinLivssituasjon';
 import dokumentasjon from './steg/dokumentasjon';
 import eosForBarn from './steg/eosForBarn';
@@ -59,7 +60,7 @@ const dokumenterMedFellesFelter = [
   ...leggTilBarnModal,
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
-  ...teksterForDato,
+  ...hjelpeteksterInputfeltgammel,
   ...formateringsfeilmelidinger,
   ...startPåNyttModal,
   ...mistetInformajsonenDinModal,
@@ -68,6 +69,7 @@ const dokumenterMedFellesFelter = [
   ...banner,
   ...kanIkkeBrukeSoknad,
   ...alternativeTekster,
+  ...hjelpeteksterInputfelt,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],
