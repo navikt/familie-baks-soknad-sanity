@@ -3,11 +3,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
+import alternativeTekster from './felles/alternativeTekster';
 import banner from './felles/banner';
 import customBlock from './felles/customBlock';
 import fieldsBase from './felles/fieldsBase';
 import formateringsfeilmelidinger from './felles/formateringsfeilmelidinger';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
+import hjelpeteksterInputfelt from './felles/hjelpeteksterInputfelt';
+import kanIkkeBrukeSoknad from './felles/kanIkkeBrukeSoknad';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
@@ -21,7 +24,6 @@ import pensjonModal from './felles/modaler/pensjonModal';
 import startPåNyttModal from './felles/modaler/startPåNyttModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
-import teksterForDato from './felles/teksterForDato';
 import dinLivssituasjon from './steg/dinLivssituasjon';
 import dokumentasjon from './steg/dokumentasjon';
 import eosForBarn from './steg/eosForBarn';
@@ -57,13 +59,15 @@ const dokumenterMedFellesFelter = [
   ...leggTilBarnModal,
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
-  ...teksterForDato,
   ...formateringsfeilmelidinger,
   ...startPåNyttModal,
   ...mistetInformajsonenDinModal,
   ...vedlikeholdsarbeid,
   ...blokkerTilbakeKnappModal,
   ...banner,
+  ...kanIkkeBrukeSoknad,
+  ...alternativeTekster,
+  ...hjelpeteksterInputfelt,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],

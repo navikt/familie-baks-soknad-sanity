@@ -50,7 +50,6 @@ export enum CustomSanityTyper {
 
 export enum DokumentNavn {
   NAVIGASJON = 'NAVIGASJON',
-  TEKSTER_FOR_DATO = 'TEKSTER_FOR_DATO',
   FORMATERINGSFEILMELDINGER = 'FORMATERINGSFEILMELDINGER',
   FRITTSTAENDEORD = 'FRITTSTAENDEORD',
   FORSIDE_VEILEDERHILSEN = 'FORSIDE_VEILEDERHILSEN',
@@ -156,6 +155,9 @@ export enum DokumentNavn {
   MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV = 'MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV',
   MODAL_BLOKKER_TILBAKE_KNAPP_AVBRYT = 'MODAL_BLOKKER_TILBAKE_KNAPP_AVBRYT',
   BANNER = 'BANNER',
+  KAN_IKKE_BRUKE_SOKNAD = 'KAN_IKKE_BRUKE_SOKNAD',
+  ALTERNATIVE_TEKSTER = 'ALTERNATIVE_TEKSTER',
+  HJELPETEKSTER_FOR_INPUT = 'HJELPETEKSTER_FOR_INPUT',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -164,7 +166,6 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   MODAL_BLOKKER_TILBAKE_KNAPP_TIL_DITT_NAV: 'Til ditt NAV',
   MODAL_BLOKKER_TILBAKE_KNAPP_TITTEL: 'Tittel',
   NAVIGASJON: 'Navigasjon',
-  TEKSTER_FOR_DATO: 'Tekster for datofelt',
   FORMATERINGSFEILMELDINGER: 'Formateringsfeilmeldinger',
   MODAL_UTENLANDSOPPHOLD_SPORSMAL_SOKER: 'Spørsmål',
   MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER: 'Årsak valgalternativer',
@@ -266,6 +267,9 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   KVITTERING_ANDRE_TEKSTER: 'Andre tekster',
   VEDLIKEHOLDSARBEID: 'Vedlikeholdsarbeid',
   BANNER: 'Banner',
+  KAN_IKKE_BRUKE_SOKNAD: 'Kan ikke bruke søknad',
+  ALTERNATIVE_TEKSTER: 'Alternative tekster',
+  HJELPETEKSTER_FOR_INPUT: 'Hjelpetekster for inputfelt',
 };
 
 export enum Steg {

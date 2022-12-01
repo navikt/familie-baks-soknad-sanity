@@ -15,10 +15,12 @@ export default () =>
       modalerlisteItem,
       mappeMedEnTypeDokument(DokumentNavn.FRITTSTAENDEORD),
       mappeMedEnTypeDokument(DokumentNavn.NAVIGASJON),
-      mappeMedEnTypeDokument(DokumentNavn.TEKSTER_FOR_DATO),
       mappeMedEnTypeDokument(DokumentNavn.FORMATERINGSFEILMELDINGER),
       mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
       documentListItem(DokumentNavn.BANNER),
+      mappeMedEnTypeDokument(DokumentNavn.KAN_IKKE_BRUKE_SOKNAD),
+      mappeMedEnTypeDokument(DokumentNavn.ALTERNATIVE_TEKSTER),
+      mappeMedEnTypeDokument(DokumentNavn.HJELPETEKSTER_FOR_INPUT),
     ]);
 
 const mappeMedForskjelligTypeDokument = (
