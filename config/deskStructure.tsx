@@ -20,6 +20,7 @@ export default () =>
       mappeMedEnTypeDokument(DokumentNavn.VEDLIKEHOLDSARBEID),
       documentListItem(DokumentNavn.BANNER),
       mappeMedEnTypeDokument(DokumentNavn.KAN_IKKE_BRUKE_SOKNAD),
+      mappeMedEnTypeDokument(DokumentNavn.ALTERNATIVE_TEKSTER),
     ]);
 
 const mappeMedForskjelligTypeDokument = (

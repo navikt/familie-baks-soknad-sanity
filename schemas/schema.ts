@@ -3,6 +3,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
+import alternativeTekster from './felles/alternativeTekster';
 import banner from './felles/banner';
 import customBlock from './felles/customBlock';
 import fieldsBase from './felles/fieldsBase';
@@ -66,6 +67,7 @@ const dokumenterMedFellesFelter = [
   ...blokkerTilbakeKnappModal,
   ...banner,
   ...kanIkkeBrukeSoknad,
+  ...alternativeTekster,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],
