@@ -10,7 +10,6 @@ import fieldsBase from './felles/fieldsBase';
 import formateringsfeilmelidinger from './felles/formateringsfeilmelidinger';
 import frittstaendeOrdDokumenter from './felles/frittstaendeOrdDokumenter';
 import hjelpeteksterInputfelt from './felles/hjelpeteksterInputfelt';
-import hjelpeteksterInputfeltgammel from './felles/hjelpeteksterInputfeltgammel';
 import kanIkkeBrukeSoknad from './felles/kanIkkeBrukeSoknad';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
@@ -60,7 +59,6 @@ const dokumenterMedFellesFelter = [
   ...leggTilBarnModal,
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
-  ...hjelpeteksterInputfeltgammel,
   ...formateringsfeilmelidinger,
   ...startPåNyttModal,
   ...mistetInformajsonenDinModal,
