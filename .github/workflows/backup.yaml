@@ -15,7 +15,7 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_VIEWER_TOKEN }}
         with:
-          args: dataset export production backups/baks-soknad-prod.tar.gz
+          args: . dataset export production backups/baks-soknad-prod.tar.gz
       - name: Upload baks-soknad-prod.tar.gz
         uses: actions/upload-artifact@v2
         with:
@@ -28,4 +28,4 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
         with:
-          args: dataset import backups/baks-soknad-prod.tar.gz test --replace
+          args: . dataset import backups/baks-soknad-prod.tar.gz test --replace
