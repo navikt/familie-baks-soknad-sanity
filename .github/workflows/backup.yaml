@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Export prod dataset
-        uses: sanity-io/github-action-sanity@v0.2-alpha
+        uses: sanity-io/github-action-sanity@v0.4-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_VIEWER_TOKEN }}
         with:
-          args: dataset export production backups/baks-soknad-prod.tar.gz
+          args: . dataset export production backups/baks-soknad-prod.tar.gz
       - name: Upload baks-soknad-prod.tar.gz
         uses: actions/upload-artifact@v2
         with:
@@ -24,8 +24,8 @@ jobs:
           # Fails the workflow if no files are found; defaults to 'warn'
           if-no-files-found: error
       - name: Import prod dataset til test
-        uses: sanity-io/github-action-sanity@v0.2-alpha
+        uses: sanity-io/github-action-sanity@v0.4-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
         with:
-          args: dataset import backups/baks-soknad-prod.tar.gz test --replace
+          args: . dataset import backups/baks-soknad-prod.tar.gz test --replace
