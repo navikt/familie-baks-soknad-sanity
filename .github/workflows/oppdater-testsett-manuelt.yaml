@@ -9,13 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Export prod dataset
-        uses: sanity-io/github-action-sanity@v0.2-alpha
+        uses: sanity-io/github-action-sanity@v0.4-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_VIEWER_TOKEN }}
         with:
           args: dataset export production backups/baks-soknad-prod.tar.gz
       - name: Import prod dataset til test
-        uses: sanity-io/github-action-sanity@v0.2-alpha
+        uses: sanity-io/github-action-sanity@v0.4-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
         with:
