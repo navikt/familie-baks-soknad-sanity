@@ -4,7 +4,7 @@ on:
 
 jobs:
   oppdater-testsett:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Oppdater testsett manuelt
     steps:
       - uses: actions/checkout@v3

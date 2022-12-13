@@ -6,7 +6,7 @@ on:
     - cron: "0 4 */16 * *"
 jobs:
   backup-prod-dataset:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Backup prod dataset
     steps:
       - uses: actions/checkout@v3
