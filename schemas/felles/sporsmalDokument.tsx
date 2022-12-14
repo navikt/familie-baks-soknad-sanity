@@ -39,7 +39,7 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
     {
       name: 'checkboxLabel',
       title: 'Checkbox label',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
       description: '(frivillig)',
     },
     {
