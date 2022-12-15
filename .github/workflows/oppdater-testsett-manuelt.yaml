@@ -4,19 +4,23 @@ on:
 
 jobs:
   oppdater-testsett:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Oppdater testsett manuelt
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          yarn
+
       - name: Export prod dataset
-        uses: sanity-io/github-action-sanity@v0.4-alpha
-        env:
-          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_VIEWER_TOKEN }}
-        with:
-          args: . dataset export production backups/baks-soknad-prod.tar.gz
+        run: |
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
+          npx sanity dataset export \
+          production backups/baks-soknad-prod.tar.gz
+
       - name: Import prod dataset til test
-        uses: sanity-io/github-action-sanity@v0.4-alpha
-        env:
-          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
-        with:
-          args: . dataset import backups/baks-soknad-prod.tar.gz test --replace
+        run: |
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
+          npx sanity dataset import \
+          backups/baks-soknad-prod.tar.gz test --replace
