@@ -15,6 +15,7 @@ const fieldsBase = (steg: Steg, name: DokumentNavn) => [
     type: SanityTyper.STRING,
     description: 'Teknisk navn. Eksempel borPaRegistrertAdresse (obligatorisk)',
     validation: Rule => apiNavnValideringer(Rule, SanityTyper.DOCUMENT, name),
+    readOnly: true, // kommenter ut denne linjen dersom man ønsker å endre api_navn
   },
   {
     name: 'ytelse',
