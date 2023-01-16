@@ -34,7 +34,7 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
       name: 'beskrivelse',
       title: 'Beskrivelse av spørsmål',
       description: 'F.eks. dd.mm.åååå under spørsmål om dato. (frivillig)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
     },
     {
       name: 'checkboxLabel',
@@ -50,7 +50,7 @@ const sporsmalDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument 
         </span>
       ),
       description: 'Beskjed om at vedlegg må lastes opp. (frivillig)',
-      type: CustomSanityTyper.LOCALE_STRING,
+      type: CustomSanityTyper.LOCALE_BLOCK,
     },
     {
       name: 'alert',
