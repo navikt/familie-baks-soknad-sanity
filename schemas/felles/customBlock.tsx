@@ -45,7 +45,7 @@ const customBlock = {
                     cursor: 'pointer',
                   }}
                 >
-                  {props.flettefeltVerdi}
+                  {props.flettefeltVerdi ? props.flettefeltVerdi : 'VELG FLETTEFELT'}
                 </span>
               ),
             },
@@ -54,6 +54,7 @@ const customBlock = {
                 name: 'flettefeltVerdi',
                 type: SanityTyper.STRING,
                 title: 'Flettefeltverdier',
+                validation: Rule => Rule.required().error('Du må velge gyldig flettefelt!'),
                 options: {
                   list: [
                     { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
