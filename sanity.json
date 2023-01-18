@@ -55,6 +55,10 @@
     {
       "implements": "part:@sanity/base/brand-logo",
       "path": "./images/NavLogo.tsx"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./actions/actionResolver.ts"
     }
   ]
 }
