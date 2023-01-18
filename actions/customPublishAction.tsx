@@ -33,8 +33,6 @@ export function getExtendedPublishAction() {
       }
     }
 
-    removedFields.join(", ")
-
     return {
       ...originalResult,
       onHandle: () => {
