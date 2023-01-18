@@ -55,7 +55,6 @@ export function getExtendedPublishAction() {
                   Verifiser med utvikler at {feltetFeltene} er fjernet fra koden før du publiserer.
                 </Text>
               </Stack>
-              <hr />
             </Card>
             <Card style={{textAlign: "right"}}>
               <Inline space={[5, 5, 5]}>
