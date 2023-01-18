@@ -9,7 +9,7 @@ export function getExtendedPublishAction() {
     const {draft, published} = props;
     const [isDialogOpen, setDialogOpen] = React.useState(false);
     const [removedFields, setRemovedFields] = React.useState([]);
-    const feltetFeltene = removedFields.length > 1 ? 'feltene' : 'feltet';
+    const feltetFelteneTekst = removedFields.length > 1 ? 'feltene' : 'feltet';
 
     const validateChanges = () => {
       const draftKeys = Object.keys(draft);
@@ -49,10 +49,10 @@ export function getExtendedPublishAction() {
             <Card paddingTop={2} paddingBottom={4}>
               <Stack space={[4]}>
                 <Text size={2}>
-                  Du har fjernet innholdet i {feltetFeltene}: <i><b>{removedFieldsText()}</b></i>, og dette kan føre til at søknadsdialogen krasjer!
+                  Du har fjernet innholdet i {feltetFelteneTekst}: <i><b>{removedFieldsText()}</b></i>, og dette kan føre til at søknadsdialogen krasjer!
                 </Text>
                 <Text size={2}>
-                  Verifiser med utvikler at {feltetFeltene} er fjernet fra koden før du publiserer.
+                  Verifiser med utvikler at {feltetFelteneTekst} er fjernet fra koden før du publiserer.
                 </Text>
               </Stack>
             </Card>
