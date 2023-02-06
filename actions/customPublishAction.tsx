@@ -1,37 +1,37 @@
-import { PublishAction } from "part:@sanity/base/document-actions";
-import React from 'react'
-import { Box, Button, Card, Inline, Stack, Text } from "@sanity/ui";
-import { PublishIcon  } from "@sanity/icons";
+import { PublishAction } from 'part:@sanity/base/document-actions';
+import React from 'react';
+import { Box, Button, Card, Inline, Stack, Text } from '@sanity/ui';
+import { PublishIcon } from '@sanity/icons';
 
 export function getExtendedPublishAction() {
-  return (props) => {
+  return props => {
     const originalResult = PublishAction(props);
-    const {draft, published} = props;
+    const { draft, published } = props;
     const [isDialogOpen, setDialogOpen] = React.useState(false);
     const [removedFields, setRemovedFields] = React.useState([]);
     const feltetFelteneTekst = removedFields.length > 1 ? 'feltene' : 'feltet';
 
     const validateChanges = () => {
-      const draftKeys = Object.keys(draft);
-      const publishedKeys = Object.keys(published);
-      const keysInPublishedButNotInDraft = publishedKeys.filter(key => draftKeys.indexOf(key) === -1);
-      if (keysInPublishedButNotInDraft.length > 0) {
+      const draftKeys = draft && Object.keys(draft);
+      const publishedKeys = published && Object.keys(published);
+      const keysInPublishedButNotInDraft = publishedKeys?.filter(
+        key => draftKeys?.indexOf(key) === -1,
+      );
+      if (keysInPublishedButNotInDraft?.length > 0) {
         setRemovedFields(keysInPublishedButNotInDraft);
         setDialogOpen(true);
+      } else {
+        originalResult.onHandle();
       }
-      else {
-        originalResult.onHandle()
-      }
-    }
+    };
 
     const removedFieldsText = (): string => {
       if (removedFields.length == 1) {
-        return removedFields[0]
+        return removedFields[0];
+      } else {
+        return removedFields.slice(0, -1).join(', ') + ' og ' + removedFields.slice(-1);
       }
-      else {
-        return removedFields.slice(0, -1).join(", ") + " og " + removedFields.slice(-1);
-      }
-    }
+    };
 
     return {
       ...originalResult,
@@ -49,18 +49,23 @@ export function getExtendedPublishAction() {
             <Card paddingTop={2} paddingBottom={4}>
               <Stack space={[4]}>
                 <Text size={2}>
-                  Du har fjernet innholdet i {feltetFelteneTekst}: <i><b>{removedFieldsText()}</b></i>, og dette kan føre til at søknadsdialogen krasjer!
+                  Du har fjernet innholdet i {feltetFelteneTekst}:{' '}
+                  <i>
+                    <b>{removedFieldsText()}</b>
+                  </i>
+                  , og dette kan føre til at søknadsdialogen krasjer!
                 </Text>
                 <Text size={2}>
-                  Verifiser med utvikler at {feltetFelteneTekst} er fjernet fra koden før du publiserer.
+                  Verifiser med utvikler at {feltetFelteneTekst} er fjernet fra koden før du
+                  publiserer.
                 </Text>
               </Stack>
             </Card>
-            <Card style={{textAlign: "right"}}>
+            <Card style={{ textAlign: 'right' }}>
               <Inline space={[5, 5, 5]}>
                 <Button
                   padding={4}
-                  text={"Avbryt"}
+                  text={'Avbryt'}
                   onClick={() => {
                     setDialogOpen(false);
                   }}
@@ -72,13 +77,14 @@ export function getExtendedPublishAction() {
                   text="Publisér"
                   onClick={() => {
                     setDialogOpen(false);
-                    originalResult.onHandle()
+                    originalResult.onHandle();
                   }}
                 />
               </Inline>
             </Card>
-          </>)
+          </>
+        ),
       },
-    }
+    };
   };
 }
