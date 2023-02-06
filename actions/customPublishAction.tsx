@@ -49,7 +49,7 @@ export function getExtendedPublishAction() {
             <Card paddingTop={2} paddingBottom={4}>
               <Stack space={[4]}>
                 <Text size={2}>
-                  Du har fjernet innholdet i {feltetFelteneTekst}:{' '}
+                  Du har fjernet innholdet i {feltetFelteneTekst}:
                   <i>
                     <b>{removedFieldsText()}</b>
                   </i>
