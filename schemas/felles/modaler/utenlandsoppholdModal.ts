@@ -18,6 +18,16 @@ const utenlandsoppholdModal = [
     DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_SOKER,
   ),
   localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_SOKER),
+  localeBlockForStegDokument(
+    Steg.FELLES,
+    DokumentNavn.MODAL_UTENLANDSOPPHOLD_TITTEL_ANDRE_FORELDER,
+  ),
+  sporsmalDokument(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_SPORSMAL_ANDRE_FORELDER),
+  localeStringForStegDokument(
+    Steg.FELLES,
+    DokumentNavn.MODAL_UTENLANDSOPPHOLD_ARSAK_VALGALTERNATIVER_ANDRE_FORELDER,
+  ),
+  localeBlockForStegDokument(Steg.FELLES, DokumentNavn.MODAL_UTENLANDSOPPHOLD_ANDRE_TEKSTER_ANDRE_FORELDER),
 ];
 
 export default utenlandsoppholdModal;
