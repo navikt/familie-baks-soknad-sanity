@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { rgba } from 'polished';
-
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
 
 const customBlock = {
@@ -35,26 +33,7 @@ const customBlock = {
             name: 'flettefelt',
             type: SanityTyper.OBJECT,
             title: 'Flettefelt',
-            blockEditor: {
-              icon: () => <span>F</span>,
-              render: (props: {
-                value: {
-                  flettefeltVerdi: React.ReactNode;
-                };
-              }) => {
-                return (
-                  <span
-                    style={{
-                      backgroundColor: rgba(30, 133, 209, 0.2),
-                      color: 'black',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : 'VELG FLETTEFELT'}
-                  </span>
-                );
-              },
-            },
+            icon: () => <span>F</span>,
             fields: [
               {
                 name: 'flettefeltVerdi',
