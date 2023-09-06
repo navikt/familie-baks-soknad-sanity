@@ -6,8 +6,9 @@
   "main": "package.json",
   "author": "Daphne <daphne.leebeek@nav.no>",
   "scripts": {
-    "start": "sanity start",
+    "dev": "sanity dev",
     "build": "sanity build",
+    "deploy": "sanity deploy",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p ./tsconfig.json"
   },
@@ -26,22 +27,18 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.35.2",
-    "@sanity/core": "^2.35.0",
-    "@sanity/dashboard": "^2.35.2",
-    "@sanity/default-layout": "^2.35.2",
-    "@sanity/default-login": "^2.35.2",
-    "@sanity/desk-tool": "^2.35.2",
-    "@sanity/eslint-config-studio": "^2.0.1",
-    "@sanity/vision": "^2.35.2",
+    "@sanity/client": "^6.4.10",
+    "@sanity/vision": "^3.16.4",
     "groq": "^2.33.2",
     "react": "^18.x",
     "react-dom": "^18.x",
+    "sanity": "^3.16.4",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "@sanity/eslint-config-studio": "^2.0.1",
     "eslint": "^8.46.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
