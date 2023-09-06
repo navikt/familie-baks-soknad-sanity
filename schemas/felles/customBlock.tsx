@@ -37,17 +37,23 @@ const customBlock = {
             title: 'Flettefelt',
             blockEditor: {
               icon: () => <span>F</span>,
-              render: props => (
-                <span
-                  style={{
-                    backgroundColor: rgba(30, 133, 209, 0.2),
-                    color: 'black',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {props.flettefeltVerdi ? props.flettefeltVerdi : 'VELG FLETTEFELT'}
-                </span>
-              ),
+              render: (props: {
+                value: {
+                  flettefeltVerdi: React.ReactNode;
+                };
+              }) => {
+                return (
+                  <span
+                    style={{
+                      backgroundColor: rgba(30, 133, 209, 0.2),
+                      color: 'black',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : 'VELG FLETTEFELT'}
+                  </span>
+                );
+              },
             },
             fields: [
               {
