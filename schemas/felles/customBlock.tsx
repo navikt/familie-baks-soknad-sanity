@@ -1,8 +1,31 @@
 import React from 'react';
 
 import { rgba } from 'polished';
+import { BlockAnnotationProps } from 'sanity';
 
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
+
+interface FlettefeltProps extends BlockAnnotationProps {
+  value: {
+    flettefeltVerdi?: string;
+    _type: string;
+    _key: string;
+  };
+}
+
+const Flettefelt: React.FC<FlettefeltProps> = props => {
+  return (
+    <span
+      style={{
+        backgroundColor: rgba(30, 133, 209, 0.2),
+        color: 'black',
+        cursor: 'pointer',
+      }}
+    >
+      {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : props.renderDefault(props)}
+    </span>
+  );
+};
 
 const customBlock = {
   title: 'Custom block',
@@ -35,19 +58,9 @@ const customBlock = {
             name: 'flettefelt',
             type: SanityTyper.OBJECT,
             title: 'Flettefelt',
-            blockEditor: {
-              icon: () => <span>F</span>,
-              render: props => (
-                <span
-                  style={{
-                    backgroundColor: rgba(30, 133, 209, 0.2),
-                    color: 'black',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {props.flettefeltVerdi ? props.flettefeltVerdi : 'VELG FLETTEFELT'}
-                </span>
-              ),
+            icon: () => 'F',
+            components: {
+              annotation: Flettefelt,
             },
             fields: [
               {

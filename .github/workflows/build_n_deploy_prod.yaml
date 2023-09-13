@@ -1,20 +1,29 @@
 name: Build and deploy prod
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'master'
 
 jobs:
   sanity-deploy:
-    runs-on: ubuntu-20.04
-    name: Deploy Sanity
+    runs-on: ubuntu-latest
+    name: Deploy
     steps:
-      - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: |
-          yarn
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Deploy
-        run: |
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" \
-          npx sanity deploy
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          cache-dependency-path: ./package.json
+          node-version: 20
+
+      - name: Installer sanity
+        run: yarn global add @sanity/cli && sanity install
+
+      - name: Deploy sanity
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
+        run: sanity deploy
