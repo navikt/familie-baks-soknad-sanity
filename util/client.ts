@@ -1,11 +1,6 @@
 import { createClient } from '@sanity/client';
 
-export enum Dataset {
-  PROD = 'production',
-  TEST = 'test',
-}
-
-export const PROSJEKT_ID = 'by26nl8j';
+import { Dataset, PROSJEKT_ID } from './constants';
 
 // Import using ESM URL imports in environments that supports it:
 // import {createClient} from 'https://esm.sh/@sanity/client'

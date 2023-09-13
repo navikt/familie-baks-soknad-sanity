@@ -1,6 +1,6 @@
 import { defineCliConfig } from 'sanity/cli';
 
-export const PROSJEKT_ID = 'by26nl8j';
+import { PROSJEKT_ID } from './util/constants';
 
 export default defineCliConfig({
   api: {

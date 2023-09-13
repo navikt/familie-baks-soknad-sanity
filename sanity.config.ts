@@ -4,13 +4,7 @@ import { deskTool } from 'sanity/desk';
 
 import { structure } from './config/deskStructure';
 import { schemaTypes } from './schemas/schema';
-
-enum Dataset {
-  PROD = 'production',
-  TEST = 'test',
-}
-
-const PROSJEKT_ID = 'by26nl8j';
+import { Dataset, PROSJEKT_ID } from './util/constants';
 
 const sharedConfig = definePlugin({
   name: 'shareConfig',
