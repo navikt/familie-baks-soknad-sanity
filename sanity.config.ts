@@ -2,6 +2,7 @@ import { visionTool } from '@sanity/vision';
 import { AuthConfig, defineConfig, definePlugin } from 'sanity';
 import { deskTool } from 'sanity/desk';
 
+import { customPublishAction } from './actions/customPublishAction';
 import { structure } from './config/deskStructure';
 import { schemaTypes } from './schemas/schema';
 import { Dataset, PROSJEKT_ID } from './util/constants';
@@ -45,5 +46,13 @@ export default defineConfig([
     basePath: `/${Dataset.TEST}`,
     plugins: [sharedConfig()],
     auth: auth,
+    document: {
+      actions: prev =>
+        prev.map(originalAction =>
+          originalAction.action === 'publish'
+            ? customPublishAction(originalAction)
+            : originalAction,
+        ),
+    },
   },
 ]);
