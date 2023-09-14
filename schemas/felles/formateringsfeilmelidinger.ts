@@ -1,4 +1,5 @@
 import { DokumentNavn, Steg } from '../typer';
+
 import localeStringForStegDokument from './localeStringForStegDokument';
 
 const formateringsfeilmelidinger = [

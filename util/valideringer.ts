@@ -1,8 +1,9 @@
 import { Rule } from '@sanity/types';
 import groq from 'groq';
 
-import { client } from './client';
 import { DokumentNavn, modalPrefix } from '../schemas/typer';
+
+import { client } from './client';
 
 const førsteTegnErLitenBokstav = (tekst: string): true | string =>
   RegExp(/^[a-zæøå].*/).test(tekst)
