@@ -1,11 +1,14 @@
-import { PublishAction } from 'part:@sanity/base/document-actions';
 import React from 'react';
-import { Box, Button, Card, Inline, Stack, Text } from '@sanity/ui';
-import { PublishIcon } from '@sanity/icons';
 
-export function getExtendedPublishAction() {
-  return props => {
-    const originalResult = PublishAction(props);
+import { PublishIcon } from '@sanity/icons';
+import { Button, Card, Inline, Stack, Text } from '@sanity/ui';
+import { DocumentActionComponent, DocumentActionProps } from 'sanity';
+
+export function customPublishAction(
+  originalPublishAction: DocumentActionComponent,
+): DocumentActionComponent {
+  return (props: DocumentActionProps) => {
+    const originalResult = originalPublishAction(props);
     const { draft, published } = props;
     const [isDialogOpen, setDialogOpen] = React.useState(false);
     const [removedFields, setRemovedFields] = React.useState([]);
@@ -39,7 +42,7 @@ export function getExtendedPublishAction() {
         validateChanges();
       },
       dialog: isDialogOpen && {
-        type: 'modal',
+        type: 'dialog',
         onClose: () => {
           setDialogOpen(false);
         },
