@@ -1,4 +1,5 @@
 import { DokumentNavn, Steg } from '../typer';
+
 import localeBlockForStegDokument from './localeBlockForStegDokument';
 
 const alternativeTekster = [
