@@ -1767,7 +1767,7 @@
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz#60e9cba61b82103ea3761730a53cd9310b98892d"
   integrity sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==
 
-"@sanity/icons@^2.4.0", "@sanity/icons@^2.4.1", "@sanity/icons@^2.6.0":
+"@sanity/icons@^2.4.1", "@sanity/icons@^2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.6.0.tgz#48e0aa2bcc39c018911cdf7a3d66647b6f87675f"
   integrity sha512-l4yBs2z2nEsgtasPuBQ5muowxJBXNfw0bqty2uG1tFsEyCYSPHGUROQSLLvIseYC3Onees+r5E9ijMadJQNc/Q==
@@ -1852,7 +1852,7 @@
     "@sanity/client" "^6.7.0"
     "@types/react" "^18.0.25"
 
-"@sanity/ui@^1.7.2", "@sanity/ui@^1.8.3":
+"@sanity/ui@^1.8.3":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-1.8.3.tgz#e527c2e9df0951f546c05cf015770be2b7e1927f"
   integrity sha512-LOYVLkpnGrWlCRTjluFn2wf7y4BzYhFBzdnBmNT0uRWH3pXN24xXH49e0HfbJ3tzRLOKwLo35IexvBKQwPgYZg==
@@ -1881,10 +1881,10 @@
     "@types/uuid" "^8.0.0"
     uuid "^8.0.0"
 
-"@sanity/vision@^3.17.0":
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/@sanity/vision/-/vision-3.17.0.tgz#c0d25eded0c55d171f5b79f2c580a6dce5a7baa3"
-  integrity sha512-d3ZU+Gsi/eANs+rMSnruiatUAC6RkJNIxPfWe7piOABl4HZ/imrGww2I70EJGk4/19fpbEF9R6SSb6kKV89tNg==
+"@sanity/vision@^3.19.1":
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/@sanity/vision/-/vision-3.19.1.tgz#336182f823cb40810786a5117c57d0fbb7fa6f42"
+  integrity sha512-LlzY4MbrL0BGx5BLzJ/+axZQl0Z+0Ia5DookM/cA7rR1MDDDZJzWDWs6xbjf9bWVvABYrG4QXHr1Vj3q8EymkQ==
   dependencies:
     "@codemirror/autocomplete" "^6.1.0"
     "@codemirror/commands" "^6.0.1"
@@ -1897,8 +1897,8 @@
     "@rexxars/react-json-inspector" "^8.0.1"
     "@rexxars/react-split-pane" "^0.1.93"
     "@sanity/color" "^2.1.20"
-    "@sanity/icons" "^2.4.0"
-    "@sanity/ui" "^1.7.2"
+    "@sanity/icons" "^2.6.0"
+    "@sanity/ui" "^1.8.3"
     "@uiw/react-codemirror" "^4.11.4"
     hashlru "^2.3.0"
     is-hotkey "^0.1.6"
