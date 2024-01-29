@@ -20,12 +20,10 @@ jobs:
           cache-dependency-path: ./package.json
           node-version: 20
 
-      - name: Yarn
-        run: yarn install
+      - name: Installer sanity
+        run: yarn global add @sanity/cli && sanity install
 
       - name: Deploy sanity
-        uses: sanity-io/github-action-sanity@v0.7-alpha
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
-        with:
-          args: deploy
+        run: sanity deploy
