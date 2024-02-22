@@ -7,6 +7,12 @@ updates:
     interval: daily
     time: "18:00"
   open-pull-requests-limit: 10
+  groups:
+    sanity:
+      patterns:
+        - "sanity:*"
+        - "@sanity/vision:*"
+        - "groq:*"
   ignore:
     - dependency-name: "*"
       update-types: ["version-update:semver-patch"]
