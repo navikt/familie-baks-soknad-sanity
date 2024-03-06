@@ -10,9 +10,9 @@ updates:
   groups:
     sanity:
       patterns:
-        - "sanity:*"
-        - "@sanity/vision:*"
-        - "groq:*"
+        - "sanity*"
+        - "@sanity/vision*"
+        - "groq*"
   ignore:
     - dependency-name: "*"
       update-types: ["version-update:semver-patch"]
