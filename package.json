@@ -32,7 +32,7 @@
     "groq": "^3.31.0",
     "react": "^18.x",
     "react-dom": "^18.x",
-    "sanity": "3.31.0",
+    "sanity": "3.32.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
