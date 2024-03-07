@@ -25,8 +25,7 @@ const fieldsBase = (steg: Steg, name: DokumentNavn) => [
     validation: Rule => Rule.required().error('Dokumentet må høre til minst en ytelse'),
     options: {
       list: [
-        { value: Ytelse.ORDINÆR_BARNETRYGD, title: 'Ordinær barnetrygd' },
-        { value: Ytelse.UTVIDET_BARNETRYGD, title: 'Utvidet barnetrygd' },
+        { value: Ytelse.BARNETRYGD, title: 'Barnetrygd' },
         { value: Ytelse.KONTANTSTØTTE, title: 'Kontantstøtte' },
       ],
       layout: 'radio',

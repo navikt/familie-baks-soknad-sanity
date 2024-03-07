@@ -311,8 +311,7 @@ export const stegTittel: Record<Steg, string> = {
 };
 
 export enum Ytelse {
-  ORDINÆR_BARNETRYGD = 'ORDINÆR_BARNETRYGD',
-  UTVIDET_BARNETRYGD = 'UTVIDET_BARNETRYGD',
+  BARNETRYGD = 'BARNETRYGD',
   KONTANTSTØTTE = 'KONTANTSTØTTE',
 }
 
