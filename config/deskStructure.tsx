@@ -42,6 +42,7 @@ export const structure = (S: StructureBuilder) => {
             mappeMedEnTypeDokument(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
             documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
             documentListItem(DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
+            mappeMedEnTypeDokument(DokumentNavn.FORSIDE_SPORSMAL),
           ]),
           stegMappe(Steg.OM_DEG, [
             documentListItem(DokumentNavn.OM_DEG_TITTEL),
