@@ -1,5 +1,6 @@
 import localeBlockForStegDokument from '../felles/localeBlockForStegDokument';
 import localeStringForStegDokument from '../felles/localeStringForStegDokument';
+import sporsmalDokument from '../felles/sporsmalDokument';
 import { DokumentNavn, Steg } from '../typer';
 
 const forside = [
@@ -11,6 +12,7 @@ const forside = [
   localeStringForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_MELLOMLAGRET_ALERT),
+  sporsmalDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_SPORSMAL),
 ];
 
 export default forside;
