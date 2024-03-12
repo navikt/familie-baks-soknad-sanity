@@ -46,6 +46,7 @@ export enum CustomSanityTyper {
   CUSTOM_BLOCK = 'customBlock',
   LOCALE_STRING = 'localeString',
   LOCALE_BLOCK = 'localeBlock',
+  FLETTEFELT = 'flettefelt',
 }
 
 export enum DokumentNavn {
