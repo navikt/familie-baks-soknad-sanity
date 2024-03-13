@@ -112,8 +112,7 @@ const customBlock = {
           {
             name: 'flettefelt',
             type: SanityTyper.OBJECT,
-            title: 'Flettefelt',
-            hidden: true, // Deprecated. Skal fjernes. Bruk nye måten
+            title: 'Flettefelt GAMMEL',
             icon: () => 'F',
             components: {
               annotation: FlettefeltGammel,
