@@ -6,6 +6,7 @@ import { DokumentNavn, Steg } from '../typer';
 const forside = [
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDERHILSEN),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDERINTRO),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_VEILEDER_HEI),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL_BARNETRYGD),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_SPRAKVELGER),
