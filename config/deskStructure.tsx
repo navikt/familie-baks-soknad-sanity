@@ -38,6 +38,7 @@ export const structure = (S: StructureBuilder) => {
             documentListItem(DokumentNavn.FORSIDE_TITTEL),
             documentListItem(DokumentNavn.FORSIDE_TITTEL_BARNETRYGD),
             documentListItem(DokumentNavn.FORSIDE_VEILEDERINTRO),
+            documentListItem(DokumentNavn.FORSIDE_VEILEDER_HEI),
             documentListItem(DokumentNavn.FORSIDE_SPRAKVELGER),
             documentListItem(DokumentNavn.FORSIDE_INFO_PLIKTER),
             documentListItem(DokumentNavn.FORSIDE_INFO_PLIKTER_TITTEL),
