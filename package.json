@@ -9,8 +9,10 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit -p ./tsconfig.json"
+    "lint": "eslint-check && prettier-check",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
+    "eslint-check": "eslint .",
+    "prettier-check": "prettier --check ."
   },
   "husky": {
     "hooks": {

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
-import { Divider, ListItem } from 'sanity/lib/exports/desk';
+import { Divider, ListItem, ListItemBuilder, StructureBuilder } from 'sanity/structure';
 
 import FileIcon from '../images/FileIcon';
 import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer';
