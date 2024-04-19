@@ -54,6 +54,7 @@ const flettefelter = [
   { title: 'Klokkeslett', value: EFlettefelt.KLOKKESLETT },
   { title: 'Dato', value: EFlettefelt.DATO },
   { title: 'Land', value: EFlettefelt.LAND },
+  { title: 'Måned år', value: EFlettefelt.MÅNED_ÅR },
 ];
 
 const flettefelt = {

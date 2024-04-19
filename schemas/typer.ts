@@ -347,6 +347,7 @@ export enum EFlettefelt {
   DATO = 'DATO',
   KLOKKESLETT = 'KLOKKESLETT',
   LAND = 'LAND',
+  MÅNED_ÅR = 'MÅNED_ÅR',
 }
 
 export const modalPrefix = 'MODAL';
