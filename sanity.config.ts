@@ -39,6 +39,15 @@ export default defineConfig([
     auth: auth,
   },
   {
+    name: 'prod-v2',
+    title: 'Produksjon-v2',
+    projectId: PROSJEKT_ID,
+    dataset: Dataset.PROD_V2,
+    basePath: `/${Dataset.PROD_V2}`,
+    plugins: [sharedConfig()],
+    auth: auth,
+  },
+  {
     name: 'test',
     title: 'Test',
     projectId: PROSJEKT_ID,
