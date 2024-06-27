@@ -212,6 +212,22 @@ export const structure = (S: StructureBuilder) => {
             mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_SPORSMAL_OMSORGSPERSON),
             mappeMedEnTypeDokument(DokumentNavn.MODAL_PENSJONSPERIODE_ANDRE_TEKSTER_OMSORGSPERSON),
           ]),
+          mappeMedForskjelligTypeDokument('Barnetrygdsperiode søker', [
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_SOKER),
+          ]),
+          mappeMedForskjelligTypeDokument('Barnetrygdsperiode andre forelder', [
+            mappeMedEnTypeDokument(
+              DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_ANDRE_FORELDER,
+            ),
+          ]),
+          mappeMedForskjelligTypeDokument('Barnetrygdsperiode omsorgsperson', [
+            mappeMedEnTypeDokument(
+              DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_OMSORGSPERSON,
+            ),
+          ]),
+          mappeMedForskjelligTypeDokument('Tidligere samboere søker', [
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_TIDLIGERE_SAMBOERE_ANDRE_TEKSTER_SOKER),
+          ]),
           mappeMedForskjelligTypeDokument('Legg til barn', [
             documentListItem(DokumentNavn.MODAL_LEGG_TIL_BARN_TITTEL),
             mappeMedEnTypeDokument(DokumentNavn.MODAL_LEGG_TIL_BARN_SPORSMAL),

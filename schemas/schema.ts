@@ -12,12 +12,14 @@ import localeString from './felles/localeString';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
 import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal';
+import barnetrygdsperiodeModal from './felles/modaler/barnetrygdsperiodeModal';
 import blokkerTilbakeKnappModal from './felles/modaler/blokkerTilbakeKnappModal';
 import eosYtelseModal from './felles/modaler/eosYtelseModal';
 import leggTilBarnModal from './felles/modaler/leggTilBarnModal';
 import mistetInformajsonenDinModal from './felles/modaler/mistetInformajsonenDinModal';
 import pensjonModal from './felles/modaler/pensjonModal';
 import startPåNyttModal from './felles/modaler/startPåNyttModal';
+import tidligereSamboereModal from './felles/modaler/tidligereSamboereModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
 import dinLivssituasjon from './steg/dinLivssituasjon';
@@ -52,6 +54,8 @@ const dokumenterMedFellesFelter = [
   ...arbeidsperiodeModal,
   ...eosYtelseModal,
   ...pensjonModal,
+  ...barnetrygdsperiodeModal,
+  ...tidligereSamboereModal,
   ...leggTilBarnModal,
   ...frittstaendeOrdDokumenter,
   ...navigasjon,
