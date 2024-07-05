@@ -5,6 +5,7 @@ import { DokumentNavn, Steg } from '../typer';
 
 const omBarnet = [
   localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL),
+  localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_GUIDE),
   localeStringForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SUBTITLER),
   sporsmalDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SPORSMAL),
   localeBlockForStegDokument(

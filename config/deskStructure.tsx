@@ -75,6 +75,7 @@ export const structure = (S: StructureBuilder) => {
           ]),
           stegMappe(Steg.OM_BARNET, [
             documentListItem(DokumentNavn.OM_BARNET_TITTEL),
+            documentListItem(DokumentNavn.OM_BARNET_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SUBTITLER),
             mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_SPORSMAL),
             mappeMedEnTypeDokument(DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
