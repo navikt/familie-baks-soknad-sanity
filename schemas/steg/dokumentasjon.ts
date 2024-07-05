@@ -4,6 +4,7 @@ import { DokumentNavn, Steg } from '../typer';
 
 const dokumentasjon = [
   localeBlockForStegDokument(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_TITTEL),
+  localeBlockForStegDokument(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_GUIDE),
   localeBlockForStegDokument(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_INFO),
   localeBlockForStegDokument(
     Steg.DOKUMENTASJON,

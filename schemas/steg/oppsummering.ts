@@ -4,6 +4,7 @@ import { DokumentNavn, Steg } from '../typer';
 
 const oppsummering = [
   localeBlockForStegDokument(Steg.OPPSUMMERING, DokumentNavn.OPPSUMMERING_TITTEL),
+  localeBlockForStegDokument(Steg.OPPSUMMERING, DokumentNavn.OPPSUMMERING_GUIDE),
   localeStringForStegDokument(Steg.OPPSUMMERING, DokumentNavn.OPPSUMMERING_ANDRE_TEKSTER),
 ];
 

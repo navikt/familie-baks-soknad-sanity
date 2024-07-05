@@ -5,6 +5,7 @@ import { DokumentNavn, Steg } from '../typer';
 
 const eosForBarn = [
   localeBlockForStegDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_TITTEL),
+  localeBlockForStegDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_GUIDE),
   sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
   sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
   sporsmalDokument(Steg.EØS_FOR_BARN, DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),

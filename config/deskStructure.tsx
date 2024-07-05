@@ -53,20 +53,24 @@ export const structure = (S: StructureBuilder) => {
           ]),
           stegMappe(Steg.OM_DEG, [
             documentListItem(DokumentNavn.OM_DEG_TITTEL),
+            documentListItem(DokumentNavn.OM_DEG_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.OM_DEG_PERSONOPPLYSNINGER),
             mappeMedEnTypeDokument(DokumentNavn.OM_DEG_SPORSMAL),
             mappeMedEnTypeDokument(DokumentNavn.OM_DEG_ANDRE_TEKSTER),
           ]),
           stegMappe(Steg.DIN_LIVSSITUASJON, [
             documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
+            documentListItem(DokumentNavn.DIN_LIVSSITUASJON_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
           ]),
           stegMappe(Steg.VELG_BARN, [
             documentListItem(DokumentNavn.VELG_BARN_TITTEL),
+            documentListItem(DokumentNavn.VELG_BARN_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.VELG_BARN_ANDRE_TEKSTER),
           ]),
           stegMappe(Steg.OM_BARNA, [
             documentListItem(DokumentNavn.OM_BARNA_TITTEL),
+            documentListItem(DokumentNavn.OM_BARNA_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.OM_BARNA_SPORSMAL),
           ]),
           stegMappe(Steg.OM_BARNET, [
@@ -78,10 +82,12 @@ export const structure = (S: StructureBuilder) => {
           ]),
           stegMappe(Steg.EØS_FOR_SØKER, [
             documentListItem(DokumentNavn.EOS_FOR_SOKER_TITTEL),
+            documentListItem(DokumentNavn.EOS_FOR_SOKER_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_SOKER_SPORSMAL),
           ]),
           stegMappe(Steg.EØS_FOR_BARN, [
             documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
+            documentListItem(DokumentNavn.EOS_FOR_BARN_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_OMSORGSPERSON),
@@ -90,10 +96,12 @@ export const structure = (S: StructureBuilder) => {
           ]),
           stegMappe(Steg.OPPSUMMERING, [
             documentListItem(DokumentNavn.OPPSUMMERING_TITTEL),
+            documentListItem(DokumentNavn.OPPSUMMERING_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.OPPSUMMERING_ANDRE_TEKSTER),
           ]),
           stegMappe(Steg.DOKUMENTASJON, [
             documentListItem(DokumentNavn.DOKUMENTASJON_TITTEL),
+            documentListItem(DokumentNavn.DOKUMENTASJON_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_INFO),
             mappeMedForskjelligTypeDokument('Bilde scanning guide', [
               mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
