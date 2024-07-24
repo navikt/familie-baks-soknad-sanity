@@ -64,4 +64,30 @@ export default defineConfig([
         ),
     },
   },
+  {
+    name: 'ba-prod',
+    title: 'BA - Produksjon',
+    projectId: PROSJEKT_ID,
+    dataset: Dataset.BA_PROD,
+    basePath: `/${Dataset.BA_PROD}`,
+    plugins: [sharedConfig()],
+    auth: auth,
+  },
+  {
+    name: 'ba-test',
+    title: 'BA - Test',
+    projectId: PROSJEKT_ID,
+    dataset: Dataset.BA_TEST,
+    basePath: `/${Dataset.BA_TEST}`,
+    plugins: [sharedConfig()],
+    auth: auth,
+    document: {
+      actions: prev =>
+        prev.map(originalAction =>
+          originalAction.action === 'publish'
+            ? customPublishAction(originalAction)
+            : originalAction,
+        ),
+    },
+  },
 ]);
