@@ -11,6 +11,8 @@ const forside = [
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_TITTEL_BARNETRYGD),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_SPRAKVELGER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_PUNKTLISTE),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_FOR_DU_SOKER_TITTEL),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_FOR_DU_SOKER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PLIKTER_TITTEL),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PLIKTER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER_TITTEL),
