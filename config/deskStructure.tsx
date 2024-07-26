@@ -44,6 +44,8 @@ export const structure = (S: StructureBuilder) => {
             documentListItem(DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER),
             documentListItem(DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER_TITTEL),
             documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
+            documentListItem(DokumentNavn.FORSIDE_FOR_DU_SOKER_TITTEL),
+            documentListItem(DokumentNavn.FORSIDE_FOR_DU_SOKER),
             documentListItem(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
             mappeMedEnTypeDokument(DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
             documentListItem(DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
