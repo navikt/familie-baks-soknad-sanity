@@ -43,6 +43,8 @@ export const structure = (S: StructureBuilder) => {
             documentListItem(DokumentNavn.FORSIDE_INFO_PLIKTER_TITTEL),
             documentListItem(DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER),
             documentListItem(DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER_TITTEL),
+            documentListItem(DokumentNavn.FORSIDE_INFO_LAGRING_AV_SVAR),
+            documentListItem(DokumentNavn.FORSIDE_INFO_LAGRING_AV_SVAR_TITTEL),
             documentListItem(DokumentNavn.FORSIDE_PUNKTLISTE),
             documentListItem(DokumentNavn.FORSIDE_FOR_DU_SOKER_TITTEL),
             documentListItem(DokumentNavn.FORSIDE_FOR_DU_SOKER),
