@@ -17,6 +17,8 @@ const forside = [
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PLIKTER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER_TITTEL),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_PERSONOPPLYSNINGER),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_LAGRING_AV_SVAR_TITTEL),
+  localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_INFO_LAGRING_AV_SVAR),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_BRODTEKST),
   localeStringForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_BEKREFTELSESBOKS_ANDRE_TEKSTER),
   localeBlockForStegDokument(Steg.FORSIDE, DokumentNavn.FORSIDE_PERSONOPPLYSNINGSLENKE),
