@@ -93,6 +93,7 @@ export const structure = (S: StructureBuilder) => {
           ]),
           stegMappe(Steg.EØS_FOR_BARN, [
             documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL),
+            documentListItem(DokumentNavn.EOS_FOR_BARN_TITTEL_UTEN_FLETTEFELT),
             documentListItem(DokumentNavn.EOS_FOR_BARN_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_BARN),
             mappeMedEnTypeDokument(DokumentNavn.EOS_FOR_BARN_SPORSMAL_OM_ANDRE_FORELDER),
