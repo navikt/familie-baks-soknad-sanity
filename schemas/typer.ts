@@ -190,6 +190,7 @@ export enum DokumentNavn {
   KAN_IKKE_BRUKE_SOKNAD = 'KAN_IKKE_BRUKE_SOKNAD',
   ALTERNATIVE_TEKSTER = 'ALTERNATIVE_TEKSTER',
   HJELPETEKSTER_FOR_INPUT = 'HJELPETEKSTER_FOR_INPUT',
+  MIDLERTIDIGE_TEKSTER = 'MIDLERTIDIGE_TEKSTER',
 }
 
 export const dokumentTittel: Record<DokumentNavn, string> = {
@@ -333,6 +334,7 @@ export const dokumentTittel: Record<DokumentNavn, string> = {
   KAN_IKKE_BRUKE_SOKNAD: 'Kan ikke bruke søknad',
   ALTERNATIVE_TEKSTER: 'Alternative tekster',
   HJELPETEKSTER_FOR_INPUT: 'Hjelpetekster for inputfelt',
+  MIDLERTIDIGE_TEKSTER: 'Midlertidige tekster',
 };
 
 export enum Steg {
