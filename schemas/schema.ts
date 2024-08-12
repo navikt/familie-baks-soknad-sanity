@@ -9,6 +9,7 @@ import hjelpeteksterInputfelt from './felles/hjelpeteksterInputfelt';
 import kanIkkeBrukeSoknad from './felles/kanIkkeBrukeSoknad';
 import localeBlock from './felles/localeBlock';
 import localeString from './felles/localeString';
+import midlertidigeTekster from './felles/midlertidigeTekster';
 import andreUtbetalingerModal from './felles/modaler/andreUtbetalingerModal';
 import arbeidsperiodeModal from './felles/modaler/arbeidsperiodeModal';
 import barnehageplassModal from './felles/modaler/barnehageplassModal';
@@ -68,6 +69,7 @@ const dokumenterMedFellesFelter = [
   ...kanIkkeBrukeSoknad,
   ...alternativeTekster,
   ...hjelpeteksterInputfelt,
+  ...midlertidigeTekster,
 ].map((dok: StegDokument) => ({
   ...dok,
   fields: [...fieldsBase(dok.steg, dok.name), ...dok.fields],

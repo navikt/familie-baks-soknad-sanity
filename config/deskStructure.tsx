@@ -278,5 +278,6 @@ export const structure = (S: StructureBuilder) => {
       mappeMedEnTypeDokument(DokumentNavn.KAN_IKKE_BRUKE_SOKNAD),
       mappeMedEnTypeDokument(DokumentNavn.ALTERNATIVE_TEKSTER),
       mappeMedEnTypeDokument(DokumentNavn.HJELPETEKSTER_FOR_INPUT),
+      mappeMedEnTypeDokument(DokumentNavn.MIDLERTIDIGE_TEKSTER),
     ]);
 };
