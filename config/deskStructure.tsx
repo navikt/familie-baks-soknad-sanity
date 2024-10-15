@@ -66,6 +66,7 @@ export const structure = (S: StructureBuilder) => {
             documentListItem(DokumentNavn.DIN_LIVSSITUASJON_TITTEL),
             documentListItem(DokumentNavn.DIN_LIVSSITUASJON_GUIDE),
             mappeMedEnTypeDokument(DokumentNavn.DIN_LIVSSITUASJON_SPORSMAL),
+            mappeMedEnTypeDokument(DokumentNavn.DIN_LIVSSITUASJON_ARSAK_ALTERNATIVER),
           ]),
           stegMappe(Steg.VELG_BARN, [
             documentListItem(DokumentNavn.VELG_BARN_TITTEL),
