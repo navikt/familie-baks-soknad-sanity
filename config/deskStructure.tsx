@@ -247,6 +247,7 @@ export const structure = (S: StructureBuilder) => {
             ),
           ]),
           mappeMedForskjelligTypeDokument('Tidligere samboere søker', [
+            documentListItem(DokumentNavn.MODAL_TIDLIGERE_SAMBOERE_TITTEL_SOKER),
             mappeMedEnTypeDokument(DokumentNavn.MODAL_TIDLIGERE_SAMBOERE_ANDRE_TEKSTER_SOKER),
           ]),
           mappeMedForskjelligTypeDokument('Legg til barn', [
