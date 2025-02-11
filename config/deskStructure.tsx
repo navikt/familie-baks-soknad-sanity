@@ -232,16 +232,19 @@ export const structure = (S: StructureBuilder) => {
           ]),
           mappeMedForskjelligTypeDokument('Barnetrygdsperiode søker', [
             documentListItem(DokumentNavn.MODAL_BARNETRYGDSPERIODE_TITTEL_SOKER),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_SPORSMAL_SOKER),
             mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_SOKER),
           ]),
           mappeMedForskjelligTypeDokument('Barnetrygdsperiode andre forelder', [
             documentListItem(DokumentNavn.MODAL_BARNETRYGDSPERIODE_TITTEL_ANDRE_FORELDER),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_SPORSMAL_ANDRE_FORELDER),
             mappeMedEnTypeDokument(
               DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_ANDRE_FORELDER,
             ),
           ]),
           mappeMedForskjelligTypeDokument('Barnetrygdsperiode omsorgsperson', [
             documentListItem(DokumentNavn.MODAL_BARNETRYGDSPERIODE_TITTEL_OMSORGSPERSON),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_SPORSMAL_OMSORGSPERSON),
             mappeMedEnTypeDokument(
               DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_OMSORGSPERSON,
             ),
