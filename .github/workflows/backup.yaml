@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     name: Backup prod dataset
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # ratchet:actions/checkout@v3
       - name: Install dependencies
         run: |
           yarn
@@ -21,7 +21,7 @@ jobs:
           production backups/baks-soknad-prod.tar.gz
 
       - name: Upload baks-soknad-prod.tar.gz
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 # ratchet:actions/upload-artifact@v3
         with:
           name: Backup prod dataset
           path: backups/baks-soknad-prod.tar.gz
@@ -29,7 +29,7 @@ jobs:
           if-no-files-found: error
 
       - name: Import prod dataset til test
-        run: |
+        run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
           npx sanity dataset import \
           backups/baks-soknad-prod.tar.gz test --replace
