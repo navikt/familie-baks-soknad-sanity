@@ -33,7 +33,7 @@
     "@sanity/vision": "^3.37.2",
     "groq": "^3.37.2",
     "react": "^18.x",
-    "react-dom": "^18.x",
+    "react-dom": "^19.x",
     "sanity": "3.37.2",
     "styled-components": "^6.1.8"
   },
