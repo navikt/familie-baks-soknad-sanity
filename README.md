@@ -1,5 +1,5 @@
 # familie-baks-soknad-sanity
-Sanity (cms) for søknad til kontantstøtte
+Sanity (cms) for søknad til barnetrygd og kontantstøtte (BAKS)
 
 ### Installere Sanity
 * Kjør `npm install -g @sanity/cli` i terminalen.

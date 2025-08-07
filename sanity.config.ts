@@ -30,29 +30,20 @@ const auth: AuthConfig = {
 
 export default defineConfig([
   {
-    name: 'prod',
-    title: 'Produksjon',
+    name: 'ks-prod',
+    title: 'KS - Produksjon',
     projectId: PROSJEKT_ID,
-    dataset: Dataset.PROD,
-    basePath: `/${Dataset.PROD}`,
+    dataset: Dataset.KS_PROD,
+    basePath: `/${Dataset.KS_PROD}`,
     plugins: [sharedConfig()],
     auth: auth,
   },
   {
-    name: 'prod-v2',
-    title: 'Produksjon-v2',
+    name: 'ks-test',
+    title: 'KS - Test',
     projectId: PROSJEKT_ID,
-    dataset: Dataset.PROD_V2,
-    basePath: `/${Dataset.PROD_V2}`,
-    plugins: [sharedConfig()],
-    auth: auth,
-  },
-  {
-    name: 'test',
-    title: 'Test',
-    projectId: PROSJEKT_ID,
-    dataset: Dataset.TEST,
-    basePath: `/${Dataset.TEST}`,
+    dataset: Dataset.KS_TEST,
+    basePath: `/${Dataset.KS_TEST}`,
     plugins: [sharedConfig()],
     auth: auth,
     document: {
