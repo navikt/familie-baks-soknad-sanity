@@ -242,6 +242,16 @@ export const structure = (S: StructureBuilder) => {
               DokumentNavn.MODAL_BARNETRYGDSPERIODE_ANDRE_TEKSTER_ANDRE_FORELDER,
             ),
           ]),
+          mappeMedForskjelligTypeDokument('Svalbard opphold søker', [
+            documentListItem(DokumentNavn.MODAL_SVALBARDOPPHOLD_TITTEL_SOKER),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_SVALBARDOPPHOLD_SPORSMAL_SOKER),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_SVALBARDOPPHOLD_ANDRE_TEKSTER_SOKER),
+          ]),
+          mappeMedForskjelligTypeDokument('Svalbard opphold barn', [
+            documentListItem(DokumentNavn.MODAL_SVALBARDOPPHOLD_TITTEL_BARN),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_SVALBARDOPPHOLD_SPORSMAL_BARN),
+            mappeMedEnTypeDokument(DokumentNavn.MODAL_SVALBARDOPPHOLD_ANDRE_TEKSTER_BARN),
+          ]),
           mappeMedForskjelligTypeDokument('Barnetrygdsperiode omsorgsperson', [
             documentListItem(DokumentNavn.MODAL_BARNETRYGDSPERIODE_TITTEL_OMSORGSPERSON),
             mappeMedEnTypeDokument(DokumentNavn.MODAL_BARNETRYGDSPERIODE_SPORSMAL_OMSORGSPERSON),
