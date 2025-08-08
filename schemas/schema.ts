@@ -20,6 +20,7 @@ import leggTilBarnModal from './felles/modaler/leggTilBarnModal';
 import mistetInformajsonenDinModal from './felles/modaler/mistetInformajsonenDinModal';
 import pensjonModal from './felles/modaler/pensjonModal';
 import startPåNyttModal from './felles/modaler/startPåNyttModal';
+import svalbardOppholdModal from './felles/modaler/svalbardOppholdModal';
 import tidligereSamboereModal from './felles/modaler/tidligereSamboereModal';
 import utenlandsoppholdModal from './felles/modaler/utenlandsoppholdModal';
 import navigasjon from './felles/navigasjon';
@@ -53,6 +54,7 @@ const dokumenterMedFellesFelter = [
   ...barnehageplassModal,
   ...andreUtbetalingerModal,
   ...arbeidsperiodeModal,
+  ...svalbardOppholdModal,
   ...eosYtelseModal,
   ...pensjonModal,
   ...barnetrygdsperiodeModal,
