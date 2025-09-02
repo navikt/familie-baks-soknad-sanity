@@ -1,6 +1,5 @@
 import { visionTool } from '@sanity/vision';
 import { AuthConfig, defineConfig, definePlugin } from 'sanity';
-import { deskTool } from 'sanity/desk';
 import { structureTool } from 'sanity/structure';
 
 import { customPublishAction } from './actions/customPublishAction';
