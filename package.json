@@ -9,7 +9,7 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "lint": "eslint-check && prettier-check",
+    "lint": "yarn eslint-check && yarn prettier-check",
     "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "eslint-check": "eslint .",
     "prettier-check": "prettier --check ."
@@ -38,10 +38,11 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@sanity/eslint-config-studio": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^8.41.0",
-    "@sanity/eslint-config-studio": "^3.0.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
@@ -49,6 +50,7 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-app": "^6.2.2",
+    "globals": "^16.3.0",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   }
