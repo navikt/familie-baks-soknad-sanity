@@ -1,6 +1,7 @@
 import { visionTool } from '@sanity/vision';
 import { AuthConfig, defineConfig, definePlugin } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure';
 
 import { customPublishAction } from './actions/customPublishAction';
 import { structure } from './config/deskStructure';
@@ -9,10 +10,8 @@ import { Dataset, PROSJEKT_ID } from './util/constants';
 
 const sharedConfig = definePlugin({
   name: 'shareConfig',
-  plugins: [deskTool({ structure }), visionTool()],
-  schema: {
-    types: schemaTypes,
-  },
+  plugins: [structureTool({ structure }), visionTool()],
+  schema: { types: schemaTypes },
 });
 
 const auth: AuthConfig = {
