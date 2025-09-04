@@ -32,8 +32,8 @@
     "@sanity/client": "^7.11.0",
     "@sanity/vision": "^4.6.0",
     "groq": "^4.6.0",
-    "react": "^18.x",
-    "react-dom": "^18.x",
+    "react": "^19.x",
+    "react-dom": "^19.x",
     "sanity": "4.6.0",
     "styled-components": "^6.1.8"
   },
