@@ -30,18 +30,18 @@
   ],
   "dependencies": {
     "@sanity/client": "^7.11.0",
-    "@sanity/vision": "^4.8.1",
-    "groq": "^4.8.1",
+    "@sanity/vision": "^4.9.0",
+    "groq": "^4.9.0",
     "react": "^19.x",
     "react-dom": "^19.x",
-    "sanity": "4.8.1",
+    "sanity": "4.9.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.35.0",
+    "@eslint/js": "^9.36.0",
     "@sanity/eslint-config-studio": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
+    "@typescript-eslint/parser": "^8.45.0",
     "eslint": "^9.35.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.5",
