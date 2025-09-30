@@ -30,11 +30,11 @@
   ],
   "dependencies": {
     "@sanity/client": "^7.11.0",
-    "@sanity/vision": "^4.9.0",
-    "groq": "^4.9.0",
+    "@sanity/vision": "^4.10.1",
+    "groq": "^4.10.1",
     "react": "^19.x",
     "react-dom": "^19.x",
-    "sanity": "4.9.0",
+    "sanity": "4.10.1",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
