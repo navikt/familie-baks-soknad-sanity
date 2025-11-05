@@ -8,6 +8,10 @@ const dokumentasjon = [
   localeBlockForStegDokument(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_GUIDE_VEDLEGGSKRAV),
   localeBlockForStegDokument(
     Steg.DOKUMENTASJON,
+    DokumentNavn.DOKUMENTASJON_FEILMELDING_VED_INNSENDING,
+  ),
+  localeBlockForStegDokument(
+    Steg.DOKUMENTASJON,
     DokumentNavn.DOKUMENTASJON_GUIDE_INGEN_VEDLEGGSKRAV,
   ),
   localeBlockForStegDokument(Steg.DOKUMENTASJON, DokumentNavn.DOKUMENTASJON_INFO),
