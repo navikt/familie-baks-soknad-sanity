@@ -113,7 +113,6 @@ export const structure = (S: StructureBuilder) => {
             documentListItem(DokumentNavn.DOKUMENTASJON_GUIDE_VEDLEGGSKRAV),
             documentListItem(DokumentNavn.DOKUMENTASJON_GUIDE_INGEN_VEDLEGGSKRAV),
             documentListItem(DokumentNavn.DOKUMENTASJON_FEILMELDING_VED_INNSENDING),
-            documentListItem(DokumentNavn.DOKUMENTASJON_VEDLEGG_BESKRIVELSE),
             mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_INFO),
             mappeMedForskjelligTypeDokument('Bilde scanning guide', [
               mappeMedEnTypeDokument(DokumentNavn.DOKUMENTASJON_SCANNING_GUIDE_TEKST_BLOKKER),
