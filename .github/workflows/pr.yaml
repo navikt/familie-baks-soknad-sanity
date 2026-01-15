@@ -17,7 +17,7 @@ jobs:
           node-version: 24
 
       - name: 📥 Install deps
-        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn
+        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn --prefer-offline --frozen-lockfile --ignore-scripts
 
       - name: 🔬 Kjør sjekk med esLint
         run: yarn eslint-check
@@ -37,7 +37,7 @@ jobs:
           node-version: 24
 
       - name: 📥 Install deps
-        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn
+        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn --prefer-offline --frozen-lockfile --ignore-scripts
 
       - name: 🔬 Kjør sjekk med prettier
         run: yarn prettier-check
@@ -57,7 +57,7 @@ jobs:
           node-version: 24
 
       - name: 📥 Install deps
-        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn
+        run: NPM_AUTH_TOKEN=${{ secrets.READER_TOKEN }} yarn --prefer-offline --frozen-lockfile --ignore-scripts
 
       - name: 🔎 Type check
         run: yarn typecheck

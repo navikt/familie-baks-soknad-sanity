@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Sanity (cms) for søknad til kontantstøtte",
   "main": "package.json",
-  "author": "Daphne <daphne.leebeek@nav.no>",
+  "author": "Team BAKS",
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
@@ -29,29 +29,24 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^7.14.0",
-    "@sanity/vision": "^5.2.0",
-    "groq": "^5.2.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "@sanity/client": "7.14.0",
+    "@sanity/vision": "5.2.0",
+    "groq": "5.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "sanity": "5.2.0",
-    "styled-components": "^6.3.5"
+    "styled-components": "6.3.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@sanity/eslint-config-studio": "^6.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.52.0",
-    "@typescript-eslint/parser": "^8.52.0",
-    "eslint": "^9.39.2",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.1",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-app": "^6.2.2",
-    "globals": "^17.0.0",
-    "prettier": "^3.7.4",
-    "typescript": "^5.9.2"
+    "@eslint/js": "9.39.2",
+    "@sanity/eslint-config-studio": "6.0.0",
+    "typescript-eslint": "8.53.0",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-prettier": "5.5.1",
+    "globals": "17.0.0",
+    "prettier": "3.7.4",
+    "typescript": "5.9.2"
   }
 }
