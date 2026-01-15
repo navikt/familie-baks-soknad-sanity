@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Sanity (cms) for søknad til kontantstøtte",
   "main": "package.json",
-  "author": "Daphne <daphne.leebeek@nav.no>",
+  "author": "Team BAKS",
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
