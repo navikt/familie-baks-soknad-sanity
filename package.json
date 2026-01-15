@@ -29,12 +29,12 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^7.11.0",
-    "@sanity/vision": "^4.9.0",
-    "groq": "^4.9.0",
+    "@sanity/client": "^7.14.0",
+    "@sanity/vision": "^5.2.0",
+    "groq": "^5.2.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "sanity": "4.9.0",
+    "sanity": "5.2.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
