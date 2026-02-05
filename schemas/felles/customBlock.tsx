@@ -49,6 +49,7 @@ const flettefelter = [
     value: EFlettefelt.PERSONTYPE,
   },
   { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
+  { title: 'Utenlandsk/Norsk', value: EFlettefelt.UTENLANDSK_NORSK },
   { title: 'Antall', value: EFlettefelt.ANTALL },
   { title: 'Total antall', value: EFlettefelt.TOTAL_ANTALL },
   { title: 'Klokkeslett', value: EFlettefelt.KLOKKESLETT },
