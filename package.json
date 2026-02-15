@@ -9,10 +9,13 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "lint": "yarn eslint-check && yarn prettier-check",
-    "typecheck": "tsc --noEmit -p ./tsconfig.json",
-    "eslint-check": "eslint .",
-    "prettier-check": "prettier --check ."
+    "test": "echo \"No test specified.\"",
+    "lint": "eslint './**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint './**/*.{js,ts,tsx}' --fix",
+    "prettier": "prettier --check './**/*.{js,jsx,ts,tsx,json,css}'",
+    "prettier:fix": "prettier --write './**/*.{js,jsx,ts,tsx,json,css}'",
+    "typecheck": "tsc --noEmit",
+    "validate": "yarn typecheck && yarn lint && yarn prettier"
   },
   "husky": {
     "hooks": {
