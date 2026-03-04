@@ -18,13 +18,13 @@ jobs:
         run: |
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
           npx sanity dataset export \
-          production backups/baks-soknad-prod.tar.gz
+          ba-production backups/baks-soknad-ba-prod.tar.gz
 
-      - name: Upload baks-soknad-prod.tar.gz
+      - name: Upload baks-soknad-ba-prod.tar.gz
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
         with:
           name: Backup prod dataset
-          path: backups/baks-soknad-prod.tar.gz
+          path: backups/baks-soknad-ba-prod.tar.gz
           # Fails the workflow if no files are found; defaults to 'warn'
           if-no-files-found: error
 
@@ -32,4 +32,4 @@ jobs:
         run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
           npx sanity dataset import \
-          backups/baks-soknad-prod.tar.gz test --replace
+          backups/baks-soknad-ba-prod.tar.gz ba-test --replace
