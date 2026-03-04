@@ -33,7 +33,6 @@
   ],
   "dependencies": {
     "@sanity/client": "7.14.0",
-    "@sanity/export": "^6.0.3",
     "@sanity/vision": "5.2.0",
     "groq": "5.2.0",
     "react": "19.2.3",
@@ -44,13 +43,13 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@sanity/eslint-config-studio": "6.0.0",
+    "typescript-eslint": "8.54.0",
     "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-prettier": "5.5.1",
     "globals": "17.3.0",
     "prettier": "3.8.1",
-    "typescript": "5.9.2",
-    "typescript-eslint": "8.54.0"
+    "typescript": "5.9.2"
   }
 }
