@@ -18,9 +18,9 @@ jobs:
         run: yarn global add @sanity/cli --exact
 
       - name: Export prod dataset
-        run: |
+        run: | 
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
-          sanity dataset export \
+          $(yarn global bin)/sanity dataset export \
           ba-production backups/baks-soknad-ba-prod.tar.gz
 
       - name: Upload baks-soknad-ba-prod.tar.gz
@@ -34,5 +34,5 @@ jobs:
       - name: Import prod dataset til test
         run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
-          sanity dataset import \
+          $(yarn global bin)/sanity dataset import \
           backups/baks-soknad-ba-prod.tar.gz ba-test --replace
