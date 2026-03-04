@@ -14,13 +14,10 @@ jobs:
         run: |
           yarn --prefer-offline --frozen-lockfile --ignore-scripts
 
-      - name: Install Sanity CLI
-        run: yarn global add @sanity/cli --exact
-
       - name: Export prod dataset
         run: | 
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
-          $(yarn global bin)/sanity dataset export \
+          npx sanity dataset export \
           ba-production backups/baks-soknad-ba-prod.tar.gz
 
       - name: Upload baks-soknad-ba-prod.tar.gz
@@ -34,5 +31,5 @@ jobs:
       - name: Import prod dataset til test
         run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
-          $(yarn global bin)/sanity dataset import \
+          npx sanity dataset import \
           backups/baks-soknad-ba-prod.tar.gz ba-test --replace
