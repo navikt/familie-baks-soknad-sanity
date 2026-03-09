@@ -1,4 +1,4 @@
-name: Backup Routine
+name: Backup Routine KS
 on:
   workflow_dispatch:
   schedule:
@@ -19,13 +19,13 @@ jobs:
         run: | 
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
           npx sanity dataset export \
-          ba-production backups/baks-soknad-ba-prod.tar.gz
+          ks-production backups/baks-soknad-ks-prod.tar.gz
 
-      - name: Upload baks-soknad-ba-prod.tar.gz
+      - name: Upload baks-soknad-ks-prod.tar.gz
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
         with:
-          name: Backup prod dataset
-          path: backups/baks-soknad-ba-prod.tar.gz
+          name: Backup prod dataset KS
+          path: backups/baks-soknad-ks-prod.tar.gz
           # Fails the workflow if no files are found; defaults to 'warn'
           if-no-files-found: error
 
@@ -33,4 +33,5 @@ jobs:
         run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
           npx sanity dataset import \
-          backups/baks-soknad-ba-prod.tar.gz ba-test --replace
+          backups/baks-soknad-ks-prod.tar.gz ks-test --replace
+
