@@ -18,7 +18,7 @@ jobs:
       - name: Export prod dataset
         run: | 
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
-          npx --yes --package sanity@latest sanity dataset export \
+          npx sanity dataset export \
           ba-production backups/baks-soknad-ba-prod.tar.gz
 
       - name: Upload baks-soknad-ba-prod.tar.gz
@@ -32,5 +32,5 @@ jobs:
       - name: Import prod dataset til test
         run: |-
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
-          npx --yes --package sanity@latest sanity dataset import \
+          npx sanity dataset import \
           backups/baks-soknad-ba-prod.tar.gz ba-test --replace
