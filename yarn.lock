@@ -2359,17 +2359,7 @@
     semver "^7.7.2"
     smol-toml "^1.6.0"
 
-"@sanity/client@7.14.0":
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-7.14.0.tgz#94d9f364a610bcc7519c07a754f1a37dbad36ebc"
-  integrity sha512-eXue3rc4MqJh89mvuTC0h0pdoY8lwXjlV8odFB3EF7aSFKF7F5BL0NU2mlTrCZYbPAlV3JTvMPPLGJCORqOKDw==
-  dependencies:
-    "@sanity/eventsource" "^5.0.2"
-    get-it "^8.7.0"
-    nanoid "^3.3.11"
-    rxjs "^7.0.0"
-
-"@sanity/client@^7.15.0", "@sanity/client@^7.16.0", "@sanity/client@^7.2.1", "@sanity/client@^7.6.0", "@sanity/client@^7.9.0":
+"@sanity/client@7.16.0", "@sanity/client@^7.15.0", "@sanity/client@^7.16.0", "@sanity/client@^7.2.1", "@sanity/client@^7.6.0", "@sanity/client@^7.9.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-7.16.0.tgz#94b89d2cceeba6f30f670d142a9223ff08769fed"
   integrity sha512-6kesQ1iPzcuQM9oLEx6UVRaSjffssp2RnFOVE3MHOAEeq2T3AOtTU5BpZf2jzB+FDBfOYTyKUdzVsmRUZbCfAw==
@@ -5475,12 +5465,7 @@ groq@3.88.1-typegen-experimental.0:
   resolved "https://registry.yarnpkg.com/groq/-/groq-3.88.1-typegen-experimental.0.tgz#62970237ba5224953194f881a799ba810369df9b"
   integrity sha512-6TZD6H1y3P7zk0BQharjFa7BOivV9nFL6KKVZbRZRH0yOSSyu2xHglTO48b1/2mCEdYoBQpvE7rjCDUf6XmQYQ==
 
-groq@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/groq/-/groq-5.2.0.tgz#5605279ed4a265af4cf7c555036ac2d3405d5216"
-  integrity sha512-8U/gKHbzyEXGUn2u9MilxSQsuzBrgP6I9LtUgiDrdbf1BBtee/W6qD9WYjqWmt+BXkf655umbmUs8q98XO7xZA==
-
-groq@^5.11.0:
+groq@5.13.0, groq@^5.11.0:
   version "5.13.0"
   resolved "https://registry.yarnpkg.com/groq/-/groq-5.13.0.tgz#659f695d5cad4f0e62c98896d62d87f36419fd53"
   integrity sha512-/SVpxcqdtkbobZTzO1klxbpn2KHRAawN8cYx42tXUV9Cle0LVXpiLlrFA2xJBIXSe9IPD+kFzLRPRl8qm+Iuig==
