@@ -2,6 +2,8 @@ name: Oppdater testsett BA
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
 jobs:
   oppdater-testsett:
     runs-on: ubuntu-latest
