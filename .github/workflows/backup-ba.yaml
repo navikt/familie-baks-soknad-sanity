@@ -1,0 +1,38 @@
+name: Backup Routine BA
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 04:00 UTC on the 1st and 17th of every month
+    - cron: "0 4 */16 * *"
+permissions:
+  contents: read
+jobs:
+  backup-prod-dataset:
+    runs-on: ubuntu-latest
+    name: Backup prod dataset
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          yarn --prefer-offline --frozen-lockfile --ignore-scripts
+
+      - name: Export prod dataset
+        run: | 
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
+          npx sanity dataset export \
+          ba-production backups/baks-soknad-ba-prod.tar.gz
+
+      - name: Upload baks-soknad-ba-prod.tar.gz
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
+        with:
+          name: Backup prod dataset BA
+          path: backups/baks-soknad-ba-prod.tar.gz
+          # Fails the workflow if no files are found; defaults to 'warn'
+          if-no-files-found: error
+
+      - name: Import prod dataset til test
+        run: |-
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
+          npx sanity dataset import \
+          backups/baks-soknad-ba-prod.tar.gz ba-test --replace

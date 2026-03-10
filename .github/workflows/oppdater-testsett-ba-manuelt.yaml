@@ -1,0 +1,28 @@
+name: Oppdater testsett BA
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  oppdater-testsett:
+    runs-on: ubuntu-latest
+    name: Oppdater testsett BA manuelt
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          yarn --prefer-offline --frozen-lockfile --ignore-scripts
+
+      - name: Export prod dataset
+        run: |
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
+          npx sanity dataset export \
+          ba-production backups/baks-soknad-ba-prod.tar.gz
+
+      - name: Import prod dataset til test
+        run: |-
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
+          npx sanity dataset import \
+          backups/baks-soknad-ba-prod.tar.gz ba-test --replace
