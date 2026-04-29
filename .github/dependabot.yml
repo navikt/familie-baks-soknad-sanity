@@ -16,6 +16,13 @@ updates:
         - "@sanity/vision"
         - "groq"
         - "@sanity/client"
+    eslint:
+      patterns:
+        - "eslint"
+        - "eslint-*"
+        - "@eslint/*"
+        - "typescript-eslint"
+        - "globals"
   ignore:
     - dependency-name: "*"
       update-types: ["version-update:semver-patch"]
