@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
+    "types": ["vite/client"],
     "skipLibCheck": true,
   },
   "esModuleInterop": true

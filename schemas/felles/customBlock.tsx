@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { rgba } from 'polished';
 import { BlockAnnotationProps } from 'sanity';
-import styled from 'styled-components';
 
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
+
+import styles from './customBlock.module.css';
 
 interface FlettefeltProps extends BlockAnnotationProps {
   value: {
@@ -16,27 +16,15 @@ interface FlettefeltProps extends BlockAnnotationProps {
 
 const FlettefeltGammel: React.FC<FlettefeltProps> = props => {
   return (
-    <span
-      style={{
-        backgroundColor: rgba(30, 133, 209, 0.2),
-        color: 'black',
-        cursor: 'pointer',
-      }}
-    >
+    <span className={styles.flettefeltGammel}>
       {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : props.renderDefault(props)}
     </span>
   );
 };
 
-const Flettefelt = styled.span`
-  background-color: rgba(30, 133, 209, 0.2);
-  text-overflow: ellipsis;
-  line-height: normal;
-  white-space: nowrap;
-  max-inline-size: 160px;
-  overflow: hidden;
-  display: inline-block;
-`;
+const Flettefelt: React.FC<React.PropsWithChildren> = ({ children }) => (
+  <span className={styles.flettefelt}>{children}</span>
+);
 
 const flettefelter = [
   { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
