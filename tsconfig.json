@@ -1,10 +1,13 @@
 {
   "include": ["./node_modules/@sanity/base/types/**/*.ts", "./**/*.ts", "./**/*.tsx"],
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "types": ["vite/client"],
-    "skipLibCheck": true,
-  },
-  "esModuleInterop": true
+    "skipLibCheck": true
+  }
 }
