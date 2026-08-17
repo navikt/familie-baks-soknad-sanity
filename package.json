@@ -32,7 +32,7 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "7.26.2",
+    "@sanity/client": "8.0.0",
     "@sanity/vision": "6.9.1",
     "groq": "6.9.1",
     "react": "19.2.3",
