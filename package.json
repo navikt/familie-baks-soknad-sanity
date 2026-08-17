@@ -32,12 +32,12 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "7.22.0",
-    "@sanity/vision": "5.23.0",
-    "groq": "5.23.0",
+    "@sanity/client": "7.26.2",
+    "@sanity/vision": "6.9.1",
+    "groq": "6.9.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "sanity": "5.23.0",
+    "sanity": "6.9.1",
     "styled-components": "6.5.0"
   },
   "devDependencies": {
