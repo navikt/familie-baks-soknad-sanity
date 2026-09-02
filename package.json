@@ -2,6 +2,7 @@
   "name": "baks-soknad-cms",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@11.15.0",
   "description": "Sanity (cms) for søknad til kontantstøtte",
   "main": "package.json",
   "author": "Team BAKS",
@@ -15,24 +16,16 @@
     "prettier": "prettier --check './**/*.{js,jsx,ts,tsx,json,css}'",
     "prettier:fix": "prettier --write './**/*.{js,jsx,ts,tsx,json,css}'",
     "typecheck": "tsc --noEmit",
-    "validate": "yarn typecheck && yarn lint && yarn prettier"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn run typecheck"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css}": [
-      "prettier --write",
-      "eslint --fix ./"
-    ]
+    "validate": "pnpm typecheck && pnpm lint && pnpm prettier"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@sanity/client": "8.0.0",
+    "@sanity/icons": "5.2.1",
+    "@sanity/types": "6.9.1",
+    "@sanity/ui": "3.5.4",
     "@sanity/vision": "6.9.1",
     "groq": "6.9.1",
     "react": "19.2.3",
@@ -50,6 +43,7 @@
     "globals": "17.4.0",
     "prettier": "3.9.5",
     "typescript": "5.9.2",
-    "typescript-eslint": "8.59.0"
+    "typescript-eslint": "8.59.0",
+    "vite": "8.2.2"
   }
 }
