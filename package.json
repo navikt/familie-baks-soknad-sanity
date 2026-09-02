@@ -22,15 +22,15 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "8.0.0",
+    "@sanity/client": "8.4.0",
     "@sanity/icons": "5.2.1",
     "@sanity/types": "6.9.1",
     "@sanity/ui": "3.5.4",
-    "@sanity/vision": "6.9.1",
-    "groq": "6.9.1",
+    "@sanity/vision": "6.11.0",
+    "groq": "6.11.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "sanity": "6.9.1",
+    "sanity": "6.11.0",
     "styled-components": "6.5.0"
   },
   "devDependencies": {
