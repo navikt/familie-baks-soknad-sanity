@@ -25,7 +25,7 @@
     "@sanity/client": "8.0.0",
     "@sanity/icons": "5.2.1",
     "@sanity/types": "6.9.1",
-    "@sanity/ui": "3.5.4",
+    "@sanity/ui": "4.0.7",
     "@sanity/vision": "6.9.1",
     "groq": "6.9.1",
     "react": "19.2.3",
