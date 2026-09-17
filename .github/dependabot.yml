@@ -7,7 +7,7 @@ updates:
     interval: daily
     time: "18:00"
   cooldown:
-    default-days: 4
+    default-days: 7
   open-pull-requests-limit: 10
   groups:
     sanity:
