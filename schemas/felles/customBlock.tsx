@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Rule } from '@sanity/types';
 import { BlockAnnotationProps } from 'sanity';
 
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
@@ -111,7 +112,7 @@ const customBlock = {
                 name: 'flettefeltVerdi',
                 type: SanityTyper.STRING,
                 title: 'Flettefeltverdier',
-                validation: Rule => Rule.required().error('Du må velge gyldig flettefelt!'),
+                validation: (rule: Rule) => rule.required().error('Du må velge gyldig flettefelt!'),
                 options: {
                   list: [...flettefelter],
                 },

@@ -1,3 +1,5 @@
+import { ConditionalPropertyCallbackContext, Rule } from '@sanity/types';
+
 import { apiNavnValideringer } from '../../util/valideringer';
 import { DokumentNavn, SanityTyper, Steg, Ytelse } from '../typer';
 
@@ -7,22 +9,23 @@ const fieldsBase = (steg: Steg, name: DokumentNavn) => [
     title: 'Visningsnavn',
     description: '(obligatorisk)',
     type: SanityTyper.STRING,
-    validation: Rule => Rule.required().error('Dokumentet må ha et visningsnavn'),
+    validation: (rule: Rule) => rule.required().error('Dokumentet må ha et visningsnavn'),
   },
   {
     name: 'api_navn',
     title: 'Api navn',
     type: SanityTyper.STRING,
     description: 'Teknisk navn. Eksempel borPaRegistrertAdresse (obligatorisk)',
-    validation: Rule => apiNavnValideringer(Rule, SanityTyper.DOCUMENT, name),
-    readOnly: ({ document }) => document?._createdAt !== undefined,
+    validation: (rule: Rule) => apiNavnValideringer(rule, SanityTyper.DOCUMENT, name),
+    readOnly: ({ document }: ConditionalPropertyCallbackContext) =>
+      document?._createdAt !== undefined,
   },
   {
     name: 'ytelse',
     title: 'Ytelse',
     type: SanityTyper.ARRAY,
     description: 'For hvilke ytelser gjelder teksten? Velg minst én. (obligatorisk)',
-    validation: Rule => Rule.required().error('Dokumentet må høre til minst en ytelse'),
+    validation: (rule: Rule) => rule.required().error('Dokumentet må høre til minst en ytelse'),
     options: {
       list: [
         { value: Ytelse.BARNETRYGD, title: 'Barnetrygd' },
