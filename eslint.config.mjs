@@ -24,7 +24,7 @@ export default [
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
     settings: {
-      react: { version: 'detect' },
+      'react-x': { version: 'detect' },
       'import/ignore': ['node_modules'],
       env: { browser: true, node: true },
     },
@@ -48,7 +48,6 @@ export default [
         'warn',
         { vars: 'all', args: 'all', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
-      'react-app/react-hooks/exhaustive-deps': 'off',
       'import/named': 'error',
       'import/namespace': 'error',
       'import/default': 'error',
