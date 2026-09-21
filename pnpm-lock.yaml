@@ -18,8 +18,8 @@ importers:
         specifier: 6.13.2
         version: 6.13.2(@types/react@19.2.18)
       '@sanity/ui':
-        specifier: 3.5.4
-        version: 3.5.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        specifier: 4.2.1
+        version: 4.2.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@sanity/vision':
         specifier: 6.13.2
         version: 6.13.2(@babel/runtime@7.29.7)(@codemirror/lint@6.9.7)(@codemirror/theme-one-dark@6.1.3)(codemirror@6.0.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(sanity@6.9.1(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.3(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0)))(@sanity/sdk@2.20.2(@types/react@19.2.18)(react@19.3.0)(use-sync-external-store@1.6.0(react@19.3.0))(xstate@5.32.6))(@types/react@19.2.18)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3))(styled-components@6.5.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
