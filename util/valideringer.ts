@@ -1,4 +1,4 @@
-import { Rule } from '@sanity/types';
+import { Rule, ValidationContext } from '@sanity/types';
 import groq from 'groq';
 
 import { DokumentNavn, modalPrefix } from '../schemas/typer';
@@ -27,20 +27,26 @@ export const maskinnavnValideringer = (rule: Rule) => [
     .error(`Feltet kan være på maksimalt ${API_NAME_MAX_LENGTH} tegn.`),
 ];
 
-export const apiNavnValideringer = (rule: Rule, type, name: DokumentNavn): Rule[] => [
+export const apiNavnValideringer = (rule: Rule, type: string, name: DokumentNavn): Rule[] => [
   ...maskinnavnValideringer(rule),
   rule.custom(async (value, context) => {
     if (value === undefined) return true;
     if (!name.includes(modalPrefix)) {
-      const erUnik = await erUniktApiNavn(type, value, context);
+      const erUnik = await erUniktApiNavn(type, String(value), context);
       if (!erUnik) return 'Apinavnet er ikke unikt.';
     }
     return true;
   }),
 ];
 
-const erUniktApiNavn = (type, apiNavn, context) => {
+const erUniktApiNavn = (
+  type: string,
+  apiNavn: string,
+  context: ValidationContext,
+): Promise<boolean> => {
   const { document } = context;
+
+  if (!document) return Promise.resolve(true);
 
   const id = document._id.replace(/^drafts\./, '');
 

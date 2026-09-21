@@ -11,20 +11,23 @@ export function customPublishAction(
     const originalResult = originalPublishAction(props);
     const { draft, published } = props;
     const [isDialogOpen, setDialogOpen] = React.useState(false);
-    const [removedFields, setRemovedFields] = React.useState([]);
+    const [removedFields, setRemovedFields] = React.useState<string[]>([]);
     const feltetFelteneTekst = removedFields.length > 1 ? 'feltene' : 'feltet';
+
+    if (!originalResult) {
+      return null;
+    }
 
     const validateChanges = () => {
       const draftKeys = draft && Object.keys(draft);
       const publishedKeys = published && Object.keys(published);
-      const keysInPublishedButNotInDraft = publishedKeys?.filter(
-        key => draftKeys?.indexOf(key) === -1,
-      );
-      if (keysInPublishedButNotInDraft?.length > 0) {
+      const keysInPublishedButNotInDraft =
+        publishedKeys?.filter(key => draftKeys?.indexOf(key) === -1) ?? [];
+      if (keysInPublishedButNotInDraft.length > 0) {
         setRemovedFields(keysInPublishedButNotInDraft);
         setDialogOpen(true);
       } else {
-        originalResult.onHandle();
+        originalResult.onHandle?.();
       }
     };
 
@@ -80,7 +83,7 @@ export function customPublishAction(
                   text="Publisér"
                   onClick={() => {
                     setDialogOpen(false);
-                    originalResult.onHandle();
+                    originalResult.onHandle?.();
                   }}
                 />
               </Inline>

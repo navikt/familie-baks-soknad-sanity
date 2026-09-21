@@ -1,3 +1,5 @@
+import { Rule } from '@sanity/types';
+
 import { CustomSanityTyper, SanityTyper } from '../typer';
 
 const localeBlock = {
@@ -9,19 +11,19 @@ const localeBlock = {
       name: 'nb',
       title: 'Bokmål',
       type: CustomSanityTyper.CUSTOM_BLOCK,
-      validation: Rule => Rule.required().error('Du må fylle inn bokmål'),
+      validation: (rule: Rule) => rule.required().error('Du må fylle inn bokmål'),
     },
     {
       name: 'nn',
       title: 'Nynorsk',
       type: CustomSanityTyper.CUSTOM_BLOCK,
-      validation: Rule => Rule.required().error('Du må fylle inn nynorsk'),
+      validation: (rule: Rule) => rule.required().error('Du må fylle inn nynorsk'),
     },
     {
       name: 'en',
       title: 'Engelsk',
       type: CustomSanityTyper.CUSTOM_BLOCK,
-      validation: Rule => Rule.required().error('Du må fylle inn engelsk'),
+      validation: (rule: Rule) => rule.required().error('Du må fylle inn engelsk'),
     },
   ],
 };
