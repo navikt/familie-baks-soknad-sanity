@@ -53,7 +53,7 @@ export function customPublishAction(
         content: (
           <>
             <Card paddingTop={2} paddingBottom={4}>
-              <Stack space={[4]}>
+              <Stack gap={4}>
                 <Text size={2}>
                   Du har fjernet innholdet i {feltetFelteneTekst}:
                   <i>
@@ -68,7 +68,7 @@ export function customPublishAction(
               </Stack>
             </Card>
             <Card style={{ textAlign: 'right' }}>
-              <Inline space={[5, 5, 5]}>
+              <Inline gap={5}>
                 <Button
                   padding={4}
                   text={'Avbryt'}
