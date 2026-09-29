@@ -24,7 +24,7 @@
   "dependencies": {
     "@sanity/client": "8.6.1",
     "@sanity/icons": "5.2.1",
-    "@sanity/types": "6.15.0",
+    "@sanity/types": "6.16.0",
     "@sanity/ui": "4.2.1",
     "@sanity/vision": "6.15.0",
     "groq": "6.15.0",
