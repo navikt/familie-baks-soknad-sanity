@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Rule } from '@sanity/types';
+import React from 'react';
 import { BlockAnnotationProps } from 'sanity';
 
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';

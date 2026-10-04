@@ -1,4 +1,4 @@
-import { DokumentNavn, dokumentTittel, SanityTyper, StegDokument, Steg } from '../typer';
+import { DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../typer';
 
 const localeStringForStegDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
     steg: steg,

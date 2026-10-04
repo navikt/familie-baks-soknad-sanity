@@ -1,4 +1,4 @@
-import { DokumentNavn, dokumentTittel, SanityTyper, StegDokument, Steg, CustomSanityTyper } from '../typer';
+import { CustomSanityTyper, DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../typer';
 
 const localeBlockForStegDokument = (steg: Steg, dokumentNavn: DokumentNavn): StegDokument => ({
     steg: steg,

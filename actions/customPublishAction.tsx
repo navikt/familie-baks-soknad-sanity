@@ -1,7 +1,6 @@
-import React from 'react';
-
 import { PublishIcon } from '@sanity/icons/Publish';
 import { Button, Card, Inline, Stack, Text } from '@sanity/ui';
+import React from 'react';
 import { DocumentActionComponent, DocumentActionProps } from 'sanity';
 
 export function customPublishAction(originalPublishAction: DocumentActionComponent): DocumentActionComponent {

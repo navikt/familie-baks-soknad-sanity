@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
-
 import { Rule } from '@sanity/types';
+import { ReactNode } from 'react';
 
 export interface DokumentBase {
     title: string;
