@@ -1,4 +1,4 @@
-import { Divider, ListItem, ListItemBuilder, StructureBuilder } from 'sanity/structure';
+import type { Divider, ListItem, ListItemBuilder, StructureBuilder } from 'sanity/structure';
 
 import FileIcon from '../images/FileIcon';
 import { DokumentNavn, dokumentTittel, Steg, stegTittel } from '../schemas/typer';

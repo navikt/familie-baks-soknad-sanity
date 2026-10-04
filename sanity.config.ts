@@ -1,5 +1,5 @@
 import { visionTool } from '@sanity/vision';
-import { AuthConfig, defineConfig, definePlugin } from 'sanity';
+import { type AuthConfig, defineConfig, definePlugin } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
 import { customPublishAction } from './actions/customPublishAction';

@@ -1,7 +1,7 @@
-import { ConditionalPropertyCallbackContext, Rule } from '@sanity/types';
+import type { ConditionalPropertyCallbackContext, Rule } from '@sanity/types';
 
 import { apiNavnValideringer } from '../../util/valideringer';
-import { DokumentNavn, SanityTyper, Steg, Ytelse } from '../typer';
+import { type DokumentNavn, SanityTyper, type Steg, Ytelse } from '../typer';
 
 const fieldsBase = (steg: Steg, name: DokumentNavn) => [
     {

@@ -36,7 +36,7 @@ import omDeg from './steg/omDeg';
 import oppsummering from './steg/oppsummering';
 import vedlikeholdsarbeid from './steg/vedlikeholdsarbeid';
 import velgBarn from './steg/velgBarn';
-import { StegDokument } from './typer';
+import type { StegDokument } from './typer';
 
 const dokumenterMedFellesFelter = [
     ...forside,

@@ -1,7 +1,7 @@
-import { Rule, ValidationContext } from '@sanity/types';
+import type { Rule, ValidationContext } from '@sanity/types';
 import groq from 'groq';
 
-import { DokumentNavn, modalPrefix } from '../schemas/typer';
+import { type DokumentNavn, modalPrefix } from '../schemas/typer';
 
 import { client } from './client';
 
