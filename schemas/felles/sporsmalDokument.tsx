@@ -1,5 +1,3 @@
-import React from 'react';
-
 import FileContentIcon from '../../images/FileContentIcon';
 import { CustomSanityTyper, DokumentNavn, dokumentTittel, SanityTyper, Steg, StegDokument } from '../typer';
 

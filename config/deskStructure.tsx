@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Divider, ListItem, ListItemBuilder, StructureBuilder } from 'sanity/structure';
 
 import FileIcon from '../images/FileIcon';
