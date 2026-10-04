@@ -4,16 +4,13 @@ import sporsmalDokument from '../felles/sporsmalDokument';
 import { DokumentNavn, Steg } from '../typer';
 
 const omBarnet = [
-  localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL),
-  localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL_UTEN_FLETTEFELT),
-  localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_GUIDE),
-  localeStringForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SUBTITLER),
-  sporsmalDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SPORSMAL),
-  localeBlockForStegDokument(
-    Steg.OM_BARNET,
-    DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE,
-  ),
-  localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
+    localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL),
+    localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_TITTEL_UTEN_FLETTEFELT),
+    localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_GUIDE),
+    localeStringForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SUBTITLER),
+    sporsmalDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_SPORSMAL),
+    localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_OPPFOLGNING_OPPLYSNINGSPAMINNELSE),
+    localeBlockForStegDokument(Steg.OM_BARNET, DokumentNavn.OM_BARNET_ANDRE_TEKSTER),
 ];
 
 export default omBarnet;

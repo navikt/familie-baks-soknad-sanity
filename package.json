@@ -1,43 +1,43 @@
 {
-  "name": "baks-soknad-cms",
-  "private": true,
-  "version": "1.0.0",
-  "packageManager": "pnpm@11.15.0",
-  "description": "Sanity (cms) for søknad til kontantstøtte",
-  "main": "package.json",
-  "author": "Team BAKS",
-  "scripts": {
-    "dev": "sanity dev",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "test": "echo \"No test specified.\"",
-    "lint": "biome lint .",
-    "lint:fix": "biome lint --write .",
-    "format": "biome format .",
-    "format:fix": "biome format --write .",
-    "check": "biome check .",
-    "check:fix": "biome check --write .",
-    "typecheck": "tsc --noEmit",
-    "validate": "pnpm typecheck && pnpm check"
-  },
-  "keywords": [
-    "sanity"
-  ],
-  "dependencies": {
-    "@sanity/client": "8.6.1",
-    "@sanity/icons": "5.2.1",
-    "@sanity/types": "6.15.0",
-    "@sanity/ui": "4.2.1",
-    "@sanity/vision": "6.15.0",
-    "groq": "6.15.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "sanity": "6.15.0",
-    "styled-components": "6.5.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.5.14",
-    "typescript": "6.0.3",
-    "vite": "8.3.0"
-  }
+    "name": "baks-soknad-cms",
+    "private": true,
+    "version": "1.0.0",
+    "packageManager": "pnpm@11.15.0",
+    "description": "Sanity (cms) for søknad til kontantstøtte",
+    "main": "package.json",
+    "author": "Team BAKS",
+    "scripts": {
+        "dev": "sanity dev",
+        "build": "sanity build",
+        "deploy": "sanity deploy",
+        "test": "echo \"No test specified.\"",
+        "lint": "biome lint .",
+        "lint:fix": "biome lint --write .",
+        "format": "biome format .",
+        "format:fix": "biome format --write .",
+        "check": "biome check .",
+        "check:fix": "biome check --write .",
+        "typecheck": "tsc --noEmit",
+        "validate": "pnpm typecheck && pnpm check"
+    },
+    "keywords": [
+        "sanity"
+    ],
+    "dependencies": {
+        "@sanity/client": "8.6.1",
+        "@sanity/icons": "5.2.1",
+        "@sanity/types": "6.15.0",
+        "@sanity/ui": "4.2.1",
+        "@sanity/vision": "6.15.0",
+        "groq": "6.15.0",
+        "react": "19.3.0",
+        "react-dom": "19.3.0",
+        "sanity": "6.15.0",
+        "styled-components": "6.5.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.5.14",
+        "typescript": "6.0.3",
+        "vite": "8.3.0"
+    }
 }
