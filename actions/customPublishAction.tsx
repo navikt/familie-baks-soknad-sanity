@@ -31,7 +31,7 @@ export function customPublishAction(originalPublishAction: DocumentActionCompone
             if (removedFields.length === 1) {
                 return removedFields[0];
             } else {
-                return removedFields.slice(0, -1).join(', ') + ' og ' + removedFields.slice(-1);
+                return `${removedFields.slice(0, -1).join(', ')} og ${removedFields.slice(-1)}`;
             }
         };
 
