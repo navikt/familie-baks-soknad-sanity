@@ -1,128 +1,127 @@
-import React from 'react';
-
-import { Rule } from '@sanity/types';
-import { BlockAnnotationProps } from 'sanity';
+import type { Rule } from '@sanity/types';
+import type React from 'react';
+import type { BlockAnnotationProps } from 'sanity';
 
 import { CustomSanityTyper, EFlettefelt, SanityTyper } from '../typer';
 
 import styles from './customBlock.module.css';
 
 interface FlettefeltProps extends BlockAnnotationProps {
-  value: {
-    flettefeltVerdi?: string;
-    _type: string;
-    _key: string;
-  };
+    value: {
+        flettefeltVerdi?: string;
+        _type: string;
+        _key: string;
+    };
 }
 
 const FlettefeltGammel: React.FC<FlettefeltProps> = props => {
-  return (
-    <span className={styles.flettefeltGammel}>
-      {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : props.renderDefault(props)}
-    </span>
-  );
+    return (
+        <span className={styles.flettefeltGammel}>
+            {props.value.flettefeltVerdi ? props.value.flettefeltVerdi : props.renderDefault(props)}
+        </span>
+    );
 };
 
 const Flettefelt: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <span className={styles.flettefelt}>{children}</span>
+    <span className={styles.flettefelt}>{children}</span>
 );
 
 const flettefelter = [
-  { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
-  { title: 'Søkers navn', value: EFlettefelt.SØKER_NAVN },
-  { title: 'Ytelse', value: EFlettefelt.YTELSE },
-  { title: 'Ytelse i bestemt form', value: EFlettefelt.YTELSE_BESTEMT_FORM },
-  { title: 'i/utenfor', value: EFlettefelt.I_UTENFOR },
-  {
-    title: 'du / den andre forelderen / omsorgspersonen',
-    value: EFlettefelt.PERSONTYPE,
-  },
-  { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
-  { title: 'Utenlandsk/Norsk', value: EFlettefelt.UTENLANDSK_NORSK },
-  { title: 'Antall', value: EFlettefelt.ANTALL },
-  { title: 'Total antall', value: EFlettefelt.TOTAL_ANTALL },
-  { title: 'Klokkeslett', value: EFlettefelt.KLOKKESLETT },
-  { title: 'Dato', value: EFlettefelt.DATO },
-  { title: 'Land', value: EFlettefelt.LAND },
+    { title: 'Barnets navn', value: EFlettefelt.BARN_NAVN },
+    { title: 'Søkers navn', value: EFlettefelt.SØKER_NAVN },
+    { title: 'Ytelse', value: EFlettefelt.YTELSE },
+    { title: 'Ytelse i bestemt form', value: EFlettefelt.YTELSE_BESTEMT_FORM },
+    { title: 'i/utenfor', value: EFlettefelt.I_UTENFOR },
+    {
+        title: 'du / den andre forelderen / omsorgspersonen',
+        value: EFlettefelt.PERSONTYPE,
+    },
+    { title: 'Utlandet/Norge', value: EFlettefelt.UTLANDET_NORGE },
+    { title: 'Utenlandsk/Norsk', value: EFlettefelt.UTENLANDSK_NORSK },
+    { title: 'Antall', value: EFlettefelt.ANTALL },
+    { title: 'Total antall', value: EFlettefelt.TOTAL_ANTALL },
+    { title: 'Klokkeslett', value: EFlettefelt.KLOKKESLETT },
+    { title: 'Dato', value: EFlettefelt.DATO },
+    { title: 'Land', value: EFlettefelt.LAND },
 ];
 
 const flettefelt = {
-  name: CustomSanityTyper.FLETTEFELT,
-  type: SanityTyper.OBJECT,
-  fields: [
-    {
-      name: CustomSanityTyper.FLETTEFELT,
-      type: SanityTyper.STRING,
-      options: {
-        list: [...flettefelter],
-      },
+    name: CustomSanityTyper.FLETTEFELT,
+    type: SanityTyper.OBJECT,
+    fields: [
+        {
+            name: CustomSanityTyper.FLETTEFELT,
+            type: SanityTyper.STRING,
+            options: {
+                list: [...flettefelter],
+            },
+        },
+    ],
+    preview: {
+        select: {
+            flettefelt: CustomSanityTyper.FLETTEFELT,
+        },
     },
-  ],
-  preview: {
-    select: {
-      flettefelt: CustomSanityTyper.FLETTEFELT,
+    components: {
+        preview: (props: { flettefelt: EFlettefelt }) => {
+            const flettefelt = flettefelter.find(flettefelt => flettefelt.value === props.flettefelt);
+            return <Flettefelt>{flettefelt?.title ?? 'Tomt flettefelt'}</Flettefelt>;
+        },
     },
-  },
-  components: {
-    preview: (props: { flettefelt: EFlettefelt }) => {
-      const flettefelt = flettefelter.find(flettefelt => flettefelt.value === props.flettefelt);
-      return <Flettefelt>{flettefelt?.title ?? 'Tomt flettefelt'}</Flettefelt>;
-    },
-  },
 };
 
 const customBlock = {
-  title: 'Custom block',
-  name: CustomSanityTyper.CUSTOM_BLOCK,
-  type: SanityTyper.ARRAY,
-  of: [
-    {
-      type: SanityTyper.BLOCK,
-      of: [flettefelt],
-      marks: {
-        annotations: [
-          {
-            name: 'link',
-            type: SanityTyper.OBJECT,
-            title: 'Ekstern lenke',
-            fields: [
-              {
-                name: 'href',
-                type: 'url',
-                title: 'URL',
-              },
-              {
-                title: 'Åpne i ny tab',
-                name: 'blank',
-                type: 'boolean',
-                initialValue: true,
-              },
-            ],
-          },
-          {
-            name: 'flettefelt',
-            type: SanityTyper.OBJECT,
-            title: 'Flettefelt GAMMEL',
-            icon: () => 'F',
-            components: {
-              annotation: FlettefeltGammel,
+    title: 'Custom block',
+    name: CustomSanityTyper.CUSTOM_BLOCK,
+    type: SanityTyper.ARRAY,
+    of: [
+        {
+            type: SanityTyper.BLOCK,
+            of: [flettefelt],
+            marks: {
+                annotations: [
+                    {
+                        name: 'link',
+                        type: SanityTyper.OBJECT,
+                        title: 'Ekstern lenke',
+                        fields: [
+                            {
+                                name: 'href',
+                                type: 'url',
+                                title: 'URL',
+                            },
+                            {
+                                title: 'Åpne i ny tab',
+                                name: 'blank',
+                                type: 'boolean',
+                                initialValue: true,
+                            },
+                        ],
+                    },
+                    {
+                        name: 'flettefelt',
+                        type: SanityTyper.OBJECT,
+                        title: 'Flettefelt GAMMEL',
+                        icon: () => 'F',
+                        components: {
+                            annotation: FlettefeltGammel,
+                        },
+                        fields: [
+                            {
+                                name: 'flettefeltVerdi',
+                                type: SanityTyper.STRING,
+                                title: 'Flettefeltverdier',
+                                validation: (rule: Rule) => rule.required().error('Du må velge gyldig flettefelt!'),
+                                options: {
+                                    list: [...flettefelter],
+                                },
+                            },
+                        ],
+                    },
+                ],
             },
-            fields: [
-              {
-                name: 'flettefeltVerdi',
-                type: SanityTyper.STRING,
-                title: 'Flettefeltverdier',
-                validation: (rule: Rule) => rule.required().error('Du må velge gyldig flettefelt!'),
-                options: {
-                  list: [...flettefelter],
-                },
-              },
-            ],
-          },
-        ],
-      },
-    },
-  ],
+        },
+    ],
 };
 
 export default customBlock;

@@ -1,51 +1,50 @@
-import { ConditionalPropertyCallbackContext, Rule } from '@sanity/types';
+import type { ConditionalPropertyCallbackContext, Rule } from '@sanity/types';
 
 import { apiNavnValideringer } from '../../util/valideringer';
-import { DokumentNavn, SanityTyper, Steg, Ytelse } from '../typer';
+import { type DokumentNavn, SanityTyper, type Steg, Ytelse } from '../typer';
 
 const fieldsBase = (steg: Steg, name: DokumentNavn) => [
-  {
-    name: 'visningsnavn',
-    title: 'Visningsnavn',
-    description: '(obligatorisk)',
-    type: SanityTyper.STRING,
-    validation: (rule: Rule) => rule.required().error('Dokumentet må ha et visningsnavn'),
-  },
-  {
-    name: 'api_navn',
-    title: 'Api navn',
-    type: SanityTyper.STRING,
-    description: 'Teknisk navn. Eksempel borPaRegistrertAdresse (obligatorisk)',
-    validation: (rule: Rule) => apiNavnValideringer(rule, SanityTyper.DOCUMENT, name),
-    readOnly: ({ document }: ConditionalPropertyCallbackContext) =>
-      document?._createdAt !== undefined,
-  },
-  {
-    name: 'ytelse',
-    title: 'Ytelse',
-    type: SanityTyper.ARRAY,
-    description: 'For hvilke ytelser gjelder teksten? Velg minst én. (obligatorisk)',
-    validation: (rule: Rule) => rule.required().error('Dokumentet må høre til minst en ytelse'),
-    options: {
-      list: [
-        { value: Ytelse.BARNETRYGD, title: 'Barnetrygd' },
-        { value: Ytelse.KONTANTSTØTTE, title: 'Kontantstøtte' },
-      ],
-      layout: 'radio',
-    },
-    of: [
-      {
+    {
+        name: 'visningsnavn',
+        title: 'Visningsnavn',
+        description: '(obligatorisk)',
         type: SanityTyper.STRING,
-      },
-    ],
-  },
-  {
-    title: 'Teknisk stegnavn',
-    name: 'steg',
-    type: SanityTyper.STRING,
-    initialValue: steg,
-    readOnly: true,
-  },
+        validation: (rule: Rule) => rule.required().error('Dokumentet må ha et visningsnavn'),
+    },
+    {
+        name: 'api_navn',
+        title: 'Api navn',
+        type: SanityTyper.STRING,
+        description: 'Teknisk navn. Eksempel borPaRegistrertAdresse (obligatorisk)',
+        validation: (rule: Rule) => apiNavnValideringer(rule, SanityTyper.DOCUMENT, name),
+        readOnly: ({ document }: ConditionalPropertyCallbackContext) => document?._createdAt !== undefined,
+    },
+    {
+        name: 'ytelse',
+        title: 'Ytelse',
+        type: SanityTyper.ARRAY,
+        description: 'For hvilke ytelser gjelder teksten? Velg minst én. (obligatorisk)',
+        validation: (rule: Rule) => rule.required().error('Dokumentet må høre til minst en ytelse'),
+        options: {
+            list: [
+                { value: Ytelse.BARNETRYGD, title: 'Barnetrygd' },
+                { value: Ytelse.KONTANTSTØTTE, title: 'Kontantstøtte' },
+            ],
+            layout: 'radio',
+        },
+        of: [
+            {
+                type: SanityTyper.STRING,
+            },
+        ],
+    },
+    {
+        title: 'Teknisk stegnavn',
+        name: 'steg',
+        type: SanityTyper.STRING,
+        initialValue: steg,
+        readOnly: true,
+    },
 ];
 
 export default fieldsBase;
