@@ -15,8 +15,8 @@ importers:
         specifier: 5.2.1
         version: 5.2.1(react@19.3.0)
       '@sanity/types':
-        specifier: 6.16.0
-        version: 6.16.0(@types/react@19.2.18)
+        specifier: 6.17.0
+        version: 6.17.0(@types/react@19.2.18)
       '@sanity/ui':
         specifier: 4.2.1
         version: 4.2.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
@@ -1944,6 +1944,12 @@ packages:
 
   '@sanity/types@6.16.0':
     resolution: {integrity: sha512-WzUGlwNxQALdBWdYH1jHJRI2KAzr2HXoSxqHTR9LMElhNXkgL2WZoLSFMf3KCSHr1iK610agKxICNRatzJ2Efw==}
+    engines: {node: '>=22.12'}
+    peerDependencies:
+      '@types/react': '*'
+
+  '@sanity/types@6.17.0':
+    resolution: {integrity: sha512-v1/YgSfSeMmdn9crj3l8O/Sx/9PgZGlZ8dAEGepANwwiAQlxIrQpH0uFu9QLF09OvV+D2GVrsDOyyLZ/EdvvTA==}
     engines: {node: '>=22.12'}
     peerDependencies:
       '@types/react': '*'
@@ -5993,7 +5999,7 @@ snapshots:
     dependencies:
       '@portabletext/schema': 3.0.0
       '@sanity/schema': 6.16.0(@types/react@19.2.18)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
     transitivePeerDependencies:
       - '@types/react'
       - vitest
@@ -6122,7 +6128,7 @@ snapshots:
       '@sanity/generate-help-url': 4.0.0
       '@sanity/schema': 6.16.0(@types/react@19.2.18)
       '@sanity/telemetry': 1.1.0(react@19.3.0)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       '@sanity/workbench-cli': 2.8.0(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@types/react@19.2.18)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(typescript@6.0.3)(yaml@2.9.1)
       '@vitejs/plugin-react': 6.1.1(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1))
       chokidar: 5.0.0
@@ -6223,7 +6229,7 @@ snapshots:
       '@sanity/schema': 6.16.0(@types/react@19.2.18)
       '@sanity/telemetry': 1.1.0(react@19.3.0)
       '@sanity/template-validator': 3.1.1
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       '@sanity/workbench-cli': 2.8.0(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@types/react@19.2.18)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(typescript@6.0.3)(yaml@2.9.1)
       '@sanity/worker-channels': 2.0.0
       '@sanity/workflow-cli': 0.32.0(@sanity/cli-core@3.8.1(@noble/hashes@2.4.0)(esbuild@0.28.2)(tsx@4.23.13)(yaml@2.9.1))(@sanity/workflow-engine@0.32.0(@types/react@19.2.18)(supports-color@8.1.1)(typescript@6.0.3))(react@19.3.0)
@@ -6454,6 +6460,10 @@ snapshots:
     dependencies:
       '@sanity/types': 6.16.0(@types/react@19.2.18)
 
+  '@sanity/media-library-types@1.7.1(@sanity/types@6.17.0(@types/react@19.2.18))':
+    dependencies:
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
+
   '@sanity/message-protocol@0.24.0':
     dependencies:
       '@sanity/comlink': 4.0.3
@@ -6462,7 +6472,7 @@ snapshots:
     dependencies:
       '@sanity/client': 8.7.0
       '@sanity/mutate': 0.18.2(xstate@5.33.2)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       '@sanity/util': 6.16.0(@types/react@19.2.18)
       arrify: 3.0.0
       get-it: 9.6.0
@@ -6601,7 +6611,7 @@ snapshots:
       '@sanity/client': 8.7.0
       '@sanity/message-protocol': 0.24.0
       '@sanity/sdk': 3.5.0(@types/react@19.2.18)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       react: 19.3.0
       react-compiler-runtime: 1.0.0(react@19.3.0)
       react-dom: 19.3.0(react@19.3.0)
@@ -6627,7 +6637,7 @@ snapshots:
       '@sanity/message-protocol': 0.24.0
       '@sanity/mutate': 0.18.2(xstate@5.33.2)
       '@sanity/telemetry': 1.1.0(react@19.3.0)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       groq: 6.16.0
       groq-js: 2.0.0
       reselect: 5.3.0
@@ -6667,6 +6677,14 @@ snapshots:
     dependencies:
       '@sanity/client': 8.7.0
       '@sanity/media-library-types': 1.7.1(@sanity/types@6.16.0(@types/react@19.2.18))
+      '@types/react': 19.2.18
+    transitivePeerDependencies:
+      - vitest
+
+  '@sanity/types@6.17.0(@types/react@19.2.18)':
+    dependencies:
+      '@sanity/client': 8.7.0
+      '@sanity/media-library-types': 1.7.1(@sanity/types@6.17.0(@types/react@19.2.18))
       '@types/react': 19.2.18
     transitivePeerDependencies:
       - vitest
@@ -6800,7 +6818,7 @@ snapshots:
       '@module-federation/runtime': 2.9.0
       '@module-federation/vite': 1.22.1(typescript@6.0.3)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1))
       '@sanity/cli-core': 3.8.1(@noble/hashes@2.4.0)(esbuild@0.28.2)(tsx@4.23.13)(yaml@2.9.1)
-      '@sanity/types': 6.16.0(@types/react@19.2.18)
+      '@sanity/types': 6.17.0(@types/react@19.2.18)
       '@vitejs/plugin-react': 6.1.1(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1))
       form-data: 4.0.6
       rxjs: 7.8.2
