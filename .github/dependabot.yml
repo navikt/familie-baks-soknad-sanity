@@ -16,6 +16,7 @@ updates:
         - "@sanity/vision"
         - "groq"
         - "@sanity/client"
+        - "@sanity/types"
     linting:
       patterns:
         - "@biomejs/biome"
