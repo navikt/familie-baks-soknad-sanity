@@ -3,7 +3,7 @@ Sanity (cms) for søknad til barnetrygd og kontantstøtte (BAKS)
 
 ### Kjøre lokalt
 * Kjør `nvm use` (Node-versjonen ligger i `.nvmrc`).
-* Aktiver riktig pnpm-versjon med `corepack enable` (henter versjonen fra `packageManager` i package.json).
+* Installer Corepack med `npm install -g corepack` (følger ikke lenger med Node) og aktiver riktig pnpm-versjon med `corepack enable` (henter versjonen fra `packageManager` i package.json).
 * Kjør `pnpm install` for å installere alle npm-pakkene.
 * Kjør `pnpm dev` for å starte applikasjonen på localhost:3333.
 * Sanity-CLI-en kjøres via repoet: `pnpm exec sanity <kommando>` (ikke installer `@sanity/cli` globalt — den er ikke kompatibel med repoets pinnede sanity-versjon).
