@@ -1,25 +1,25 @@
 version: 2
 
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "18:00"
-  cooldown:
-    default-days: 7
-  open-pull-requests-limit: 10
-  groups:
-    sanity:
-      patterns:
-        - "sanity"
-        - "@sanity/vision"
-        - "groq"
-        - "@sanity/client"
-        - "@sanity/types"
-    linting:
-      patterns:
-        - "@biomejs/biome"
-  ignore:
-    - dependency-name: "*"
-      update-types: ["version-update:semver-patch"]
+    - package-ecosystem: npm
+      directory: "/"
+      schedule:
+          interval: daily
+          time: "18:00"
+      cooldown:
+          default-days: 7
+      open-pull-requests-limit: 10
+      groups:
+          sanity:
+              patterns:
+                  - "sanity"
+                  - "@sanity/vision"
+                  - "groq"
+                  - "@sanity/client"
+                  - "@sanity/types"
+          linting:
+              patterns:
+                  - "@biomejs/biome"
+      ignore:
+          - dependency-name: "*"
+            update-types: ["version-update:semver-patch"]

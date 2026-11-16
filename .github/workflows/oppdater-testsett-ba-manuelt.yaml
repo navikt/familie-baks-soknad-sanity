@@ -1,32 +1,32 @@
 name: Oppdater testsett BA
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 permissions:
-  contents: read
+    contents: read
 jobs:
-  oppdater-testsett:
-    runs-on: ubuntu-latest
-    name: Oppdater testsett BA manuelt
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
-        with:
-          persist-credentials: false
+    oppdater-testsett:
+        runs-on: ubuntu-latest
+        name: Oppdater testsett BA manuelt
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
+              with:
+                  persist-credentials: false
 
-      - name: Set up node and install pnpm packages
-        uses: navikt/familie-baks-gha-workflows/.github/actions/setup-node-pnpm@main # ratchet:exclude
-        with:
-          node-version: '26'
-          reader-token: ${{ secrets.READER_TOKEN }}
+            - name: Set up node and install pnpm packages
+              uses: navikt/familie-baks-gha-workflows/.github/actions/setup-node-pnpm@main # ratchet:exclude
+              with:
+                  node-version: "26"
+                  reader-token: ${{ secrets.READER_TOKEN }}
 
-      - name: Export prod dataset
-        run: |
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
-          pnpm exec sanity dataset export \
-          ba-production backups/baks-soknad-ba-prod.tar.gz
+            - name: Export prod dataset
+              run: |
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
+                  pnpm exec sanity dataset export \
+                  ba-production backups/baks-soknad-ba-prod.tar.gz
 
-      - name: Import prod dataset til test
-        run: |-
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
-          pnpm exec sanity dataset import \
-          backups/baks-soknad-ba-prod.tar.gz ba-test --replace
+            - name: Import prod dataset til test
+              run: |-
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
+                  pnpm exec sanity dataset import \
+                  backups/baks-soknad-ba-prod.tar.gz ba-test --replace
