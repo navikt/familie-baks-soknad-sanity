@@ -1,43 +1,42 @@
 name: Backup Routine KS
 on:
-  workflow_dispatch:
-  schedule:
-    # Runs at 04:00 UTC on the 1st and 17th of every month
-    - cron: "0 4 */16 * *"
+    workflow_dispatch:
+    schedule:
+        # Runs at 04:00 UTC on the 1st and 17th of every month
+        - cron: "0 4 */16 * *"
 permissions:
-  contents: read
+    contents: read
 jobs:
-  backup-prod-dataset:
-    runs-on: ubuntu-latest
-    name: Backup prod dataset
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
-        with:
-          persist-credentials: false
+    backup-prod-dataset:
+        runs-on: ubuntu-latest
+        name: Backup prod dataset
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
+              with:
+                  persist-credentials: false
 
-      - name: Set up node and install pnpm packages
-        uses: navikt/familie-baks-gha-workflows/.github/actions/setup-node-pnpm@main # ratchet:exclude
-        with:
-          node-version: '26'
-          reader-token: ${{ secrets.READER_TOKEN }}
+            - name: Set up node and install pnpm packages
+              uses: navikt/familie-baks-gha-workflows/.github/actions/setup-node-pnpm@main # ratchet:exclude
+              with:
+                  node-version: "26"
+                  reader-token: ${{ secrets.READER_TOKEN }}
 
-      - name: Export prod dataset
-        run: | 
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
-          pnpm exec sanity dataset export \
-          ks-production backups/baks-soknad-ks-prod.tar.gz
+            - name: Export prod dataset
+              run: |
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_VIEWER_TOKEN }}" \
+                  pnpm exec sanity dataset export \
+                  ks-production backups/baks-soknad-ks-prod.tar.gz
 
-      - name: Upload baks-soknad-ks-prod.tar.gz
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
-        with:
-          name: Backup prod dataset KS
-          path: backups/baks-soknad-ks-prod.tar.gz
-          # Fails the workflow if no files are found; defaults to 'warn'
-          if-no-files-found: error
+            - name: Upload baks-soknad-ks-prod.tar.gz
+              uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
+              with:
+                  name: Backup prod dataset KS
+                  path: backups/baks-soknad-ks-prod.tar.gz
+                  # Fails the workflow if no files are found; defaults to 'warn'
+                  if-no-files-found: error
 
-      - name: Import prod dataset til test
-        run: |-
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
-          pnpm exec sanity dataset import \
-          backups/baks-soknad-ks-prod.tar.gz ks-test --replace
-
+            - name: Import prod dataset til test
+              run: |-
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_WRITE_TOKEN }}" \
+                  pnpm exec sanity dataset import \
+                  backups/baks-soknad-ks-prod.tar.gz ks-test --replace
