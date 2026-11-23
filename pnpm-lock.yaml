@@ -12,8 +12,8 @@ importers:
         specifier: 8.16.0
         version: 8.16.0
       '@sanity/icons':
-        specifier: 5.2.1
-        version: 5.2.1(react@19.3.0)
+        specifier: 5.4.0
+        version: 5.4.0(react@19.3.0)
       '@sanity/types':
         specifier: 6.23.0
         version: 6.23.0(@types/react@19.2.18)
@@ -1994,20 +1994,8 @@ packages:
     resolution: {integrity: sha512-HbP+UytB9gbScX5JuCM5mJNIZ093p3eeuDojqbf5KIunBaAqi0AuamsU5bjfNa/roE92xAJ9HDLbS5Vc93aPWA==}
     engines: {node: '>=20'}
 
-  '@sanity/icons@5.2.1':
-    resolution: {integrity: sha512-P5gY1HRungh4RgCcypdIpu/SKoTwRBTttpbHntZjdW1MO3MK6xEOs+pbAzSARyhh22OcN9PkBBEYk2FL34BvfQ==}
-    engines: {node: '>=20.19 <22 || >=22.12'}
-    peerDependencies:
-      react: ^18 || ^19
-
-  '@sanity/icons@5.2.3':
-    resolution: {integrity: sha512-10nE7IiuXIPIf6ufSKyNwnOE75wghEollUYzkjPUAX+5oenyE5qDFUrMD5MeC+8gxZ8KS61o8sH1mpmhpWx++w==}
-    engines: {node: '>=20.19 <22 || >=22.12'}
-    peerDependencies:
-      react: ^18 || ^19
-
-  '@sanity/icons@5.3.0':
-    resolution: {integrity: sha512-8zPOrlK1TgCEj4c60jJ/Lljlro6S8DRfotiPaW1uTXwOjLWk2TSyqBdUaWCVDgWuHgw4jhijg2pBf7o23KFNMA==}
+  '@sanity/icons@5.4.0':
+    resolution: {integrity: sha512-yoLkmg+VT3ZLByf2mMYo8itpSKvmlGyBbViaXKa1HtrA2ebFHJkAKur1I16TYm5mY0glya0BxI+Ndc+gEjYtvg==}
     engines: {node: '>=20.19 <22 || >=22.12'}
     peerDependencies:
       react: ^18 || ^19
@@ -6703,7 +6691,7 @@ snapshots:
   '@sanity/access-ui@6.23.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.6.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@sanity/client': 8.16.0
-      '@sanity/icons': 5.3.0(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       '@sanity/ui': 4.4.12(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.6.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
       react-rx: 7.1.0(react@19.3.0)(rxjs@7.8.2)
@@ -7024,15 +7012,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/icons@5.2.1(react@19.3.0)':
-    dependencies:
-      react: 19.3.0
-
-  '@sanity/icons@5.2.3(react@19.3.0)':
-    dependencies:
-      react: 19.3.0
-
-  '@sanity/icons@5.3.0(react@19.3.0)':
+  '@sanity/icons@5.4.0(react@19.3.0)':
     dependencies:
       react: 19.3.0
 
@@ -7308,7 +7288,7 @@ snapshots:
     dependencies:
       '@floating-ui/react-dom': 2.1.9(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@sanity/color': 3.0.9
-      '@sanity/icons': 5.3.0(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       clsx: 2.1.1
       csstype: 3.2.3
       motion: 14.14.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -7325,7 +7305,7 @@ snapshots:
     dependencies:
       '@floating-ui/react-dom': 2.1.9(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@sanity/color': 3.0.9
-      '@sanity/icons': 5.2.3(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       clsx: 2.1.1
       csstype: 3.2.3
       motion: 14.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -7339,7 +7319,7 @@ snapshots:
   '@sanity/ui@5.0.0-alpha.22(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@sanity-labs/design-tokens': 0.0.2-alpha.10
-      '@sanity/icons': 5.2.1(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       clsx: 2.1.1
       comment-json: 5.0.0
       dialog-closedby-polyfill: 1.4.0
@@ -7398,7 +7378,7 @@ snapshots:
       '@sanity-labs/groq-wasm': 1.2.0
       '@sanity/client': 8.16.0
       '@sanity/color': 3.0.9
-      '@sanity/icons': 5.3.0(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       '@sanity/lezer-groq': 1.0.4
       '@sanity/schema': 6.23.0(@types/react@19.2.18)
       '@sanity/ui': 4.4.12(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.6.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
@@ -9493,7 +9473,7 @@ snapshots:
       '@sanity/diff-patch': 7.0.0
       '@sanity/eventsource': 5.0.4
       '@sanity/generate-help-url': 4.0.0
-      '@sanity/icons': 5.3.0(react@19.3.0)
+      '@sanity/icons': 5.4.0(react@19.3.0)
       '@sanity/id-utils': 1.1.0
       '@sanity/image-url': 2.1.1
       '@sanity/logos': 2.2.6(react@19.3.0)
