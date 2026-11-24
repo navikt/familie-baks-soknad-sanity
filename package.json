@@ -26,13 +26,13 @@
     "dependencies": {
         "@sanity/client": "8.16.0",
         "@sanity/icons": "5.2.1",
-        "@sanity/types": "6.23.0",
+        "@sanity/types": "6.24.0",
         "@sanity/ui": "4.4.9",
-        "@sanity/vision": "6.23.0",
-        "groq": "6.23.0",
+        "@sanity/vision": "6.24.0",
+        "groq": "6.24.0",
         "react": "19.3.0",
         "react-dom": "19.3.0",
-        "sanity": "6.23.0",
+        "sanity": "6.24.0",
         "styled-components": "6.6.0"
     },
     "devDependencies": {
